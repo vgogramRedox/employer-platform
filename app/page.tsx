@@ -3,7 +3,7 @@
 import { ActionIcon, Box, Button, FileInput, Group, Image, TextInput, Title, useComputedColorScheme, useMantineColorScheme } from '@mantine/core';
 import { HeaderMenu } from './components/Navbar';
 import { useInputState } from '@mantine/hooks';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { theme } from '@/theme/app';
 import { IconMoon, IconSun } from '@tabler/icons-react';
 import cx from 'clsx'
@@ -13,7 +13,22 @@ import PrimaryButton from './components/Button';
 import Demo from './components/Carousel';
 
 export default function Home() {
+  let screenwidth
+  useEffect(()=>{
 
+
+window.addEventListener("resize",()=>{
+screenwidth=window.innerWidth
+})
+
+return()=>{
+  window.removeEventListener("resize",()=>{
+    screenwidth=""
+  })
+}
+
+  },[])
+  console.log(screenwidth)
  
   const images=["/images/mobileLand.svg","/images/mobileLand2.svg","/images/mobileLand3.svg"]
   return (
