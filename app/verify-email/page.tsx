@@ -46,7 +46,9 @@ function page() {
 
           <form action="" className="mt-8 p-2 lg:w-[38%] max-lg:mx-auto max-lg:text-center max-lg:w-full ">
           <OTPInput
+          //@ts-ignore
       value={otp}
+      //@ts-ignore
       onChange={setOtp}
       numInputs={4}
       renderSeparator={<span className='p-2'>   </span>}

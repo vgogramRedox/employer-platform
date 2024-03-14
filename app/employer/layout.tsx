@@ -1,7 +1,7 @@
 import React from 'react'
 
-function ({children}:{
-  React.reactNode
+function layout ({children}:{
+ children: React.ReactNode
 }) {
   return (
     
@@ -10,4 +10,4 @@ function ({children}:{
   )
 }
 
-export default 
+export default  layout
