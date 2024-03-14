@@ -14,13 +14,13 @@ import Demo from './components/Carousel';
 import useIsMobile from '@/hooks/useIsMobile';
 import { useRouter } from 'next/navigation';
 import MobileLanding from './components/MobileLanding';
-
+import {isMobile} from 'react-device-detect';
 export default function Home() {
-const isMobile=useIsMobile()
+
 const router=useRouter()
  
   useEffect(()=>{
-    console.log(isMobile)
+    // console.log(isMobile)
 if(!isMobile){
   router.replace("/login")
 }
