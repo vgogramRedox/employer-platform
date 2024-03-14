@@ -13,11 +13,8 @@ import PrimaryButton from './components/Button';
 import Demo from './components/Carousel';
 
 export default function Home() {
-  const {setColorScheme}=useMantineColorScheme({
-    //@ts-ignore
-    getInitialValueInEffect:true
-  })
-  const computedColorScheme=useComputedColorScheme('light')
+
+ 
   const images=["/images/mobileLand.svg","/images/mobileLand2.svg","/images/mobileLand3.svg"]
   return (
     <div className=" ">

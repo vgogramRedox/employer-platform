@@ -13,7 +13,7 @@ export default function Demo({
   return (
     <Carousel 
       
-      height={200}
+      height={391}
       plugins={[autoplay.current]}
       onMouseEnter={autoplay.current.stop}
       onMouseLeave={autoplay.current.reset}
