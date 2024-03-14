@@ -2,7 +2,7 @@
 import React, { useState } from 'react'
 import { Checkbox } from '@mantine/core'
 import '@mantine/core'
-import useIsMobile from '@/hooks/useIsMoble'
+import useIsMobile from '@/hooks/useIsMobile'
 
 interface checkboxProps{
     checked?:boolean

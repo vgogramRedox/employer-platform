@@ -11,7 +11,7 @@ import classes from '@/styles/Demo.module.css'
 import Link from 'next/link';
 import PrimaryButton from './components/Button';
 import Demo from './components/Carousel';
-import useIsMobile from '@/hooks/useIsMoble';
+import useIsMobile from '@/hooks/useIsMobile';
 import { useRouter } from 'next/navigation';
 import MobileLanding from './components/MobileLanding';
 
@@ -20,50 +20,20 @@ const isMobile=useIsMobile()
 const router=useRouter()
  
   useEffect(()=>{
+    console.log(isMobile)
 if(!isMobile){
   router.replace("/login")
 }
 
 
-  },[])
+  },[isMobile])
 
   if (isMobile) {
    
     return(
       <MobileLanding/>
     )
-  //   return (
-  //     <div className=" ">
-  //     <Box  className=" p-[1.25rem]">
-      
-  //   <Demo slideItems={images} />
-       
-  //     <main className="">
-  //       <div className="mt-8 text-center  ">
-          
-         
-  //         <p className="leading-[3rem] mt-3 font-bold text-2xl">Find the right talent</p>
-  //         <p className='text-black font-normal leading-[1.37rem] text-sm'>Lorem ipsum dolor sit amet consectetur.
-  //          </p>
-  //          <p className='text-black font-normal leading-[1.37rem] text-sm'> Feugiat elit mi iaculis.</p>
-  
-  //         <section  className="mt-10 p-2">
-           
-           
-  
-  //           <PrimaryButton title="Log In" className="bg-primary-blue  mt-10" />
-            
-  //           <PrimaryButton
-  //             title={
-  //               <div className="flex justify-center gap-x-3 items-center">
-  //                 <Image src="/images/googleIcon.svg" w={24} h={24} /> Log In 
-  //               </div>
-  //             }
-  //             variant="Outline"
-  //             className="text-primary-blue border mt-3
-  // hover:bg-primary-blue transition hover:text-white
-  // border-primary-blue  "
-  //           />
+
            
   
           

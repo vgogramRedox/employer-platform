@@ -7,7 +7,7 @@ import PrimaryButton from '../components/Button';
 import Link from 'next/link';
 import { IconArrowLeft } from '@tabler/icons-react';
 import OTPInput from 'react-otp-input';
-import useIsMobile from '@/hooks/useIsMoble';
+import useIsMobile from '@/hooks/useIsMobile';
 
 function page() {
   const[otp,setOtp]=useState<number|undefined>()

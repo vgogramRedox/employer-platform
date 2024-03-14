@@ -9,7 +9,7 @@ import { IconArrowLeft } from '@tabler/icons-react';
 import { IconChevronLeft } from '@tabler/icons-react';
 import SignUpSelector from '../components/SignUpSelector';
 import SignUp from '../components/SignUp';
-import useIsMobile from '@/hooks/useIsMoble';
+import useIsMobile from '@/hooks/useIsMobile';
 import { useRouter } from 'next/navigation';
 const getStage=(stage:number)=>{
   switch(stage){
