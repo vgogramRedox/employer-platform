@@ -12,6 +12,7 @@ export default function Demo({
  
   return (
     <Carousel 
+    withControls={false}
       
       height={391}
       plugins={[autoplay.current]}
@@ -23,6 +24,7 @@ export default function Demo({
                 
                 <Carousel.Slide key={i}>
                       <Image src={item} className=" max-w-full rounded-3xl h-[24.47rem]"  />
+                     
                     </Carousel.Slide>
             ))
         }

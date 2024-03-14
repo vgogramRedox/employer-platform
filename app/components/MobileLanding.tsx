@@ -10,9 +10,11 @@ import classes from '@/styles/Demo.module.css'
 import Link from 'next/link';
 import PrimaryButton from './Button';
 import Demo from './Carousel';
+import { useRouter } from 'next/navigation';
 
 export default function MobileLanding() {
     const images=["/images/mobileLand.svg","/images/mobileLand2.svg","/images/mobileLand3.svg"]
+    const router=useRouter()
     return (
         <div className=" ">
         <Box  className=" p-[1.25rem]">
@@ -32,12 +34,19 @@ export default function MobileLanding() {
              
              
     
-              <PrimaryButton title="Log In" className="bg-primary-blue  mt-10" />
+              <PrimaryButton title="Get Started" 
+                onClick={()=>{
+                  router.push("/signup")
+                }}
+              className="bg-primary-blue  mt-10" />
               
               <PrimaryButton
+              onClick={()=>{
+                router.push("/login")
+              }}
                 title={
                   <div className="flex justify-center gap-x-3 items-center">
-                    <Image src="/images/googleIcon.svg" w={24} h={24} /> Log In 
+                   Log In
                   </div>
                 }
                 variant="Outline"

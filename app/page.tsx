@@ -26,7 +26,7 @@ if(!isMobile){
 }
 
 
-  },[isMobile])
+  },[])
 
   if (isMobile) {
    

@@ -61,7 +61,11 @@ function page() {
 <>
 {getStage(stage)}
 {
-  stage==1?(<PrimaryButton title="Next" className="bg-primary-blue  mt-24 mb-24" />):""
+  stage==1?(<PrimaryButton title="Next" 
+  onClick={()=>{
+  setStage(2)
+  }}
+  className="bg-primary-blue  mt-24 mb-24" />):""
 }
 
 </>
