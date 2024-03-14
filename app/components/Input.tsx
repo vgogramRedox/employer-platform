@@ -18,7 +18,7 @@ className
     <div className='leading-8'>
     
     
-    <label className='text-dark text-xl' >
+    <label className='text-dark text-xl max-md:text-sm' >
 {label}
     </label>
     <input 

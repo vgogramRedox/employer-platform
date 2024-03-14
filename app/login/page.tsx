@@ -9,21 +9,21 @@ import { IconArrowLeft } from '@tabler/icons-react';
 function page() {
   return (
     <div className="flex min-h-screen">
-      <Box component="aside" className="lg:min-w-[18.25rem] ">
+      <Box component="aside" className="lg:min-w-[18.25rem]  max-md:hidden">
         <BackgroundImage src="images/sidebar.svg" className="min-h-[105%]"></BackgroundImage>
       </Box>
 
-      <main className="w-full">
-        <div className="mt-8 ms-44 w-[33%]">
-          <Image src="/images/darkLogo.svg" w={93} h={93} />
+      <main className="w-full max-lg:p-3">
+        <div className="mt-8 lg:ms-44 lg:w-[33%] max-lg:mx-auto ">
+          <Image src="/images/darkLogo.svg" w={93} h={93} className='max-lg:items-center max-lg:mx-auto' />
           <p className="leading-[1.2rem] mt-3 text-dark font-semibold">Welcome back,</p>
-          <p className="leading-[3rem] mt-3 font-bold text-5xl">Log In to continue</p>
+          <p className="leading-[3rem] mt-3 font-bold text-5xl max-lg:text-[1.5rem]">Log In to continue</p>
 
           <form action="" className="mt-10 p-2">
             <Input label="Email" placeholder="Enter your email" />
             <Input label="Password" placeholder="Enter your password" />
             <p className="text-dark font-medium text-end">Forgot Password ?</p>
-            <CheckboxComp label="Remember me?" />
+            <CheckboxComp className='max-md:mt-5 ' label="Remember me?" />
 
             <PrimaryButton title="Log In" className="bg-primary-blue  mt-10" />
             <p className="text-dark font-medium text-lg text-center mt-3">Or</p>
@@ -58,7 +58,7 @@ border-primary-blue  "
           </form>
 
           <div className="mx-auto mt-10 mb-5  ">
-            <Link href="" className="font-bold flex justify-center lg:ms-3 gap-x-2">
+            <Link href="" className="font-bold flex justify-center lg:ms-3 gap-x-2 max-lg:hidden ">
               {' '}
               <IconArrowLeft /> Back to homePage
             </Link>

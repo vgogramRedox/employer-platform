@@ -15,11 +15,13 @@ export const appConfig = {
     },
     "dark":"#010101",
     "dark-100":"#515151",
+    "dark-200":"#615656",
     "grey-3":"#7E8494",
     "grey-4":"#BDC0CE",
     "grey-5":"#A8AFE3",
     "primary-blue":"#3B4BC1",
-    'primary-blue-2':"#515FC8"
+    'primary-blue-2':"#515FC8",
+    "purple-100":"#D3D7F180"
     
   },
 };
