@@ -7,6 +7,9 @@ const config: Config = {
   theme: {
     extend: {
       colors: appConfig.colors,
+      backgroundImage:{
+        'sidebar':"url('/images/darkLogo.svg')"
+      },
     },
   },
 };

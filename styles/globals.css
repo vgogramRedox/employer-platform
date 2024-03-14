@@ -106,3 +106,8 @@
     }
   }
 }
+
+.custom-checkbox-width .mantine-checkbox {
+  /* Your custom styles for the checkbox */
+  width: 300px; /* Example width */
+}
