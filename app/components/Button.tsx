@@ -13,7 +13,7 @@ function PrimaryButton({title,variant,className,onClick,fullWidth=true}:BtnProps
   return (
    <Button variant={variant}  fullWidth={fullWidth} radius='lg'
    onClick={onClick}
-   className={className}>
+   className={`${className} transition-all duration-200`}>
 {title}
    </Button>
   )

@@ -10,6 +10,9 @@ const config: Config = {
       backgroundImage:{
         'sidebar':"url('/images/darkLogo.svg')"
       },
+      fontFamily:{
+      generalSans:["GeneralSans"],
+    }
     },
   },
 };

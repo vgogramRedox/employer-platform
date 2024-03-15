@@ -24,7 +24,7 @@ export const theme = createTheme({
             }
         }
     },
-    fontFamily: 'inherit',
+    fontFamily: 'GeneralSans',
     primaryColor: 'primary',
     primaryShade: 4,
     breakpoints:{
