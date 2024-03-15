@@ -42,8 +42,12 @@ export function NavbarSimple() {
 
   const [active, setActive] = useState('Billing');
   const { colorScheme, setColorScheme } = useMantineColorScheme();
+  //@ts-ignore
   const [checked, setChecked] = useState<boolean>(() => {
-    return window.localStorage.getItem('darkMode') === 'true';
+    if (typeof window !=='undefined') {
+      return window.localStorage.getItem('darkMode') === 'true';
+    }
+    
   });
 
   const computedColorScheme = useComputedColorScheme('light', { getInitialValueInEffect: true });
