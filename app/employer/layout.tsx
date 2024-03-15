@@ -10,8 +10,9 @@ function layout ({children}:{
     <div className='flex'>
     <NavbarSimple />
 
-    <main >
+    <main className='w-full'>
 <Header/>
+{children}
     </main>
     </div>
     

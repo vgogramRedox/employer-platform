@@ -16,6 +16,7 @@ export const appConfig = {
     "dark":"#010101",
     "dark-100":"#515151",
     "dark-200":"#615656",
+    "grey-1":"#25015B",
     "grey-2":"#565C69",
     "grey-3":"#7E8494",
     "grey-4":"#BDC0CE",
@@ -24,7 +25,9 @@ export const appConfig = {
 
     "primary-blue":"#3B4BC1",
     'primary-blue-2':"#515FC8",
-    "purple-100":"#D3D7F180"
+    "purple-100":"#D3D7F180",
+    "purple-200":"#D3D7F136",
+    "sun-100":"#FBF0D0"
     
   },
 };

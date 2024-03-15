@@ -1,15 +1,19 @@
+"use client"
 import { useState } from 'react';
-import { Container, Group, Burger, Autocomplete,rem } from '@mantine/core';
+import { Container, Group, Burger, Autocomplete,rem, Badge, Flex, Image } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { MantineLogo } from '@mantinex/mantine-logo';
 import classes from '@/styles/Header.module.css';
-import { IconSearch } from '@tabler/icons-react';
+import { IconMail, IconSearch } from '@tabler/icons-react';
+import { IconChevronDown } from '@tabler/icons-react';
+import { IconBell } from '@tabler/icons-react';
+import DropDown from './Dropdown';
 
 const links = [
-  { link: '/about', label: 'Features' },
-  { link: '/pricing', label: 'Pricing' },
-  { link: '/learn', label: 'Learn' },
-  { link: '/community', label: 'Community' },
+  { link: '/about', label: 'IconBell' },
+  { link: '/pricing', label: 'IconChevronDown' },
+  { link: '/learn', label: 'IconMail' }
+  
 ];
 
 export function Header() {
@@ -21,35 +25,116 @@ export function Header() {
       key={link.label}
       href={link.link}
       className={classes.link}
-      data-active={active === link.link || undefined}
+      // data-active={active === link.link || undefined}
       onClick={(event) => {
         event.preventDefault();
-        setActive(link.link);
+        // setActive(link.link);
       }}
     >
-      {link.label}
+     
+      {
+        < IconChevronDown />
+      }
     </a>
   ));
 
   return (
-    <header className={classes.header}>
-      <Container size="md" className={classes.inner}>
-        <MantineLogo size={28} />
-        <Group gap={5} visibleFrom="xs">
-          {items}
-        </Group>
-
+    <header className={`${classes.header} p-5`}>
+      <Container size="2xl" className={classes.inner}>
+    
+      
         <Group>
-          <Group ml={50} gap={5} className={classes.links} visibleFrom="sm">
-            {items}
-          </Group>
-          <Autocomplete
-            className={classes.search}
-            placeholder="Search"
+         
+          <Autocomplete radius='lg' size='lg'
+    
+            className={` min-w-[24.4375rem] min-h-10 p-[0.5rem] rounded-[1.5rem] text-lg`} 
+            placeholder="Search Talent"
             leftSection={<IconSearch style={{ width: rem(16), height: rem(16) }} stroke={1.5} />}
-            data={['React', 'Angular', 'Vue', 'Next.js', 'Riot.js', 'Svelte', 'Blitz.js']}
+            data={['']}
             visibleFrom="xs"
           />
+        </Group>
+
+        <Group gap={5} visibleFrom="xs">
+        <a
+      key="99i"
+      href=""
+      className={classes.link}
+      // data-active={active === link.link || undefined}
+      onClick={(event) => {
+        event.preventDefault();
+        // setActive(link.link);
+      }}
+    >
+     
+     <Flex
+       justify='center'
+       align="center"
+       direction="row"
+       
+      pos={'relative'}
+       columnGap="md"
+       gap="md"
+       
+     >
+        < IconBell />    <Badge className='absolute left-3 bottom-3' size="xs" bg='red' circle>
+        1
+      </Badge>
+     </Flex>
+      
+       
+      
+    </a>
+
+   
+
+
+    <a
+      key="99i"
+      href=""
+      className={classes.link}
+      // data-active={active === link.link || undefined}
+      onClick={(event) => {
+        event.preventDefault();
+        // setActive(link.link);
+      }}
+    >
+     
+      
+        < IconMail />
+      
+    </a>
+
+    <a
+      key="9i"
+      href=""
+      className={`${classes.link}`}
+      // data-active={active === link.link || undefined}
+      onClick={(event) => {
+        event.preventDefault();
+        // setActive(link.link);
+      }}
+    >
+     
+    <Image className='w-14 h-14 rounded-full' src='/images/userIcon.svg'/>
+    </a>
+    
+    <a
+      key="99i4"
+      href=""
+      className={classes.link}
+      // data-active={active === link.link || undefined}
+      onClick={(event) => {
+        event.preventDefault();
+        // setActive(link.link);
+      }}
+    >
+     
+      
+        
+        <DropDown />
+    
+    </a>
         </Group>
 
         <Burger opened={opened} onClick={toggle} hiddenFrom="xs" size="sm" />
