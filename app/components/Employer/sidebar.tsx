@@ -29,7 +29,7 @@ import { IconMoon } from '@tabler/icons-react';
 <Image src="/images/home-house.svg" className={classes.linkIcon} />;
 
 const data = [
-  { link: '', label: 'Home', icon: '/images/home-house.svg' },
+  { link: '.employer', label: 'Home', icon: '/images/home-house.svg' },
   { link: '', label: 'My Jobs', icon: '/images/workBag.svg' },
   { link: '', label: 'Talent', icon: '/images/userGroup.svg' },
   { link: '', label: 'Profile', icon: '/images/userIconBlack.svg' },
@@ -89,9 +89,9 @@ export function NavbarSimple() {
     setChecked((prevChecked) => !prevChecked);
   };
   return (
-    <nav className={`${classes.navbar} relative`}>
-      <div className={classes.navbarMain}>
-        <Group className={`${classes.header} p-10 mb-10`} justify="center">
+    <nav className={`${classes.navbar}  lg:fixed max-lg:hidden`} >
+      <div className={`${classes.navbarMain} max-lg:hidden`}>
+        <Group className={`${classes.header} lg:p-10 mb-10`} justify="center" >
           <Image
             src="/images/darkLogo.svg"
             className="max-lg:items-center max-lg:mx-auto"
@@ -103,7 +103,7 @@ export function NavbarSimple() {
       </div>
 
       <div
-        className={`${classes.footer} top-[80%] absolute flex space-between items-center gap-x-4`}
+        className={`${classes.footer} top-[80%] absolute flex space-between items-center gap-x-4 max-lg:hidden `}
       >
         <a href="#" className={`flex`} onClick={(event) => event.preventDefault()}>
             {
@@ -117,7 +117,7 @@ export function NavbarSimple() {
             <span className="text-dark font-bold ms-7">Light Mode</span>
           )}
         </a>
-        <Switch size='lg'     color="gray" checked={checked} onChange={toggleColorScheme}   />
+        <Switch size='lg' className='max-lg:hidden'    color="gray" checked={checked} onChange={toggleColorScheme}   />
       </div>
     </nav>
   );

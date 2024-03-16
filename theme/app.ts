@@ -27,11 +27,15 @@ export const theme = createTheme({
     fontFamily: 'GeneralSans',
     primaryColor: 'primary',
     primaryShade: 4,
-    breakpoints:{
-      xs:'30em',
-      sm:'48em',
-      lg:'64em',
-      xl:'90em'
+    
+    breakpoints: {
+      xs: '30em',
+      sm: '48em',
+      md: '64em',
+      lg: '74em',
+      xl: '90em',
     }
+
+   
   
   });

@@ -39,7 +39,7 @@ export function Header() {
   ));
 
   return (
-    <header className={`${classes.header} p-5`}>
+    <header className={`${classes.header} p-5 max-lg:hidden`}>
       <Container size="2xl" className={classes.inner}>
     
       
@@ -55,7 +55,7 @@ export function Header() {
           />
         </Group>
 
-        <Group gap={5} visibleFrom="xs">
+        <Group gap={5} >
         <a
       key="99i"
       href=""
@@ -132,7 +132,11 @@ export function Header() {
      
       
         
-        <DropDown />
+        <DropDown dropDownIcon={
+          <>
+          <IconChevronDown/>
+          </>
+        } />
     
     </a>
         </Group>
