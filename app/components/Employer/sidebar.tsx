@@ -5,39 +5,30 @@ import {
   Code,
   Image,
   Switch,
-  useComputedColorScheme,
+
   useMantineColorScheme,
-  ActionIcon,
+ 
 } from '@mantine/core';
-import {
-  IconBellRinging,
-  IconFingerprint,
-  IconKey,
-  IconSettings,
-  Icon2fa,
-  IconDatabaseImport,
-  IconReceipt2,
-  IconSwitchHorizontal,
-  IconLogout,
-  IconSun,
-} from '@tabler/icons-react';
-import { MantineLogo } from '@mantinex/mantine-logo';
+
 import classes from '@/styles/NavbarSimple.module.css';
-import { IconHome } from '@tabler/icons-react';
-import { IconMoon } from '@tabler/icons-react';
+import Link from 'next/link';
+import {  usePathname } from 'next/navigation';
+
+
 
 <Image src="/images/home-house.svg" className={classes.linkIcon} />;
 
 const data = [
-  { link: '.employer', label: 'Home', icon: '/images/home-house.svg' },
-  { link: '', label: 'My Jobs', icon: '/images/workBag.svg' },
-  { link: '', label: 'Talent', icon: '/images/userGroup.svg' },
-  { link: '', label: 'Profile', icon: '/images/userIconBlack.svg' },
+  { link: '/home', label: 'Home', icon: '/images/home-house.svg' },
+  { link: '/jobs', label: 'My Jobs', icon: '/images/workBag.svg' },
+  { link: '/talent', label: 'Talent', icon: '/images/userGroup.svg' },
+  { link: '/profile', label: 'Profile', icon: '/images/userIconBlack.svg' },
 ];
 
 export function NavbarSimple() {
   if (typeof window !== 'undefined') {
     window.localStorage.setItem('vgogramTheme', 'light');
+
   }
 
   const [active, setActive] = useState('Billing');
@@ -49,26 +40,40 @@ export function NavbarSimple() {
     }
     
   });
+const pathname=usePathname()
+const path=pathname.substring(1)
 
-  const computedColorScheme = useComputedColorScheme('light', { getInitialValueInEffect: true });
+  // const computedColorScheme = useComputedColorScheme('light', { getInitialValueInEffect: true });
   const links = data.map((item) => (
-    <a
-      className={`${classes.link} w-[113%] `}
-      data-active={item.label === active || undefined}
+    <Link
+      className={`${classes.link} w-full relative min-h-[4.28rem]`}
+      data-active={item.link?.substring(1) === active || undefined}
       href={item.link}
       key={item.label}
       onClick={(event) => {
-        event.preventDefault();
-        setActive(item.label);
+        // event.preventDefault();
+        setActive(item.link?.substring(1));
       }}
     >
       <Image src={item.icon} className={classes.linkIcon} />
       <span className="font-normal text-[1rem] text-grey-2 p-0">{item.label}</span>
-      {item?.label == active && (
-        <span className="font-normal text-[1rem] text-grey-2 bg-primary-blue min-h-[2.91rem] rounded-s-[0.25rem] min-w-[0.625rem] ms-auto"></span>
+      {item.link?.substring(1) == active && (
+        
+        <Image
+        src="/images/indicatorLgOn.svg"
+        className=" absolute left-[95%]  w-[0.675rem]"
+
+      
+      />
+        // <span className="font-normal text-[1rem] text-grey-2 bg-primary-blue min-h-[2.91rem] rounded-s-[0.25rem] min-w-[0.625rem] ms-auto"></span>
       )}
-    </a>
+    </Link>
   ));
+
+  const toggleColorScheme = () => {
+    setChecked((prevChecked) => !prevChecked);
+
+  };
   useEffect(() => {
     // Update localStorage whenever the state changes
    if(typeof window!=="undefined"){
@@ -84,10 +89,18 @@ export function NavbarSimple() {
     }
   }, [colorScheme,checked]);
 
-  console.log(computedColorScheme);
-  const toggleColorScheme = () => {
-    setChecked((prevChecked) => !prevChecked);
-  };
+
+ 
+  console.log(path)
+useEffect(()=>{
+  
+  setActive(path)
+},[])
+  // console.log(computedColorScheme);
+ 
+
+
+ 
   return (
     <nav className={`${classes.navbar}  lg:fixed max-lg:hidden`} >
       <div className={`${classes.navbarMain} max-lg:hidden`}>
@@ -103,7 +116,7 @@ export function NavbarSimple() {
       </div>
 
       <div
-        className={`${classes.footer} top-[80%] absolute flex space-between items-center gap-x-4 max-lg:hidden `}
+        className={`${classes.footer} top-[80%] absolute flex space-between items-center gap-x-4 max-lg:hidden ms-5`}
       >
         <a href="#" className={`flex`} onClick={(event) => event.preventDefault()}>
             {

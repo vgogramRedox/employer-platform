@@ -4,7 +4,7 @@ import { IconPlayerPlay } from '@tabler/icons-react';
 import { isMobile } from 'react-device-detect';
 
 export function VidThumbNail() {
-  console.log(isMobile)
+  // console.log(isMobile)
   return (
   
       <section  className="" >

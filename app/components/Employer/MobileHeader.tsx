@@ -41,7 +41,7 @@ export function MobileHeader() {
     <header className="">
       <div className={` pt-5 w-[80%] ms-auto flex justify-center items-center  gap-x-10 `}>
         <a
-          key="99i"
+          key="9i"
           href="/"
           className={` text-center `}
           // data-active={active === link.link || undefined}

@@ -14,7 +14,7 @@ export default function DropDown({
     //  return   px(val)
     // }
     const width= px('37.875rem')
-    console.log(width)
+    // console.log(width)
   return (
     <Menu width={!isMobile?width:px("17.9rem")}  shadow="md"  >
       <Menu.Target><Text>{

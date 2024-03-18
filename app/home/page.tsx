@@ -48,7 +48,7 @@ function page() {
       </Box>
       <p className="leading-[1.2rem] text-dark lg:text-2xl font-semibold mt-10 ">Explore Talent</p>
       <Box className="mt-20">
-        <div  className=" grid  lg:grid-cols-4 sm:grid-cols-2 md:grid-cols-3">
+        <div  className=" grid  lg:grid-cols-4 sm:grid-cols-2 md:grid-cols-3 gap-4">
           <VidThumbNail />
           <VidThumbNail />
           <VidThumbNail />

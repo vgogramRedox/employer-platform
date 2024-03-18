@@ -14,6 +14,8 @@ export const theme = createTheme({
         appConfig.colors.primary[800],
         appConfig.colors.primary[900],
         appConfig.colors.primary[950],
+        appConfig.colors.primary[955]
+      
       ],
     },
     components:{

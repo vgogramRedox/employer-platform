@@ -2,7 +2,7 @@
    min-height: 100vh;
     min-width: 15%;
     max-width: 15%;
-    padding: var(--mantine-spacing-sm);
+    /* padding: var(--mantine-spacing-sm); */
     display: flex;
     flex-direction: column;
     border-right: rem(1px) solid light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
@@ -51,7 +51,7 @@
       &:hover {
         background-color: #F4F5F8;
         color: var(--mantine-color-blue-light-color);
-        padding: var(--mantine-spacing-xs) var(--mantine-spacing-sm);
+        /* padding: var(--mantine-spacing-xs) var(--mantine-spacing-sm); */
         .linkIcon {
           color: var(--mantine-color-blue-light-color);
         }
