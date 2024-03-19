@@ -5,9 +5,10 @@ import PrimaryButton from './Button';
 export function ProjectCard() {
   return (
     <Card shadow="sm" padding="lg" radius="md" withBorder>
-      <Card.Section component="a" href="https://mantine.dev/">
+      <Card.Section component="a" href="/" className="p-4">
         <Image
-          src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-8.png"
+        
+          src="/pg.png"
           height={160}
           alt="Norway"
         />

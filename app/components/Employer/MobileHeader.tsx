@@ -50,7 +50,7 @@ export function MobileHeader() {
             // setActive(link.link);
           }}
         >
-          <Image src="/images/darkLogo.svg" className="  w-[4.5rem] h-[4.5rem]" />
+          <Image src="/svgs/darkLogo.svg" className="  w-[4.5rem] h-[4.5rem]" />
         </a>
 
         <div  className="flex flex-row gap-4">

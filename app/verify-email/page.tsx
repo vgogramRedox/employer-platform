@@ -20,7 +20,7 @@ function page() {
 
       <main className="w-full max-lg:p-3">
         <div className="mt-8 lg:ms-44 ">
-          <Image src="/images/darkLogo.svg" w={93} h={93} className='max-lg:items-center max-lg:mx-auto ' />
+          <Image src="/svgs/darkLogo.svg" w={93} h={93} className='max-lg:items-center max-lg:mx-auto ' />
           <Image src="/gif/envelope-gif.gif" className='mt-3 max-lg:items-center max-lg:mx-auto ' w={103} h={93} />
 
           <p className=" font-bold  text-dark text-5xl mt-10 max-lg:text-[1.2rem] max-lg:text-center  ">Verify your  {

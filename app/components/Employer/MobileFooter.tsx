@@ -4,11 +4,11 @@ import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 const links = [
-  { link: '/employer/home', label: 'Home', icon: '/images/home-house.svg',activeIcon:"/images/home-house-active.svg" },
-  { link: '/employer/jobs', label: ' Jobs', icon: '/images/workBag.svg',activeIcon:"/images/workBagActive.svg" },
-  { link: '/employer/post', label: 'Post', icon: '/images/add-circle-plus.svg',activeIcon:"/images/add-circle-plus-active.svg" },
-  { link: '/employer/talent', label: 'Talent', icon: '/images/userGroup.svg',activeIcon:"/images/userGroupActive.svg" },
-  { link: '/employer/profile', label: 'Profile', icon: '/images/userIconBlack.svg',activeIcon:"/images/userIconActive.svg" },
+  { link: '/employer/home', label: 'Home', icon: '/svgs/home-house.svg',activeIcon:"/svgs/home-house-active.svg" },
+  { link: '/employer/jobs', label: ' Jobs', icon: '/svgs/workBag.svg',activeIcon:"/svgs/workBagActive.svg" },
+  { link: '/employer/post', label: 'Post', icon: '/svgs/add-circle-plus.svg',activeIcon:"/svgs/add-circle-plus-active.svg" },
+  { link: '/employer/talent', label: 'Talent', icon: '/svgs/userGroup.svg',activeIcon:"/svgs/userGroupActive.svg" },
+  { link: '/employer/profile', label: 'Profile', icon: '/svgs/userIconBlack.svg',activeIcon:"/svgs/userIconActive.svg" },
 ];
 
 
@@ -42,7 +42,7 @@ export function MobileFooter() {
     >
 
 {item.link === active ||pathname?.includes( item?.link) && (
-        <Image src="/images/indicatorOn.svg"/>
+        <Image src="/svgs/indicatorOn.svg"/>
       )}
       {
         item.link === active ||pathname?.includes( item?.link)?(      <Image src={item.activeIcon} className={`w-5 m-auto mt-5 `} />):(      <Image src={item.icon} className={`w-5 m-auto mt-5 `} />)

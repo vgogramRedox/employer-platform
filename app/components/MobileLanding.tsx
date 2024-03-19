@@ -13,7 +13,7 @@ import Demo from './Carousel';
 import { useRouter } from 'next/navigation';
 
 export default function MobileLanding() {
-    const images=["/images/mobileLand.svg","/images/mobileLand2.svg","/images/mobileLand3.svg"]
+    const images=["/svgs/mobileLand.svg","/svgs/mobileLand2.svg","/svgs/mobileLand3.svg"]
     const router=useRouter()
     return (
         <div className=" ">

@@ -43,7 +43,7 @@ function page() {
     
     <div className='mt-3.5 max-lg:p-4'>
     <Box className='flex items-center gap-x-8 max-lg:gap-x-4'>
- <Image src="/images/person.svg" className='min-w-[8.6rem] max-lg:w-[7.6rem] min-h-[8.6rem]'/>
+ <Image src="/svgs/person.svg" className='min-w-[8.6rem] max-lg:w-[7.6rem] min-h-[8.6rem]'/>
  <PrimaryButton
  onClick={()=>{
   router.push("/employer/jobs/1")
@@ -80,7 +80,7 @@ Tolu Ogunnipe
       <Text className='font-bold  border-b text-center'>Education</Text>
 
       <Box className='flex gap-x-3 p-7 '>
-      <Image src="/images/graduateCap.svg" className='w-10 h-10'/>
+      <Image src="/svgs/graduateCap.svg" className='w-10 h-10'/>
       <Box>
         <Text component='h1'>B.Sc Computer Engineering</Text>
         <Text className='text-sm font-light m'>

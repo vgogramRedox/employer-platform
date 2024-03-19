@@ -31,7 +31,7 @@ export default function PaperComp({ radius, pay, applied, className }: PaperComp
       </Group>
 
       <Group>
-        <Image src="/images/charmMenu.svg" />
+        <Image src="/svgs/charmMenu.svg" />
       </Group>
     </Paper>
   );

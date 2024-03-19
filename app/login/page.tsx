@@ -18,7 +18,7 @@ function page() {
 
       <main className="w-full max-lg:p-3">
         <div className="mt-8 lg:ms-44 lg:w-[33%] max-lg:mx-auto ">
-          <Image src="/images/darkLogo.svg" w={93} h={93} className='max-lg:items-center max-lg:mx-auto' />
+          <Image src="/svgs/darkLogo.svg" w={93} h={93} className='max-lg:items-center max-lg:mx-auto' />
           <p className="leading-[1.2rem] mt-3 text-dark lg:text-2xl font-semibold">Welcome back,</p>
           <p className="leading-[3rem] mt-3 font-bold text-5xl max-lg:text-[1.5rem]">Log In to continue</p>
 
@@ -37,7 +37,7 @@ function page() {
             <PrimaryButton
               title={
                 <div className="flex justify-center gap-x-3 items-center">
-                  <Image src="/images/googleIcon.svg" w={24} h={24} /> Log In With Google
+                  <Image src="/svgs/googleIcon.svg" w={24} h={24} /> Log In With Google
                 </div>
               }
               variant="Outline"

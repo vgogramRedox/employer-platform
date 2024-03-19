@@ -46,7 +46,7 @@ function page() {
               setStage(prev=>prev-1):router.push("/login")
             }}
             />
-            <Image src="/images/darkLogo.svg"
+            <Image src="/svgs/darkLogo.svg"
           className='max-lg:items-center max-lg:mx-auto'
           w={93} h={93} />
           </section>
@@ -88,7 +88,7 @@ function page() {
 <PrimaryButton
   title={
     <div className="flex justify-center gap-x-3 items-center">
-      <Image src="/images/googleIcon.svg" w={24} h={24} /> Sign Up With Google
+      <Image src="/svgs/googleIcon.svg" w={24} h={24} /> Sign Up With Google
     </div>
   }
   variant="Outline"

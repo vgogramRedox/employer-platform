@@ -16,13 +16,13 @@ import {  usePathname } from 'next/navigation';
 
 
 
-<Image src="/images/home-house.svg" className={classes.linkIcon} />;
+<Image src="/svgs/home-house.svg" className={classes.linkIcon} />;
 
 const data = [
-  { link: '/employer/home', label: 'Home', icon: '/images/home-house.svg' },
-  { link: '/employer/jobs', label: 'My Jobs', icon: '/images/workBag.svg' },
-  { link: '/employer/talent', label: 'Talent', icon: '/images/userGroup.svg' },
-  { link: '/employer/profile', label: 'Profile', icon: '/images/userIconBlack.svg' },
+  { link: '/employer/home', label: 'Home', icon: '/svgs/home-house.svg' },
+  { link: '/employer/jobs', label: 'My Jobs', icon: '/svgs/workBag.svg' },
+  { link: '/employer/talent', label: 'Talent', icon: '/svgs/userGroup.svg' },
+  { link: '/employer/profile', label: 'Profile', icon: '/svgs/userIconBlack.svg' },
 ];
 
 export function NavbarSimple() {
@@ -41,13 +41,13 @@ export function NavbarSimple() {
     
   });
 const pathname=usePathname()
-const path=pathname.substring(1)
+// const path=pathname.substring(1)
 
   // const computedColorScheme = useComputedColorScheme('light', { getInitialValueInEffect: true });
   const links = data.map((item) => (
     <Link
       className={`${classes.link} w-full relative min-h-[4.28rem]`}
-      data-active={item.link?.substring(1) === active ||pathname?.includes( item?.link)|| undefined}
+      data-active={item.link == active ||pathname?.includes( item?.link)|| undefined}
       href={item.link}
       key={item.label}
       onClick={(event) => {
@@ -57,10 +57,10 @@ const path=pathname.substring(1)
     >
       <Image src={item.icon} className={classes.linkIcon} />
       <span className="font-normal text-[1rem] text-grey-2 p-0">{item.label}</span>
-      {item.link?.substring(1) == active||pathname?.includes( item?.link) && (
+      {item.link == active||pathname?.includes( item?.link) && (
         
         <Image
-        src="/images/indicatorLgOn.svg"
+        src="/svgs/indicatorLgOn.svg"
         className=" absolute left-[95%]  w-[0.675rem]"
 
       
@@ -94,7 +94,7 @@ const path=pathname.substring(1)
   // console.log(path)
 useEffect(()=>{
   
-  setActive(path)
+  setActive(pathname)
 },[])
   // console.log(computedColorScheme);
  
@@ -106,7 +106,7 @@ useEffect(()=>{
       <div className={`${classes.navbarMain} max-lg:hidden`}>
         <Group className={`${classes.header} lg:p-10 mb-10`} justify="center" >
           <Image
-            src="/images/darkLogo.svg"
+            src="/svgs/darkLogo.svg"
             className="max-lg:items-center max-lg:mx-auto"
             w={93}
             h={93}
@@ -120,8 +120,8 @@ useEffect(()=>{
       >
         <a href="#" className={`flex`} onClick={(event) => event.preventDefault()}>
             {
-                checked==false?(  <Image src="/images/sun.svg" className={classes.linkIcon} />): 
-                 <Image src="/images/moon.svg" className={`classes.linkIcon fill-slate-100`} />
+                checked==false?(  <Image src="/svgs/sun.svg" className={classes.linkIcon} />): 
+                 <Image src="/svgs/moon.svg" className={`classes.linkIcon fill-slate-100`} />
             }
          
           {checked == false ? (

@@ -10,7 +10,7 @@ export default function Demo({
     slideItems
 }:carouselProps) {
   const autoplay = useRef(Autoplay({ delay: 2000 }));
-  const images=["/images/mobileLand.svg","/images/mobileLand2.svg","/images/mobileLand3.svg"]
+  const images=["/svgs/mobileLand.svg","/svgs/mobileLand2.svg","/svgs/mobileLand3.svg"]
   const slides = images.map((url) => (
     <Carousel.Slide key={url}>
       <Image src={url} />

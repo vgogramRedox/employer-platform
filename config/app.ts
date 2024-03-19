@@ -11,7 +11,7 @@ export const appConfig = {
       700: '#106A7E',
       800: '#0B4451',
       900: '#052229',
-      950: '#031317',
+      950: '#C2CFD6',
       955:"#F6F7FC"
     },
     "dark":"#010101",
@@ -24,7 +24,7 @@ export const appConfig = {
     "grey-5":"#A8AFE3",
    " grey-6":"#F4F5F8",
    "grey-7":"#F6F7FC",
-
+"light-blue":"#C2CFD6",
     "primary-blue":"#3B4BC1",
     'primary-blue-2':"#515FC8",
     "purple-100":"#D3D7F180",

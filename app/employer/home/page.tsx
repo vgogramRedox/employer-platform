@@ -23,8 +23,8 @@ function page() {
 
       <Box className="lg:bg-sun-100 max-lg:bg-purple-100  max-lg:rounded lg:min-h-[14.375rem] flex max-lg:flex-col mt-10 max-lg:p-0 lg:p-4 ps-8 ">
 
-      <BackgroundImage src="/images/colorfulBgMobile.svg" className="ms-auto lg:hidden w-full h-10 rounded-t-lg">
-          {/* <Image src="/images/colorfulBgMobile.svg" className='h-[2.75931rem]'/> */}
+      <BackgroundImage src="/svgs/colorfulBgMobile.svg" className="ms-auto lg:hidden w-full h-10 rounded-t-lg">
+          {/* <Image src="/svgs/colorfulBgMobile.svg" className='h-[2.75931rem]'/> */}
         </BackgroundImage>
         <section className='max-lg:p-6'>
           <p className="leading-[1.2rem] text-dark  max-lg:text-[#070B25] lg:text-5xl font-semibold max-lg:mt-2 mt-20 max-lg:text-2xl">
@@ -43,7 +43,7 @@ function page() {
         </section>
 
         <section className="ms-auto max-lg:hidden">
-          <Image src="/images/colorfulbg.svg" />
+          <Image src="/svgs/colorfulbg.svg" />
         </section>
       </Box>
       <p className="leading-[1.2rem] text-dark lg:text-2xl font-semibold mt-10 ">Explore Talent</p>

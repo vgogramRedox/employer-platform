@@ -35,12 +35,12 @@ const CandidateInfo = ({ header, content, className }: CandidateInfoProps) => (
 
 function page() {
   return (
-    <Box className="lg:w-[90%] flex max-lg:block max-lg:text-lg mb-5">
+    <Box className="lg:w-[90%] flex max-lg:block max-lg:text-lg mb-5 lg:p-5">
       <div className="min-h-[8rem] h-[8rem] min-w-full bg-[#D3D7F1] lg:hidden"></div>
       <Box className=" w-[40%] max-lg:w-full  max-lg:p-4  ">
-        <div className="mt-3.5 max-lg:mb-20 max-lg:top-[10%] max-lg:absolute lg:hidden">
+        <div className="mt-3.5 max-lg:mb-20 max-lg:top-[10%] max-lg:absolute ">
           <Box className="flex items-center gap-x-8">
-            <Image src="/images/person.svg" className="w-[8.6rem] h-[8.6rem]" />
+            <Image src="/svgs/person.svg" className="w-[8.6rem] h-[8.6rem]" />
           </Box>
           <div className="flex gap-x-4 items-center">
             <Box className=" flex-col gap-y-4">
@@ -59,7 +59,7 @@ function page() {
           </div>
         </div>
 
-        <Text className="font-bold text-center  mt-[60%]">About me</Text>
+        <Text className="font-bold text-center lg:hidden mt-[60%]">About me</Text>
         <div className=" grid  lg:hidden  max-lg:grid-cols-2  mt-5">
           <VidThumbNail />
           <VidThumbNail />
@@ -84,7 +84,7 @@ function page() {
       <Text className='font-bold  border-b text-center'>Education</Text>
 
       <Box className='flex gap-x-3 p-7 '>
-      <Image src="/images/graduateCap.svg" className='w-10 h-10'/>
+      <Image src="/svgs/graduateCap.svg" className='w-10 h-10'/>
       <Box>
         <Text component='h1'>B.Sc Computer Engineering</Text>
         <Text className='text-sm font-light m'>
@@ -205,7 +205,7 @@ className='max-lg:hidden'
 
         {/* for smaller screen */}
 <CandidateInfo
-
+className='lg:hidden'
 header={<Text className="text center">REVIEWS</Text>}
 content={
   <div className="">

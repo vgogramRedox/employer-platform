@@ -116,7 +116,7 @@ export function Header() {
       }}
     >
      
-    <Image className='w-14 h-14 rounded-full' src='/images/userIcon.svg'/>
+    <Image className='w-14 h-14 rounded-full' src='/svgs/userIcon.svg'/>
     </a>
     
     <a

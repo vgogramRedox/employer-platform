@@ -21,7 +21,7 @@ function page() {
         <div className="mt-8 ms-44 lg:ms-44 max-lg:mx-auto">
         <section className='flex'>
             <IconChevronLeft className="lg:hidden max-lg:items-center max-lg:my-auto"/>
-            <Image src="/images/darkLogo.svg"
+            <Image src="/svgs/darkLogo.svg"
           className='max-lg:items-center max-lg:mx-auto'
           w={93} h={93} />
           </section>
