@@ -21,7 +21,7 @@ export default function BreadCrumbsNav({
   return (
     <>
       
-      <Breadcrumbs separator=">" separatorMargin="md"  className='lg:w-[90%]  max-lg:w-full mx-auto max-lg:text-lg max-lg:p-4'>
+      <Breadcrumbs separator=">" separatorMargin="md"  className='lg:w-[90%] max-lg:hidden max-lg:w-full mx-auto max-lg:text-lg max-lg:p-4'>
         {linksCrumb}
       </Breadcrumbs>
     </>

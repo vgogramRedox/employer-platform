@@ -6,15 +6,16 @@ interface AccordiontType{
     title:string
     description:string
     key:any
+    className?:string
 }
 export default function AccordionComp({
-    title,description,key
+    title,description,key,className
 }:AccordiontType) {
   // See groceries data above
  
 
   return (
-    <Accordion defaultValue="Apples">
+    <Accordion defaultValue="Apples" className={`${className}`}>
      <Accordion.Item key={key} value={title}>
       <Accordion.Control icon={<IconBriefcase style={{color:"#7F0DF1"}}/>}>{title}</Accordion.Control>
       <Accordion.Panel>{description}</Accordion.Panel>

@@ -94,7 +94,7 @@ function page() {
   variant="Outline"
   className="text-primary-blue border mt-3
 hover:bg-primary-blue transition hover:text-white
-border-primary-blue  "
+border-primary-blue bg-white "
 />
 <PrimaryButton
   title={
@@ -103,7 +103,7 @@ border-primary-blue  "
   variant="Outline"
   className="text-primary-blue border mt-3
 hover:bg-primary-blue transition hover:text-white
-border-primary-blue  "
+border-primary-blue bg-white  "
 />
 
 <p className="text-dark font-light text-center mt-5">

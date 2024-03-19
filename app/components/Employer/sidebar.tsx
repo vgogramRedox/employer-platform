@@ -47,7 +47,7 @@ const path=pathname.substring(1)
   const links = data.map((item) => (
     <Link
       className={`${classes.link} w-full relative min-h-[4.28rem]`}
-      data-active={item.link?.substring(1) === active || undefined}
+      data-active={item.link?.substring(1) === active ||pathname?.includes( item?.link)|| undefined}
       href={item.link}
       key={item.label}
       onClick={(event) => {
@@ -57,7 +57,7 @@ const path=pathname.substring(1)
     >
       <Image src={item.icon} className={classes.linkIcon} />
       <span className="font-normal text-[1rem] text-grey-2 p-0">{item.label}</span>
-      {item.link?.substring(1) == active && (
+      {item.link?.substring(1) == active||pathname?.includes( item?.link) && (
         
         <Image
         src="/images/indicatorLgOn.svg"
@@ -91,7 +91,7 @@ const path=pathname.substring(1)
 
 
  
-  console.log(path)
+  // console.log(path)
 useEffect(()=>{
   
   setActive(path)
@@ -125,9 +125,9 @@ useEffect(()=>{
             }
          
           {checked == false ? (
-            <span className="text-dark font-bold ">Dark Mode</span>
+            <span className="text-dark font-bold text-sm ">Dark Mode</span>
           ) : (
-            <span className="text-dark font-bold ms-7">Light Mode</span>
+            <span className="text-dark font-bold ms-7 text-sm">Light Mode</span>
           )}
         </a>
         <Switch size='lg' className='max-lg:hidden'    color="gray" checked={checked} onChange={toggleColorScheme}   />

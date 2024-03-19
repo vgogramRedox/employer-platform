@@ -57,7 +57,7 @@ export function Header() {
 
         <Group gap={5} >
         <a
-      key="99i"
+      key=""
       href=""
       className={classes.link}
       // data-active={active === link.link || undefined}
@@ -90,7 +90,7 @@ export function Header() {
 
 
     <a
-      key="99i"
+      key="NBH2FHnIm0mvaJyI99i"
       href=""
       className={classes.link}
       // data-active={active === link.link || undefined}
@@ -120,7 +120,7 @@ export function Header() {
     </a>
     
     <a
-      key="99i4"
+      key="GxUrYPwq2HV7aE7WLUqx"
       href=""
       className={classes.link}
       // data-active={active === link.link || undefined}
