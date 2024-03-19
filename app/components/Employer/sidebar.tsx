@@ -19,10 +19,10 @@ import {  usePathname } from 'next/navigation';
 <Image src="/images/home-house.svg" className={classes.linkIcon} />;
 
 const data = [
-  { link: '/home', label: 'Home', icon: '/images/home-house.svg' },
-  { link: '/jobs', label: 'My Jobs', icon: '/images/workBag.svg' },
-  { link: '/talent', label: 'Talent', icon: '/images/userGroup.svg' },
-  { link: '/profile', label: 'Profile', icon: '/images/userIconBlack.svg' },
+  { link: '/employer/home', label: 'Home', icon: '/images/home-house.svg' },
+  { link: '/employer/jobs', label: 'My Jobs', icon: '/images/workBag.svg' },
+  { link: '/employer/talent', label: 'Talent', icon: '/images/userGroup.svg' },
+  { link: '/employer/profile', label: 'Profile', icon: '/images/userIconBlack.svg' },
 ];
 
 export function NavbarSimple() {

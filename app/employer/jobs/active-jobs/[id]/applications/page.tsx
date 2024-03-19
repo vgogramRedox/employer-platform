@@ -20,15 +20,15 @@ const[activePage,setPage]=useState(1)
    <p className="leading-[1.2rem] text-dark lg:text-2xl font-semibold mt-10 ">Applications</p>
       <Box className="mt-20">
         <div  className=" grid  lg:grid-cols-4 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          <Link href={'/jobs/1'}>
+          <Link href={'/employer/jobs/1'}>
           <VidThumbNail />
           </Link>
          
-          <Link href={'/jobs/1'}>
+          <Link href={'/employer/jobs/1'}>
           <VidThumbNail />
           </Link>
          
-          <Link href={'/jobs/1'}>
+          <Link href={'/employer/jobs/1'}>
           <VidThumbNail />
           </Link>
          

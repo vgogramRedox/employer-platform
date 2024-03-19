@@ -39,7 +39,7 @@ function page() {
         <Group>
           <PrimaryButton
           onClick={()=>{
-            router.push("/jobs/active-jobs/params/applications")
+            router.push("params/applications")
           }}
           title="View Applications" className='bg-primary-blue w-full min-w-[17.5rem]'/>
         </Group>

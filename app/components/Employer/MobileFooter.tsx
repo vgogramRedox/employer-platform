@@ -1,12 +1,12 @@
 "use client"
 import { Anchor, Group, ActionIcon, rem, AppShellFooter, Image } from '@mantine/core';
 
-import classes from '@/styles/NavbarSimple.module.css';
+
 import { useState } from 'react';
 
 const links = [
   { link: '/employer', label: 'Home', icon: '/images/home-house.svg',activeIcon:"/images/home-house-active.svg" },
-  { link: '', label: ' Jobs', icon: '/images/workBag.svg',activeIcon:"/images/workBagActive.svg" },
+  { link: '/employer/jobs', label: ' Jobs', icon: '/images/workBag.svg',activeIcon:"/images/workBagActive.svg" },
   { link: '', label: 'Post', icon: '/images/add-circle-plus.svg',activeIcon:"/images/add-circle-plus-active.svg" },
   { link: '', label: 'Talent', icon: '/images/userGroup.svg',activeIcon:"/images/userGroupActive.svg" },
   { link: '', label: 'Profile', icon: '/images/userIconBlack.svg',activeIcon:"/images/userIconActive.svg" },

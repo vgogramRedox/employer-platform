@@ -28,7 +28,7 @@ function page() {
  <Image src="/images/person.svg" className='w-[8.6rem] h-[8.6rem]'/>
  <PrimaryButton
  onClick={()=>{
-  router.push("/jobs/1")
+  router.push("/employer/jobs/1")
  }}
  className='bg-primary-blue w-1/4' title=" View Profile"/>
     </Box>

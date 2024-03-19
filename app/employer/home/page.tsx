@@ -1,9 +1,9 @@
 import { BackgroundImage, Box, Container, Grid, Image } from '@mantine/core';
 import React from 'react';
-import { ProgressBar } from '../components/Employer/ProgressBar';
-import PrimaryButton from '../components/Button';
-import { VidThumbNail } from '../components/Employer/VidThumbNail';
-import AblyPubSub from '../components/Employer/chat';
+import { ProgressBar } from '@/app/components/Employer/ProgressBar';
+import PrimaryButton from '@/app/components/Button';
+import { VidThumbNail } from '@/app/components/Employer/VidThumbNail';
+
 import { isMobile } from 'react-device-detect';
 
 function page() {

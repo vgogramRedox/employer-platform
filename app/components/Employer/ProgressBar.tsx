@@ -1,6 +1,6 @@
 "use client"
 import { Progress, Slider } from '@mantine/core';
-import { useHover } from '@mantine/hooks';
+
 interface SliderProps{
 percent:number
 className?:string

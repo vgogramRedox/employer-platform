@@ -1,7 +1,7 @@
 "use client"
 import { Box } from '@mantine/core'
 import React from 'react'
-import Tab from '../components/Tab'
+import Tab from '@/app/components/Tab'
 
 function page() {
   return (

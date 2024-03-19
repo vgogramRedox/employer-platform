@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { Container, Group, Burger, Autocomplete,rem, Badge, Flex, Image } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import { MantineLogo } from '@mantinex/mantine-logo';
+
 import classes from '@/styles/Header.module.css';
 import { IconMail, IconSearch } from '@tabler/icons-react';
 import { IconChevronDown } from '@tabler/icons-react';

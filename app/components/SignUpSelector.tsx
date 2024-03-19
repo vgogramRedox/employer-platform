@@ -1,11 +1,6 @@
-import { BackgroundImage, Box, Center, Image } from '@mantine/core';
+import {  Box, Center, Image } from '@mantine/core';
 import React from 'react';
-import Input from './Input';
-import CheckboxComp from './Checkbox';
-import PrimaryButton from './Button';
-import Link from 'next/link';
-import { IconArrowLeft } from '@tabler/icons-react';
-import { IconChevronLeft } from '@tabler/icons-react';
+
 import SelectBox from './SelectBox';
 
 function SignUpSelector() {

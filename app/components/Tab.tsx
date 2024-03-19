@@ -23,17 +23,17 @@ export default function Tab() {
       </Tabs.List>
 
       <Tabs.Panel value="active" className='w-full '>
-        <Link href={"/jobs/active-jobs/1"}>
+        <Link href={"jobs/active-jobs/1"}>
         <PaperComp/>
         </Link>
-        <Link href={"/jobs/active-jobs/1"}>
+        <Link href={"jobs/active-jobs/1"}>
         <PaperComp/>
         </Link>
      
       </Tabs.Panel>
 
       <Tabs.Panel value="completed">
-      <Link href={"/jobs/active-jobs/1"}>
+      <Link href={"jobs/active-jobs/1"}>
         <PaperComp/>
         </Link>
       </Tabs.Panel>

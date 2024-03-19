@@ -1,6 +1,6 @@
 import { Menu, Button, rem, Text, px } from '@mantine/core';
 import { IconBell, IconChevronDown } from '@tabler/icons-react';
-import { IconExternalLink } from '@tabler/icons-react';
+
 import Link from 'next/link';
 import { isMobile } from 'react-device-detect';
 
