@@ -1,6 +1,6 @@
 import { useDisclosure } from '@mantine/hooks';
 import { Modal, Button, Box, Text, Group } from '@mantine/core';
-import { Dispatch, SetStateAction, useState } from 'react';
+import { Dispatch, SetStateAction, useContext, useState } from 'react';
 import PrimaryButton from '../Button';
 import Input from '../Input';
 import TextArea from '../TextArea';
@@ -9,32 +9,20 @@ import { EmploymentType, WorkSettingType } from '@/types/app';
 import { DropZone } from '../DropZone';
 import MultiSelectComp from '../MultiSelectComp'
 import { IconEdit } from '@tabler/icons-react';
+import { UserContext } from '@/context/EmployerContext';
+import { VidThumbNail } from './VidThumbNail';
 
 interface SetterType{
     setter:React.ReactNode
 }
 
 function PostJobStage2({setter}:SetterType) {
-    const employmentType: EmploymentType[] = ['Full-Time', 'Contract'];
+   
 
-  const workSettingType: WorkSettingType[] = ['Remote', 'Hybrid', 'On-site'];
+ 
 
-  const [employmentT, setEmploymentT] = useState<String | ''>('');
-  const [workSettingT, setWorkSettingT] = useState<String | ''>('');
-  const [postVideoMode,setPostVideoMode]=useState<boolean>(false)
-  const ET = employmentType?.map((type) => (
-    
-    <BadgeComp
-      className={` border-[#BDC0CE] border font-normal text-lg p-5 cursor-pointer ${
-        type == employmentT ? 'bg-primary-blue  text-white' : 'bg-white  text-[#BDC0CE] '
-      }`}
-      title={type}
-      onClick={() => {
-        setEmploymentT(type);
-      }}
-    />
-  
-));
+  const {appState,setAppState} = useContext(UserContext)
+  const {postVideoMode}= appState
   return (
   <>
    <Modal.Content>
@@ -53,15 +41,42 @@ function PostJobStage2({setter}:SetterType) {
           </Modal.Header>
           <Modal.Body >
           <Box className="lg:p-10 ">
+
+            {postVideoMode&&(
+              <Box className='flex w-full items-center'>
+ <div  className=" lg:w-[50%] ">
+
+ <VidThumbNail />  
+            </div>
+            <div className="w-1/2 border border-dotted h-[12.55313rem]">
+          <DropZone/>
+              </div>
+
+              
+              </Box>
+            )
+
+            }
             <Box className="">
 
             <Text className='mt-5 flex justify-between font-bold text-2xl'> Job Title <IconEdit/></Text>
             <Text className='mt-5 '> Product Designer</Text>
             
 
+{postVideoMode?(
 
-            
 <Group>
+<Text className='mt-5 flex justify-between font-bold text-2xl w-full'> Tags: <IconEdit/></Text>
+           
+                 <MultiSelectComp data={[
+        { value: 'react', label: 'React' },
+        { value: 'angular', label: 'Angular' },
+      ]}/>
+</Group>
+):(
+
+  <>
+  <Group>
 <Text className='mt-5 flex justify-between font-bold text-2xl w-full'> Job Description: <IconEdit/></Text>
             <Text className=' '> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim quae, necessitatibus maiores reprehenderit a iure aut laboriosam aliquam autem ea omnis, dicta id error temporibus laudantium, officia ad fuga illum? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis dolor officiis qui ratione iusto dolorem molestias eum debitis nam quisquam ad delectus inventore maxime eos, explicabo temporibus earum quasi commodi.</Text>
 </Group>
@@ -80,7 +95,11 @@ function PostJobStage2({setter}:SetterType) {
 <Text className='mt-5 flex justify-between font-bold text-2xl w-full'> Renumerations  <IconEdit/></Text>
             <Text className=' '>$12000/hr</Text>
 </Group>
+          
+  </>
+)}
             
+  
 
 
             

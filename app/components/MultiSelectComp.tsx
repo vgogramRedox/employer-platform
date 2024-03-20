@@ -14,7 +14,9 @@ export default function MultiSelectComp({
   data
 }:List) {
   const [value, setValue] = useState<string[]>([]);
- 
+  const handleRemoveValue = (indexToRemove: number) => {
+    setValue((prevValue) => prevValue.filter((_, index) => index !== indexToRemove));
+  };
   return (
 
     <>
@@ -53,7 +55,7 @@ export default function MultiSelectComp({
         <div  className=' flex font-light items-center gap-3 ' >
         {val}  <Image src="/svgs/closeBtn.svg" className='h-6 w-6' width={20} height={20}
         onClick={()=>{
-        i== value.indexOf(val) &&setValue(value.slice(0,i))
+          handleRemoveValue(i)
         }}
         />
         </div>

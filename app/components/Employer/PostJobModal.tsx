@@ -1,12 +1,7 @@
-import { Modal, Button, Box, Text, Group } from '@mantine/core';
+import { Modal,  Group } from '@mantine/core';
 import { Dispatch, SetStateAction, useContext, useState } from 'react';
 import PrimaryButton from '../Button';
-import Input from '../Input';
-import TextArea from '../TextArea';
-import { BadgeComp } from '../BadgeComp';
-import { EmploymentType, WorkSettingType } from '@/types/app';
-import { DropZone } from '../DropZone';
-import MultiSelectComp from '../MultiSelectComp';
+
 import PostJobStage1 from './PostJobStage1';
 import PostJobStage2 from './PostJobStage2';
 import { UserContext } from '@/context/EmployerContext';
@@ -19,6 +14,7 @@ interface PostJobModalType {
 export function PostJobModal({ opened, open, close }: PostJobModalType) {
 
  const {appState,setAppState} = useContext(UserContext)
+
  console.log(appState)
   const setter = (
     <Group className="flex gap-5 flex-row mt-5 lg:w-full  justify-end ">

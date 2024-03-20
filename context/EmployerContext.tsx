@@ -5,6 +5,7 @@ interface AppStateType{
     renumerations:string,
     tags:any,
     jobDescription:any
+    postVideoMode:boolean|false
 }
 export const UserContext=createContext<any>({})
 function EmployerContext({
@@ -17,7 +18,8 @@ function EmployerContext({
         jobPostStage:1,
         renumerations:"",
         tags:"",
-        jobDescription:""
+        jobDescription:"",
+        postVideoMode:false
 
     })
    
