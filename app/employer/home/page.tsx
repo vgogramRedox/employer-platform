@@ -1,13 +1,25 @@
-import { BackgroundImage, Box, Container, Grid, Image } from '@mantine/core';
-import React from 'react';
+"use client"
+import { BackgroundImage, Box, Container, Grid, Image, Portal } from '@mantine/core';
+import React, { useState } from 'react';
 import { ProgressBar } from '@/app/components/Employer/ProgressBar';
 import PrimaryButton from '@/app/components/Button';
 import { VidThumbNail } from '@/app/components/Employer/VidThumbNail';
 
 import { isMobile } from 'react-device-detect';
+import { useDisclosure } from '@mantine/hooks';
+import { PostJobModal } from '@/app/components/Employer/PostJobModal';
 
 function page() {
+  const [opened, setOpened] = useState(false);
   return (
+
+    <>
+     {opened && (
+        <Portal>
+         <PostJobModal opened ={opened}  open={open}
+  close={()=>{setOpened(false)}}/>
+        </Portal>
+      )}
     <Box className="lg:w-[90%]  max-lg:w-full mx-auto max-lg:text-lg max-lg:p-4">
       <p className="leading-[1.2rem] text-dark lg:text-2xl  font-semibold mt-20">
         Welcome {isMobile? "back":""}, Vincent
@@ -37,6 +49,9 @@ function page() {
           <PrimaryButton
             variant="filled"
             fullWidth={false}
+            onClick={()=>{
+              setOpened(true)
+            }}
             className="bg-primary-blue rounded-3xl mt-5 mb-6"
             title={<>Post a Job</>}
           />
@@ -56,6 +71,7 @@ function page() {
         </div>
       </Box>
     </Box>
+    </>
   );
 }
 

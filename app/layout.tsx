@@ -7,6 +7,7 @@ import type { Metadata } from 'next';
 import { Work_Sans } from 'next/font/google';
 
 import { theme } from '@/theme/app';
+import EmployerContext from '@/context/EmployerContext';
 
 
 
@@ -27,7 +28,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           withNormalizeCss
           theme={theme}
         >
+          <EmployerContext>
           {children}
+          </EmployerContext>
+          
         </MantineProvider>
       </body>
     </html>

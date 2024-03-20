@@ -6,10 +6,13 @@ interface BadgeCompProps{
     radius?:string
     size?:string
     color?:string
+    onClick?:()=>void
 
 }
 export function BadgeComp({
-    className,title,radius,size='lg',color
+    className,title,radius,size='lg',color,onClick
 }:BadgeCompProps) {
-  return <Badge  color ={color} radius={radius} size={size} className={`${className} capitalize`}>{title}</Badge>;
+  return <Badge
+  onClick={onClick}
+  color ={color} radius={radius} size={size} className={`${className} capitalize`}>{title}</Badge>;
 }
