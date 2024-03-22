@@ -1,4 +1,4 @@
-import { useDisclosure } from '@mantine/hooks';
+import { useDisclosure, useLocalStorage } from '@mantine/hooks';
 import { Modal, Button, Box, Text, Group, Image } from '@mantine/core';
 import { Dispatch, SetStateAction, useContext, useState } from 'react';
 import PrimaryButton from '../Button';
@@ -22,7 +22,11 @@ interface SetterType{
 function PostJobStage2({setter}:SetterType) {
    
 
- 
+  const [value, setValue, removeValue] = useLocalStorage({
+    key: 'jobVidThumbNail',
+    defaultValue: '',
+  });
+
 
   const {appState,setAppState} = useContext(UserContext)
   const{tags}=appState
@@ -37,7 +41,7 @@ function PostJobStage2({setter}:SetterType) {
     jobWorkSettingType,
     jobVidThumbNail
   } = appState;
-
+  
   const ThumbNail=(
 
     <section  className=" lg:max-w-[90%] lg:hidden" >
@@ -46,7 +50,7 @@ function PostJobStage2({setter}:SetterType) {
       <div className='relative'>
         
       <Image 
-      src={jobVidThumbNail?jobVidThumbNail:""} className={`lg:max-w-[80%] mx-auto `}/>
+      src={value?value:""} className={`lg:max-w-[80%] mx-auto `}/>
       <div className='bg-grey-3 rounded-full max-md:w-10 max-md:h-10  md:h-14 w-14 absolute max-md:top-[32.5%] lg:top-[35%] lg:left-[50%] max-lg:top-[35%] max-lg:left-[35%]  '>
 
       <IconPlayerPlay fill='true'strokeWidth='1.5' size={32}  className='z-10 outline-0 mx-auto  text-center mt-[22%] max-md:mt-[10%]    items-center '/>
@@ -72,8 +76,7 @@ function PostJobStage2({setter}:SetterType) {
 
  
 
-
-
+ 
   return (
   <>
    <Modal.Content>
@@ -100,7 +103,7 @@ function PostJobStage2({setter}:SetterType) {
   {/* small screen */}
 {ThumbNail}
 {/* large screen */}
- <VidThumbNail thumbnailImg={jobVidThumbNail}  className="max-md:w-full md:w-[80%] max-lg:hidden" />  
+ <VidThumbNail thumbnailImg={value?value:""}  className="max-md:w-full md:w-[80%] max-lg:hidden" />  
             </div>
             <div className="lg:w-1/2 border border-dashed lg:h-[12.55313rem] max-lg:min-h-[5.4rem] max-lg:my-auto">
           <DropZone/>

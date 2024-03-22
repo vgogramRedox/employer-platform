@@ -9,7 +9,7 @@ import { isMobile } from 'react-device-detect';
 import { useDisclosure } from '@mantine/hooks';
 import { PostJobModal } from '@/app/components/Employer/PostJobModal';
 import { UserContext } from '@/context/EmployerContext';
-import VideoThumbnailGenerator from '@/app/util/GenerateImgThumbNail';
+
 
 function page() {
  

@@ -31,7 +31,7 @@ function EmployerContext({ children }: { children: React.ReactNode }) {
     jobPostRenumerations: '',
     jobPostEmploymentType: undefined,
     jobWorkSettingType: undefined,
-    jobVidThumbNail: ''
+    jobVidThumbNail: null
   });
   const [postJobModalOpened, setPostJobModalOpened] = useState(false);
   return (

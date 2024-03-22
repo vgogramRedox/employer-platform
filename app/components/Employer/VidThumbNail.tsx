@@ -13,6 +13,7 @@ export function VidThumbNail({bg,
   thumbnailImg="/svgs/thumbnail1.svg"
 }:VidThumbNailType) {
   // console.log(isMobile)
+  
   return (
   
       <section  className=" lg:max-w-[90%] " >

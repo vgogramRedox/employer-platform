@@ -7,9 +7,9 @@ import {
   IMAGE_MIME_TYPE,
   MIME_TYPES,
 } from '@mantine/dropzone';
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { File } from 'buffer';
-import { useMediaQuery } from '@mantine/hooks';
+import { useLocalStorage, useMediaQuery } from '@mantine/hooks';
 import { IconCamera } from '@tabler/icons-react';
 import {
   generateVideoThumbnails,
@@ -41,36 +41,56 @@ import { UserContext } from '@/context/EmployerContext';
 //   return file;
 // }
 
-
 export function DropZone(props: Partial<DropzoneProps>) {
   const breakpoint = useMediaQuery('(min-width: 56.25em)');
   const [file, setFile] = useState<FileWithPath | undefined>();
+  const [error, setError] = useState('');
   // console.log(files);
   const [thumbnails, setThumbnails] = useState<string[]>([]);
-  // console.log(thumbnails[0])
-  const { setAppState, appState } = useContext(UserContext);
-  // console.log(appState)
-  if (file) {
-    //@ts-ignore
-    generateVideoThumbnails(file, 2).then((thumbs) => {
-      setThumbnails(thumbs);
-      const buff =Buffer.from(thumbs[0])
-      // console.log(buff)
-      setAppState({
-        ...appState
-        // jobVidThumbNail:  base64ToFile(thumbs[0]),
-      });
-    });
-  }
 
+  const { setAppState, appState } = useContext(UserContext);
+
+  // const setStorage=()=>{
+  //   if (typeof window !== 'undefined') {
+  //     localStorage.setItem('jobPostThumbNail', thumbnails);
+  //   }
+  // }
+
+  // useEffect(()=>{
+  //   if (file){
+
+  //   }
+
+  // },[])
+  const [value, setValue, removeValue] = useLocalStorage({
+    key: 'jobVidThumbNail',
+    defaultValue: '',
+  });
   return (
     <Dropzone
       onDrop={(files) => {
         console.log('accepted files', files);
         setFile(files[0]);
+        setError('');
+        // setAppState({
+        //   ...appState,
+        //   jobVidThumbNail: file,
+        // });
+        //@ts-ignore
+        generateVideoThumbnails(file, 3).then((thumbs) => {
+          setThumbnails(thumbs);
+          setValue(thumbs[0]);
+          console.log(value);
+          // setStorage()
+        });
       }}
-      onReject={(files) => console.log('rejected files', files)}
+      onReject={(files) => {
+        console.log('rejected files', files);
+        setError(files[0]?.errors[0]?.code);
+        console.log('error', error);
+      }}
       maxSize={5 * 1024 ** 2}
+      //@ts-ignore
       accept={MIME_TYPES}
       {...props}
     >
@@ -87,10 +107,10 @@ export function DropZone(props: Partial<DropzoneProps>) {
             style={{ width: rem(52), height: rem(52), color: 'var(--mantine-color-red-6)' }}
             stroke={1.5}
           />
-          <Text className='text-red-200'> eRROR</Text>
+          <Text className="text-red-200"> {error}</Text>
         </Dropzone.Reject>
         <Dropzone.Idle>
-          {!file && (
+          {!file && !error&&(
             <Text
               className="flex gap-3 max-lg:font-light max-lg:text-sm max-lg:text-[#7E8494] max-lg:items-center 
               "
@@ -107,12 +127,17 @@ export function DropZone(props: Partial<DropzoneProps>) {
               )}
             </Text>
           )}
-            {file && (
-          <Text>{file?.name}</Text>
-        )}
+          {file && <Text>{file?.name}</Text>}
+          {error && (
+            <div className='flex gap-2'>
+              <IconX
+                style={{ width: rem(52), height: rem(32), color: 'var(--mantine-color-red-6)' }}
+                stroke={1.5}
+              />
+              <Text className="text-red-200"> {error}</Text>
+            </div>
+          )}
         </Dropzone.Idle>
-
-      
 
         {/* {thumbnails?.map((thumbnail) => (
           <Image src={thumbnail} />
