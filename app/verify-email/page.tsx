@@ -15,7 +15,7 @@ function page() {
   return (
     <div className="flex min-h-screen">
       <Box component="aside" className="lg:min-w-[18.25rem]  max-md:hidden ">
-        <BackgroundImage src="images/sidebar.svg" className="min-h-[105%]"></BackgroundImage>
+        <BackgroundImage src="/svgs/sidebar.svg" className="min-h-[105%]"></BackgroundImage>
       </Box>
 
       <main className="w-full max-lg:p-3">
