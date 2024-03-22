@@ -69,7 +69,7 @@ export function DropZone(props: Partial<DropzoneProps>) {
   return (
     <Dropzone
       onDrop={(files) => {
-        console.log('accepted files', files);
+        // console.log('accepted files', files);
         setFile(files[0]);
         setError('');
         // setAppState({
@@ -80,14 +80,14 @@ export function DropZone(props: Partial<DropzoneProps>) {
         generateVideoThumbnails(file, 3).then((thumbs) => {
           setThumbnails(thumbs);
           setValue(thumbs[0]);
-          console.log(value);
+          // console.log(value);
           // setStorage()
         });
       }}
       onReject={(files) => {
-        console.log('rejected files', files);
+        // console.log('rejected files', files);
         setError(files[0]?.errors[0]?.code);
-        console.log('error', error);
+        // console.log('error', error);
       }}
       maxSize={5 * 1024 ** 2}
       //@ts-ignore
