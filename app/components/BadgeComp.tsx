@@ -6,7 +6,7 @@ interface BadgeCompProps{
     radius?:string
     size?:string
     color?:string
-    onClick?:()=>void
+    onClick?:(e:any)=>void
 
 }
 export function BadgeComp({

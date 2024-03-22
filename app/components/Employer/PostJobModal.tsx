@@ -5,6 +5,7 @@ import PrimaryButton from '../Button';
 import PostJobStage1 from './PostJobStage1';
 import PostJobStage2 from './PostJobStage2';
 import { UserContext } from '@/context/EmployerContext';
+import { useMediaQuery } from '@mantine/hooks';
 
 interface PostJobModalType {
   opened: boolean;
@@ -15,10 +16,13 @@ export function PostJobModal({ opened, open, close }: PostJobModalType) {
 
  const {appState,setAppState} = useContext(UserContext)
 
- console.log(appState)
+//  console.log(appState)
+ const breakpoint=useMediaQuery('(min-width: 56.25em)');
   const setter = (
-    <Group className="flex gap-5 flex-row mt-5 lg:w-full  justify-end ">
+    <Group className="flex gap-5 flex-row mt-5 lg:w-full  justify-end  max-lg:justify-center max-lg:gap-x-2 max-lg:p-0">
       <PrimaryButton
+      p="sm"
+       fullWidth={false}
          onClick={()=>{
           setAppState({
             ...appState,jobPostStage:1
@@ -26,11 +30,13 @@ export function PostJobModal({ opened, open, close }: PostJobModalType) {
           close()
         }}
 
-        className="bg-white border border-grey-4 hover:border-dotted w-60 text-dark "
-        title="Cancel"
+        className="bg-white border border-grey-4 hover:border-dotted lg:w-60 text-dark max-lg:w-[40%] max-lg:font-normal  "
+        title={breakpoint?"Cancel":"Save Draft"}
       />
       <PrimaryButton
-        className="bg-primary-blue border w-60"
+       p="xs"
+      fullWidth={false}
+        className="bg-primary-blue border lg:w-60 max-lg:w-[40%] max-lg:font-normal  "
         title="  Post"
         onClick={() => {
          setAppState({

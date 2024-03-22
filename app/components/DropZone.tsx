@@ -3,33 +3,33 @@ import { IconUpload, IconPhoto, IconX } from '@tabler/icons-react';
 import { Dropzone, DropzoneProps, FileWithPath, IMAGE_MIME_TYPE } from '@mantine/dropzone';
 import { useState } from 'react';
 import { File } from 'buffer';
+import { useMediaQuery } from '@mantine/hooks';
+import { IconCamera } from '@tabler/icons-react';
 
 export function DropZone(props: Partial<DropzoneProps>) {
-    const [files,setFiles]=useState<FileWithPath[]|undefined>()
-    console.log(files)
+  const breakpoint = useMediaQuery('(min-width: 56.25em)');
+  const [files, setFiles] = useState<FileWithPath[] | undefined>();
+  // console.log(files);
   return (
     <Dropzone
-      onDrop={(files) =>{ console.log('accepted files', files)
-      setFiles(files)}
-    }
+      onDrop={(files) => {
+        console.log('accepted files', files);
+        setFiles(files);
+      }}
       onReject={(files) => console.log('rejected files', files)}
       maxSize={5 * 1024 ** 2}
       accept={IMAGE_MIME_TYPE}
       {...props}
     >
-      <Group justify="center" gap="xl" mih={220}  >
+      <Group justify="center" gap="xl" mih={breakpoint ? 220 : '100'}>
         <Dropzone.Accept>
           <IconUpload
             style={{ width: rem(52), height: rem(52), color: 'var(--mantine-color-blue-6)' }}
             stroke={1.5}
           />
-          {
-            files?.map((file)=>(
-<Text>
-{file?.name}
-</Text>
-            ))
-          }
+          {files?.map((file) => (
+            <Text>{file?.name}</Text>
+          ))}
         </Dropzone.Accept>
         <Dropzone.Reject>
           <IconX
@@ -38,23 +38,32 @@ export function DropZone(props: Partial<DropzoneProps>) {
           />
         </Dropzone.Reject>
         <Dropzone.Idle>
-         {!files&&(
-              <Text className='flex gap-3 text-light'>
-              <IconUpload/>    Drag files here or click to upload
-                  </Text>
-         )}
-        
+          {!files && (
+            <Text
+              className="flex gap-3 max-lg:font-light max-lg:text-sm max-lg:text-[#7E8494] max-lg:items-center 
+              "
+            >
+              {breakpoint ? (
+                <>
+                  <IconUpload />
+                  Drag files here or click to upload
+                </>
+              ) : (
+                <>
+                  <IconCamera color="#7E8494" /> Click to open camera or upload
+                </>
+              )}
+            </Text>
+          )}
         </Dropzone.Idle>
 
-        {files?.length==0?(<>
-            <IconUpload/>    Drag files here or click to upload
-        </>):
-            files?.map((file)=>(
-<Text>
-{file?.name}
-</Text>
-            ))
-          }
+        {files?.length == 0 ? (
+          <>
+            <IconUpload /> Drag files here or click to upload
+          </>
+        ) : (
+          files?.map((file) => <Text>{file?.name}</Text>)
+        )}
 
         {/* <div>
           <Text size="xl" inline>

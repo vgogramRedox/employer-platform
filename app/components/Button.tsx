@@ -7,11 +7,13 @@ variant?:'filled'|'Outline'
 onClick?:()=>void
 className:string
 fullWidth?:boolean
+p?:string
+radius?:string
 
 }
-function PrimaryButton({title,variant,className,onClick,fullWidth=true}:BtnProps) {
+function PrimaryButton({title,variant,className,onClick,fullWidth=true,p,radius="lg"}:BtnProps) {
   return (
-   <Button variant={variant}  fullWidth={fullWidth} radius='lg'
+   <Button variant={variant}  fullWidth={fullWidth} radius={radius} p={p}
    onClick={onClick}
    className={`${className} transition-all duration-200`}>
 {title}

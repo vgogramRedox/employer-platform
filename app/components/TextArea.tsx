@@ -2,9 +2,10 @@ import { Textarea, TextInput } from '@mantine/core'
 import React from 'react'
 interface inputProps{
 label?:string
-onChange?:()=>void
+onChange?:any
 placeholder?:string
 className?:string
+value?:string
 
 }
 
@@ -12,7 +13,8 @@ function TextArea({
 label,
 onChange,
 placeholder,
-className
+className,
+value
 }:inputProps) {
   return (
     <div className='leading-8'>
@@ -23,6 +25,7 @@ className
     </label>
     <Textarea
     onChange={onChange}
+    value={value}
     autosize={true}
     minRows={10}
  className={`lg:min-h-[16.5rem] min-w-full   w-full rounded  ${className}`}
