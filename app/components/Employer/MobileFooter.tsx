@@ -1,7 +1,8 @@
 "use client"
+import { UserContext } from '@/context/EmployerContext';
 import { Anchor, Group, ActionIcon, rem, AppShellFooter, Image } from '@mantine/core';
 import { usePathname } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 
 const links = [
   { link: '/employer/home', label: 'Home', icon: '/svgs/home-house.svg',activeIcon:"/svgs/home-house-active.svg" },
@@ -18,6 +19,7 @@ export function MobileFooter() {
   const [active,setActive]=useState<string>('Home')
   const pathname=usePathname()
  
+  const {appState,setAppState,postJobModalOpened,setPostJobModalOpened}=useContext(UserContext)
   useEffect(()=>{
   
     setActive(pathname)
@@ -34,8 +36,12 @@ export function MobileFooter() {
       data-active={item.link === active ||pathname?.includes( item?.link)||undefined}
       onClick={(event) => {
         
-        
-        // event.preventDefault()
+        if( item?.label=="Post"){
+  event.preventDefault()
+  setPostJobModalOpened(true)
+        }
+       
+       
         setActive(item.link);
       }}
      

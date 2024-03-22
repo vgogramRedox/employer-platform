@@ -35,6 +35,7 @@ function PostJobStage2({setter}:SetterType) {
     jobPostRenumerations,
     jobPostEmploymentType,
     jobWorkSettingType,
+    jobVidThumbNail
   } = appState;
 
   const ThumbNail=(
@@ -45,7 +46,7 @@ function PostJobStage2({setter}:SetterType) {
       <div className='relative'>
         
       <Image 
-      src="/svgs/thumbnail1.svg" className={`lg:max-w-[80%] mx-auto `}/>
+      src={jobVidThumbNail?jobVidThumbNail:""} className={`lg:max-w-[80%] mx-auto `}/>
       <div className='bg-grey-3 rounded-full max-md:w-10 max-md:h-10  md:h-14 w-14 absolute max-md:top-[32.5%] lg:top-[35%] lg:left-[50%] max-lg:top-[35%] max-lg:left-[35%]  '>
 
       <IconPlayerPlay fill='true'strokeWidth='1.5' size={32}  className='z-10 outline-0 mx-auto  text-center mt-[22%] max-md:mt-[10%]    items-center '/>
@@ -99,7 +100,7 @@ function PostJobStage2({setter}:SetterType) {
   {/* small screen */}
 {ThumbNail}
 {/* large screen */}
- <VidThumbNail   className="max-md:w-full md:w-[80%] max-lg:hidden" />  
+ <VidThumbNail thumbnailImg={jobVidThumbNail}  className="max-md:w-full md:w-[80%] max-lg:hidden" />  
             </div>
             <div className="lg:w-1/2 border border-dashed lg:h-[12.55313rem] max-lg:min-h-[5.4rem] max-lg:my-auto">
           <DropZone/>

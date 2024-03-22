@@ -1,10 +1,12 @@
 'use client';
+import { PostJobModal } from '@/app/components/Employer/PostJobModal';
+import { Portal } from '@mantine/core';
 import React, { createContext, useState } from 'react';
 interface AppStateType {
   postVideoMode: boolean | false;
   jobPostStage: number;
-jobPostEmploymentType:'Full-Time'| 'Contract'|undefined
-jobWorkSettingType:'Remote'| 'Hybrid'|'On-site'|undefined
+  jobPostEmploymentType: 'Full-Time' | 'Contract' | undefined;
+  jobWorkSettingType: 'Remote' | 'Hybrid' | 'On-site' | undefined;
   jobPostTitle: string;
 
   tags: any;
@@ -13,6 +15,7 @@ jobWorkSettingType:'Remote'| 'Hybrid'|'On-site'|undefined
 
   jobPostRequirements?: string;
   jobPostRenumerations: string;
+  jobVidThumbNail: any;
 }
 export const UserContext = createContext<any>({});
 function EmployerContext({ children }: { children: React.ReactNode }) {
@@ -26,16 +29,29 @@ function EmployerContext({ children }: { children: React.ReactNode }) {
     postVideoMode: false,
     jobPostRequirements: '',
     jobPostRenumerations: '',
-    jobPostEmploymentType:undefined,
-jobWorkSettingType:undefined
+    jobPostEmploymentType: undefined,
+    jobWorkSettingType: undefined,
+    jobVidThumbNail: ''
   });
-
+  const [postJobModalOpened, setPostJobModalOpened] = useState(false);
   return (
     <UserContext.Provider
       //@ts-ignore
-      value={{ appState, setAppState }}
+      value={{ appState, setAppState, postJobModalOpened, setPostJobModalOpened }}
     >
       {children}
+
+      {postJobModalOpened && (
+        <Portal>
+          <PostJobModal
+            opened={postJobModalOpened}
+            open={open}
+            close={() => {
+              setPostJobModalOpened(false);
+            }}
+          />
+        </Portal>
+      )}
     </UserContext.Provider>
   );
 }

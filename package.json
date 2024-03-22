@@ -17,6 +17,7 @@
     "@rajesh896/video-thumbnails-generator": "^2.3.9",
     "@tabler/icons-react": "^2.47.0",
     "ably": "^1.2.49",
+    "browser-video-thumbnail-generator": "^1.2.8",
     "embla-carousel-autoplay": "^7.1.0",
     "embla-carousel-react": "^7.1.0",
     "framer-motion": "^11.0.13",
