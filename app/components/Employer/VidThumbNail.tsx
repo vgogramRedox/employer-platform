@@ -2,15 +2,19 @@
 import { Grid, Image } from '@mantine/core';
 import { IconPlayerPlay } from '@tabler/icons-react';
 import { isMobile } from 'react-device-detect';
-interface VidThumbNailType{
+export interface VidThumbNailType{
   bg?:string,
   thumbnailImg?:any
   className?:string
+  bookmarked?:boolean
+  onClick?:()=>void
+  onClickBookMark?:()=>void
 }
 
 export function VidThumbNail({bg,
   className,
-  thumbnailImg="/svgs/thumbnail1.svg"
+  thumbnailImg="/svgs/thumbnail1.svg",
+  
 }:VidThumbNailType) {
   // console.log(isMobile)
   

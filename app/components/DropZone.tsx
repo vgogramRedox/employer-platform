@@ -37,7 +37,7 @@ import { UserContext } from '@/context/EmployerContext';
 
 //   // Create a File object from the Blob
 //   const file = new File([blob], "thumbnailPreview", { type: dataType });
-// console.log(file)
+// ivee.log(file)
 //   return file;
 // }
 

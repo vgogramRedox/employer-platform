@@ -1,4 +1,6 @@
+"use client"
 import { Breadcrumbs, Anchor } from '@mantine/core';
+import { usePathname } from 'next/navigation';
 interface LinkProps{
     title: string,
      href: string
@@ -10,9 +12,11 @@ export default function BreadCrumbsNav({
   items
 }:BreadcrumbsNavProp) {
 
-
+  
+  const pathName= usePathname()
+  console.log(pathName)
     const linksCrumb =items?.map((item, index) => (
-        <Anchor href={item.href} key={index} className='text-[#162170]' 
+        <Anchor href={item.href} key={index} className={`${item?.href==pathName?"text-[#162170]":"text-dark" }  `}
         >
           {item.title}
         </Anchor>
