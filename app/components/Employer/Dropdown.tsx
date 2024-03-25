@@ -1,4 +1,4 @@
-import { Menu, Button, rem, Text, px, Drawer } from '@mantine/core';
+import { Menu, Button, rem, Text, px, Drawer, Divider } from '@mantine/core';
 import { IconBell, IconChevronDown } from '@tabler/icons-react';
 
 import Link from 'next/link';
@@ -13,7 +13,6 @@ export default function DropDown({ dropDownIcon }: DropDownProps) {
   // }
   const width = px('37.875rem');
   
-  const [opened, setOpened] = useState(false);
   // console.log(width)
   return (
     <Menu
@@ -32,12 +31,15 @@ export default function DropDown({ dropDownIcon }: DropDownProps) {
         </Text>
       </Menu.Target>
 
-      <Drawer opened={opened} onClose={setOpened(false)} offset={8} radius="md" title="Authentication">
+
         {/* Drawer content */}
         <Menu.Dropdown className="text-center " style={{ border: '  rgb(126 132 148' }}>
-          <Menu.Item component="h1" className=" text-dark-100 font-bold max-lg:text-lg max-lg:ms-4">
+          <Menu.Item component="h1" className=" text-dark-100 font-bold max-lg:text-lg max-lg:ms-4 border-b border hover:bg-white">
             Notifications
+          
           </Menu.Item>
+          <Divider/>
+          
           <Menu.Item
             mih={px('5.5rem')}
             className="   border-t-grey-1 border"
@@ -58,7 +60,7 @@ export default function DropDown({ dropDownIcon }: DropDownProps) {
             </div>
           </Menu.Item>
         </Menu.Dropdown>
-      </Drawer>
+      
     </Menu>
   );
 }

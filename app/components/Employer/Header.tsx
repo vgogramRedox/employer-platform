@@ -8,6 +8,7 @@ import { IconMail, IconSearch } from '@tabler/icons-react';
 import { IconChevronDown } from '@tabler/icons-react';
 import { IconBell } from '@tabler/icons-react';
 import DropDown from './Dropdown';
+import DropDownProfile from './DropdownProfile';
 
 const links = [
   { link: '/about', label: 'IconBell' },
@@ -137,7 +138,7 @@ export function Header() {
       
         
       
-     <DropDown dropDownIcon={
+     <DropDownProfile dropDownIcon={
           <>
        <IconChevronDown/>
           </>

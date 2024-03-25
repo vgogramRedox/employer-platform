@@ -14,7 +14,7 @@ function page() {
   const links = [
     {
       title: 'Profile',
-      href: '/employer/profile/profile',
+      href: '/employer/profile',
     },
     {
       title: 'Edit Profile',

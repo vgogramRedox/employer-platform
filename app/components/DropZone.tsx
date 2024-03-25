@@ -18,7 +18,7 @@ import {
 import { UserContext } from '@/context/EmployerContext';
 
 interface DropzonePropsMutation extends Partial <DropzoneProps>{
-lgWidth:string
+lgWidth?:string
 }
 // function base64ToFile(base64: string): File {
 //   // Split the base64 string to get the data type and the base64 data

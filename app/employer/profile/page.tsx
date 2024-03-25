@@ -53,7 +53,7 @@ function page() {
             Verify your profile to attract the best talent. <Link href="" className='underline font-normal'>Verify your profile</Link>
             </Box>
    
-   <IconX className='w-6 h-6 me-[2%]'/>
+   <IconX className='w-6 h-6 me-[2%] cursor-pointer'/>
 
      
       </div>
