@@ -17,6 +17,9 @@ import {
 } from '@rajesh896/video-thumbnails-generator';
 import { UserContext } from '@/context/EmployerContext';
 
+interface DropzonePropsMutation extends Partial <DropzoneProps>{
+lgWidth:string
+}
 // function base64ToFile(base64: string): File {
 //   // Split the base64 string to get the data type and the base64 data
 //   const [dataType, base64Data] = base64.split(',');
@@ -41,11 +44,11 @@ import { UserContext } from '@/context/EmployerContext';
 //   return file;
 // }
 
-export function DropZone(props: Partial<DropzoneProps>) {
+export function DropZone({lgWidth=rem(220),...props}:DropzonePropsMutation) {
   const breakpoint = useMediaQuery('(min-width: 56.25em)');
   const [file, setFile] = useState<FileWithPath | undefined>();
   const [error, setError] = useState('');
-  // console.log(files);
+  console.log(file);
   const [thumbnails, setThumbnails] = useState<string[]>([]);
 
   const { setAppState, appState } = useContext(UserContext);
@@ -66,6 +69,8 @@ export function DropZone(props: Partial<DropzoneProps>) {
     key: 'jobVidThumbNail',
     defaultValue: '',
   });
+
+
   return (
     <Dropzone
       onDrop={(files) => {
@@ -94,7 +99,7 @@ export function DropZone(props: Partial<DropzoneProps>) {
       accept={MIME_TYPES}
       {...props}
     >
-      <Group justify="center" gap="xl" mih={breakpoint ? 220 : '100'}>
+      <Group justify="center" gap="xl" mih={breakpoint ? {lgWidth} : '100'}>
         <Dropzone.Accept>
           <IconUpload
             style={{ width: rem(52), height: rem(52), color: 'var(--mantine-color-blue-6)' }}

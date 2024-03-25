@@ -8,7 +8,9 @@ import { Work_Sans } from 'next/font/google';
 
 import { theme } from '@/theme/app';
 import EmployerContext from '@/context/EmployerContext';
-
+import { nprogress, NavigationProgress } from '@mantine/nprogress';
+import '@mantine/notifications/styles.css';
+import { Notifications } from '@mantine/notifications';
 
 
 const font = Work_Sans({ subsets: ['latin'] });
@@ -28,6 +30,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           withNormalizeCss
           theme={theme}
         >
+            <NavigationProgress />
+            <Notifications />
           <EmployerContext>
           {children}
           </EmployerContext>

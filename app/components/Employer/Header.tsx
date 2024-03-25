@@ -67,7 +67,11 @@ export function Header() {
       }}
     >
      
-     <Flex
+    
+      
+     <DropDown dropDownIcon={
+          <>
+         <Flex
        justify='center'
        align="center"
        direction="row"
@@ -81,8 +85,8 @@ export function Header() {
         1
       </Badge>
      </Flex>
-      
-       
+          </>
+        } />
       
     </a>
 
@@ -132,11 +136,14 @@ export function Header() {
      
       
         
-        <DropDown dropDownIcon={
+      
+     <DropDown dropDownIcon={
           <>
-          <IconChevronDown/>
+       <IconChevronDown/>
           </>
         } />
+      
+     
     
     </a>
         </Group>

@@ -1,6 +1,6 @@
 import { TextInput } from '@mantine/core'
 import React from 'react'
-interface inputProps{
+export interface inputProps{
 label?:string
 onChange?:any
 placeholder?:string

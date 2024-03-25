@@ -13,6 +13,8 @@
     "@mantine/core": "^7.6.2",
     "@mantine/dropzone": "^7.6.2",
     "@mantine/hooks": "^7.6.2",
+    "@mantine/notifications": "^7.6.2",
+    "@mantine/nprogress": "^7.6.2",
     "@mantinex/mantine-logo": "^1.0.1",
     "@rajesh896/video-thumbnails-generator": "^2.3.9",
     "@tabler/icons-react": "^2.47.0",

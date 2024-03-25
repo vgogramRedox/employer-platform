@@ -8,6 +8,7 @@ import { MobileHeader } from '../components/Employer/MobileHeader'
 import { headers } from 'next/headers'
 
 
+
 function layout ({children}:{
  children: React.ReactNode
 }) {
@@ -21,6 +22,7 @@ const domain = headersList.get('host') || "";
     // console.log(fullUrl?.includes("/jobs/active-jobs"||`/jobs/`))
   return (
     <>
+      
     <div className='lg:flex'>
       <div className='max-lg:hidden'>
       <NavbarSimple />
