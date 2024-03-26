@@ -1,10 +1,11 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Box, Divider, Group, Image, Paper, Tabs, Text } from '@mantine/core';
 import { VidThumbNail } from '@/app/components/Employer/VidThumbNail';
 import PrimaryButton from '@/app/components/Button';
 import { IconBookmark, IconMail, IconMapPin } from '@tabler/icons-react';
-import { useRouter } from 'next/navigation';
+import {  useRouter,usePathname, useSearchParams } from 'next/navigation';
+
 import { IconChevronLeft } from '@tabler/icons-react';
 import BreadCrumbsNav from '@/app/components/BreadCrumbsNav';
 import OrganizationalInfo from '@/app/components/Edit/OrganizationalInfo';
@@ -18,10 +19,22 @@ function page() {
     },
     {
       title: 'Edit Profile',
-      href: '/employer/profile/edit-profile',
+      href: '/employer/profile/edit',
     },
   ];
   const [activeTab, setActiveTab] = useState<string | null>('personalInfo');
+const searchParams=useSearchParams()
+
+ const search=searchParams.get('info')
+ console.log(search)
+  // useEffect(()=>{
+  // if(search){
+
+  //     setActiveTab(search)
+    
+  // }
+
+  // },[])
   return (
     <Box className="lg:w-[90%]  max-lg:w-full mx-auto max-lg:text-lg  mb-5">
       <Box className="mt-[2%]">
@@ -35,7 +48,7 @@ function page() {
               router.back();
             }}
           />
-          <Text className=" text-dark text-lg  font-semibold   ">Applications</Text>
+          <Text className=" text-dark text-lg  font-semibold   ">Edit Info</Text>
           <IconChevronLeft className="text-3xl opacity-0" />
         </Group>
       </div>
@@ -49,7 +62,7 @@ function page() {
         color="primary"
         className="max-lg:text-sm"
       >
-        <Tabs.List className="lg:min-w-[31rem] lg:w-[33rem] lg:max-w-[100%] max-md:min-w-full md:w-[90%] mb-10">
+        <Tabs.List className="lg:min-w-[31rem] lg:w-[33rem] lg:max-w-[100%] max-md:min-w-full md:w-[90%] sm:w-[95%] mb-10">
           <Tabs.Tab
             value="personalInfo"
             className={` lg:text-xl  lg:min-w-[10.46319rem] ${

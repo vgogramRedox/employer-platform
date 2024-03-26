@@ -1,4 +1,5 @@
 'use client';
+import AddVideoModal from '@/app/components/Edit/AddVideoModal';
 import { PostJobModal } from '@/app/components/Employer/PostJobModal';
 import { Portal } from '@mantine/core';
 import React, { createContext, useState } from 'react';
@@ -34,10 +35,11 @@ function EmployerContext({ children }: { children: React.ReactNode }) {
     jobVidThumbNail: null
   });
   const [postJobModalOpened, setPostJobModalOpened] = useState(false);
+  const [addVideoModalOpened, setAddVideoModalOpened] = useState(false);
   return (
     <UserContext.Provider
       //@ts-ignore
-      value={{ appState, setAppState, postJobModalOpened, setPostJobModalOpened }}
+      value={{ appState, setAppState, postJobModalOpened, setPostJobModalOpened,addVideoModalOpened, setAddVideoModalOpened }}
     >
       {children}
 
@@ -52,6 +54,19 @@ function EmployerContext({ children }: { children: React.ReactNode }) {
           />
         </Portal>
       )}
+
+      {addVideoModalOpened&&(
+        <Portal>
+<AddVideoModal opened={addVideoModalOpened}
+open={open}
+close={()=>{
+  setAddVideoModalOpened(false)
+}}
+/>
+        </Portal>
+      )
+
+      }
     </UserContext.Provider>
   );
 }

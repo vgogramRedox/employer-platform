@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useState } from 'react';
-import { Group, Code, Image, Switch, useMantineColorScheme } from '@mantine/core';
+import { Group, Code, Image, Switch, useMantineColorScheme, Box } from '@mantine/core';
 
 import classes from '@/styles/NavbarSimple.module.css';
 import Link from 'next/link';
@@ -91,10 +91,10 @@ export function NavbarSimple() {
         {links}
       </div>
 
-      <div
+      <Box
         className={`${classes.footer} top-[80%] absolute flex space-between items-center gap-x-4 max-lg:hidden ms-5`}
       >
-        <a href="#" className={`flex`} onClick={(event) => event.preventDefault()}>
+        <Link href="#" className={`flex`} onClick={(event) => event.preventDefault()}>
           {checked == false ? (
             <Image src="/svgs/sun.svg" className={classes.linkIcon} />
           ) : (
@@ -106,7 +106,7 @@ export function NavbarSimple() {
           ) : (
             <span className="text-dark font-bold ms-7 text-sm">Light Mode</span>
           )}
-        </a>
+        </Link>
         <Switch
           size="lg"
           className="max-lg:hidden"
@@ -114,7 +114,7 @@ export function NavbarSimple() {
           checked={checked}
           onChange={toggleColorScheme}
         />
-      </div>
+      </Box>
     </nav>
   );
 }

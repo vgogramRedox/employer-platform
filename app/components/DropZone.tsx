@@ -48,7 +48,7 @@ export function DropZone({lgWidth=rem(220),...props}:DropzonePropsMutation) {
   const breakpoint = useMediaQuery('(min-width: 56.25em)');
   const [file, setFile] = useState<FileWithPath | undefined>();
   const [error, setError] = useState('');
-  console.log(file);
+  
   const [thumbnails, setThumbnails] = useState<string[]>([]);
 
   const { setAppState, appState } = useContext(UserContext);
@@ -73,6 +73,7 @@ export function DropZone({lgWidth=rem(220),...props}:DropzonePropsMutation) {
 
   return (
     <Dropzone
+  
       onDrop={(files) => {
         // console.log('accepted files', files);
         setFile(files[0]);

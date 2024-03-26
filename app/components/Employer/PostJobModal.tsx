@@ -7,7 +7,7 @@ import PostJobStage2 from './PostJobStage2';
 import { UserContext } from '@/context/EmployerContext';
 import { useMediaQuery } from '@mantine/hooks';
 
-interface PostJobModalType {
+export interface PostJobModalType {
   opened: boolean;
   open: () => void;
   close: Dispatch<SetStateAction<boolean>> | any;

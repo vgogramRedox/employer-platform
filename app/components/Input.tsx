@@ -17,10 +17,10 @@ className,
 value
 }:inputProps) {
   return (
-    <div className='leading-8'>
+    <div className={`leading-8 ${className}`}>
     
     
-    <label className='text-dark text-xl max-md:text-sm' >
+    <label className='text-dark text-xl max-md:text-sm lg:text-3xl' >
 {label}
     </label>
     <input 

@@ -16,7 +16,7 @@ const Input = ({ label, onChange, placeholder, className, value }: inputProps) =
       <input
         onChange={onChange}
         value={value}
-        className="min-h-[3.25rem] min-w-full p-2 border font-light text-lg border-grey-4 w-full rounded mb-4"
+        className="min-h-[3.25rem] min-w-full p-2 border font-light text-lg border-grey-4 w-full rounded mb-4 max-lg:text-sm"
         placeholder={placeholder}
       />
     </div>
@@ -26,7 +26,7 @@ const Input = ({ label, onChange, placeholder, className, value }: inputProps) =
 function OrganizationalInfo() {
   const selectItems = [{ value: 'react', label: 'React library' }];
   return (
-    <Box className="lg:max-w-[50%]">
+    <Box className="lg:max-w-[50%] max-lg:w-[90%]  max-lg:mx-auto">
       <Text className="leading-[1.2rem] text-dark lg:text-2xl font-semibold mt-4  max-lg:hidden">
         Logo
         </Text>
