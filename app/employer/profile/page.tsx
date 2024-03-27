@@ -38,12 +38,17 @@ const CandidateInfo = ({
 );
 
 function page() {
-  const { setAddVideoModalOpened } = useContext(UserContext);
+  const { setAddVideoModalOpened,setVerifyModalOpened } = useContext(UserContext);
   const router=useRouter()
   return (
     <Box>
       <Box className="  max-lg:bg-[#040513] max-lg:full max-lg:min-h-10 lg:hidden flex justify-between items-center text-[#FFFFFFD9] lg:p-5">
-        <Link href="" className="underline font-normal  ms-[10%] text-sm">
+        <Link href=""
+        onClick={(e)=>{
+e.preventDefault()
+setVerifyModalOpened(true)
+        }}
+        className="underline font-normal  ms-[10%] text-sm">
           Verify your profile
         </Link>
         <IconX className="w-6 h-6 me-[2%] cursor-pointer" />
@@ -51,7 +56,12 @@ function page() {
       <div className="lg:min-h-[4rem] max-lg:h-[2rem] lg:h-[4rem] max-lg:hidden min-w-full bg-[#D3D7F1] font-light flex items-center justify-between ">
         <Box className="ms-[10%]">
           Verify your profile to attract the best talent.{' '}
-          <Link href="" className="underline font-normal">
+          <Link href=""
+                onClick={(e)=>{
+                  e.preventDefault()
+                  setVerifyModalOpened(true)
+                          }}
+          className="underline font-normal">
             Verify your profile
           </Link>
         </Box>
@@ -59,18 +69,18 @@ function page() {
         <IconX className="w-6 h-6 me-[2%] cursor-pointer" />
       </div>
       <Box className="lg:w-[90%] flex max-lg:block max-lg:text-lg mb-5 lg:p-5">
-        <div className="min-h-[8rem] max-lg:min-h-[4rem] h-[8rem] min-w-full bg-[#D3D7F1] lg:hidden"></div>
+        <div className="min-h-[7rem] max-lg:min-h-[4rem] h-[7rem] min-w-full bg-[#D3D7F1] lg:hidden"></div>
 
-        <Box className=" w-[40%] max-lg:w-full  max-lg:p-4  ">
-          <div className="mt-3.5 max-lg:mb-20 max-lg:top-[20%] max-lg:absolute  max-lg:flex max-lg:items-center  max-lg:w-full max-lg:gap-x-8 ">
+        <Box className=" w-[40%] max-lg:w-full max-lg:p-2  ">
+          <div className="mt-3.5 max-lg:mb-20 max-lg:top-[22%] max-lg:absolute  max-lg:flex max-lg:items-center  max-lg:w-full max-lg:gap-x-8 ">
             <div>
               <Box className="   ">
-                <div className="w-[8.6rem] h-[8.6rem] lg:mx-auto lg:flex lg:items-center lg:gap-x-8 relative ">
-                  <Image src="/svgs/person.svg" className="w-[8.6rem] h-[8.6rem] " />
-                  <Image
+                <div className="lg:w-[8.6rem] lg:h-[8.6rem] lg:mx-auto lg:flex lg:items-center lg:gap-x-8 relative ">
+                  <Image src="/svgs/person.svg" className="[8.6rem] [8.6rem] " />
+                  {/* <Image
                     src="/svgs/verifiedCheck.svg"
                     className="w-[1.6rem] h-[1.6rem] absolute top-[10%] left-[80%]"
-                  />
+                  /> */}
                   <IconEdit 
                    onClick={()=>{
                     router.push("profile/edit")
@@ -80,10 +90,10 @@ function page() {
               </Box>
               <div className="flex gap-x-4 items-center  lg:justify-center mt-2.5">
                 <Box className=" flex-col gap-y-4">
-                  <Text className="font-bold text-lg">Tolu Ogunnipe</Text>
+                  <Text className="font-bold text-lg max-lg:text-sm">Tolu Ogunnipe</Text>
 
-                  <Text className="text- flex gap-x-2 font-light">
-                    <IconMapPin /> Lagos,Nigeria
+                  <Text className="text- flex gap-x-2 font-light max-lg:text-sm">
+                    <IconMapPin  className='max-lg:w-5'/> Lagos,Nigeria
                   </Text>
                 </Box>
               </div>
@@ -98,24 +108,26 @@ function page() {
               {/* small screen */}
               <Paper
                 bg={'primary.10'}
-                className="font-bold flex items-center gap-x-3 w-[7rem] min-h-[2.6rem] lg:hidden text-sm p-2 "
+                className="font-bold flex items-center gap-x-3 w-[7rem] min-h-[2.6rem] lg:hidden text-sm p-2 mt-[10%] "
               >
                 <Image src="/svgs/diamondYellow.svg" className="w-6 h-6" /> Premium{' '}
               </Paper>
 
-              <Box className="flex lg:hidden gap-x-2.5 mt-[45%]">
-                <Group className="bg-primary-blue text-white-smoke w-[4rem] h-[3.9375rem] rounded-lg text-center">
+              <Box className="flex lg:hidden gap-x-2.5 justify-center mt-[60%]">
+                <Box className="bg-primary-blue text-white-smoke w-[4rem] h-[3.9375rem] rounded-lg text-center">
                   <Text className="max-lg:text-[0.5rem] text-center">Jobs <br/> Completed</Text>
                   <Text className="font-bold  max-lg:text-[1.5rem] text-center">20</Text>
-                </Group>
+                </Box>
 
-                <Group className="text-white-smoke w-[4rem] h-[3.9375rem] bg-primary-blue rounded-lg">
+                <Box className="bg-primary-blue text-white-smoke w-[4rem] h-[3.9375rem] rounded-lg text-center">
                   <Text className="max-lg:text-[0.5rem] text-center">Jobs <br/> Completed</Text>
                   <Text className="font-bold max-lg:text-[1.5rem] text-center">20</Text>
-                </Group>
+                </Box>
               </Box>
             </div>
           </div>
+
+          
 
           {/* for large screen */}
           <CandidateInfo
@@ -166,8 +178,8 @@ function page() {
        
         </Box>
 
-        <Box className="w-full  max-lg:p-4 max-lg:mt-10 ">
-          <Box className="flex text-bold justify-between items-center text-2xl lg:w-[75%] max-lg:text-lg ">
+        <Box className="w-full  max-lg:p-4 max-lg:mt-20 ">
+          <Box className="flex text-bold justify-between items-center text-2xl lg:w-[75%] max-lg:text-sm  max-lg:font-bold ">
             <IconEdit className="opacity-0" />
             About Ovidigo <IconEdit
              onClick={()=>{
@@ -175,7 +187,7 @@ function page() {
             }}
             />
           </Box>
-          <div className=" grid  lg:grid-cols-2 sm:grid-cols-2 md:grid-cols-2 gap-4  lg:w-[80%] mt-2.5 max-lg:mt-5">
+          <div className=" grid  lg:grid-cols-2 max-lg:grid-cols-2 md:grid-cols-2 gap-4 max-lg:w-full  lg:w-[80%] mt-2.5 max-lg:mt-5">
             <EmptyVidThumbNail
               onClick={() => {
                 setAddVideoModalOpened(true);
@@ -199,7 +211,7 @@ function page() {
               </Box>
             }
             content={
-              <div className="max-w-[80%] m-auto mt-3 ">
+              <div className="max-w-[80%] m-auto mt-3 max-lg:font-light">
                 <Text>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptatum,
                   doloribus incidunt quos vero non eveniet eum debitis quae aliquam totam blanditiis
@@ -233,6 +245,7 @@ function page() {
               </div>
             }
           />
+            
 
           {/* larger screen */}
           <CandidateInfo
@@ -268,7 +281,7 @@ function page() {
                   />{' '}
                   David Osas
                 </Text>
-                <Text>Tolu is amazing to work with.</Text>
+                <Text className='max-lg:font-light'>Tolu is amazing to work with.</Text>
               </div>
             }
           />

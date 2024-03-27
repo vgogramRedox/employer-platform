@@ -30,7 +30,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           withNormalizeCss
           theme={theme}
         >
-            <NavigationProgress />
+            {/* <NavigationProgress /> */}
             <Notifications />
           <EmployerContext>
           {children}

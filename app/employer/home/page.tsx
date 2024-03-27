@@ -6,9 +6,9 @@ import PrimaryButton from '@/app/components/Button';
 import { VidThumbNail } from '@/app/components/Employer/VidThumbNail';
 
 import { isMobile } from 'react-device-detect';
-import { useDisclosure } from '@mantine/hooks';
-import { PostJobModal } from '@/app/components/Employer/PostJobModal';
+
 import { UserContext } from '@/context/EmployerContext';
+
 
 
 function page() {
@@ -20,6 +20,7 @@ function page() {
 
   
     <>
+   
       
     <Box className="lg:w-[90%]  max-lg:w-full mx-auto max-lg:text-lg max-lg:p-4">
       <p className="leading-[1.2rem] text-dark lg:text-2xl  font-semibold mt-20">
