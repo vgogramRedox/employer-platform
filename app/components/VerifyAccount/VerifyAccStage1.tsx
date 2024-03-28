@@ -4,6 +4,7 @@ import { useMediaQuery } from '@mantine/hooks';
 import { Box,  Text } from '@mantine/core';
 import {  IconChevronRight } from '@tabler/icons-react';
 import { UserContext } from '@/context/EmployerContext';
+import SlideInAnimation from '@/context/Motion';
 
 function VerifyAccStage1() {
 
@@ -18,6 +19,7 @@ function VerifyAccStage1() {
     </Text>
    
 < Box className='mt-10'>
+  <SlideInAnimation>
 <Box className='border-b  w-full lg:p-5 max-lg:pb-3 cursor-pointer'
 onClick={()=>{
   setAppState({
@@ -25,6 +27,7 @@ onClick={()=>{
   })
 }}
 >
+  
   <div className='flex justify-between  items-center lg:w-[90%]  font-light lg:text-lg '>
   {/* <IconCheck color='#F2AB1B' /> */}
   CAC <IconChevronRight className='cursor-pointer max-lg:hidden' onClick={()=>{
@@ -36,7 +39,8 @@ onClick={()=>{
 
 </Box>
 
-
+</SlideInAnimation>
+<SlideInAnimation>
 <Box className='border-b  w-full lg:p-5 max-lg:pb-3 max-lg:pt-3 cursor-pointer'
 onClick={()=>{
   setAppState({
@@ -54,7 +58,9 @@ onClick={()=>{
   </div>
 
 </Box>
+</SlideInAnimation>
 
+<SlideInAnimation>
 <Box className='border-b  w-full lg:p-5 max-lg:pb-3 max-lg:pt-3 cursor-pointer' >
   <div className='flex justify-between  items-center lg:w-[90%]  font-light lg:text-lg '
   onClick={()=>{
@@ -73,6 +79,7 @@ onClick={()=>{
 
 </Box>
 
+</SlideInAnimation>
 
 </Box>
     

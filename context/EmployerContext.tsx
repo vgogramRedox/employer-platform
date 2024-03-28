@@ -2,6 +2,7 @@
 import AddVideoModal from '@/app/components/Edit/AddVideoModal';
 // import VerifyAccountModal from '@/app/components/Edit/verifyAccountModal';
 import { PostJobModal } from '@/app/components/Employer/PostJobModal';
+import AddUserModal from '@/app/components/HomeComps/AddUserModal';
 import { Portal } from '@mantine/core';
 import { AnimatePresence,motion } from 'framer-motion';
 import dynamic from 'next/dynamic';
@@ -12,7 +13,7 @@ interface AppStateType {
   jobPostEmploymentType: 'Full-Time' | 'Contract' | undefined;
   jobWorkSettingType: 'Remote' | 'Hybrid' | 'On-site' | undefined;
   jobPostTitle: string;
-
+  addUser_mode:"add"|"edit"
   tags: any;
   jobPostDescription: any;
   jobPostLocation: string;
@@ -21,6 +22,8 @@ interface AppStateType {
   jobPostRenumerations: string;
   jobVidThumbNail: any;
   verifyAccStage:number
+  addUser_name:string
+  addUser_email:string
 }
 const VerifyAccountModal=dynamic(()=>import('@/app/components/Edit/verifyAccountModal'))
 
@@ -40,16 +43,20 @@ function EmployerContext({ children }: { children: React.ReactNode }) {
     jobPostEmploymentType: undefined,
     jobWorkSettingType: undefined,
     jobVidThumbNail: null,
-    verifyAccStage:1
+    verifyAccStage:1,
+    addUser_name:"",
+    addUser_email:"",
+    addUser_mode:"edit"
   });
   const [postJobModalOpened, setPostJobModalOpened] = useState(false);
   const [addVideoModalOpened, setAddVideoModalOpened] = useState(false);
+  const[addUserModalOpened,setAddUserModalOpened]= useState(false);
   const[verifyModalOpened,setVerifyModalOpened]=useState(false)
   return (
     <UserContext.Provider
       //@ts-ignore
       value={{ appState, setAppState, postJobModalOpened, setPostJobModalOpened,addVideoModalOpened, setAddVideoModalOpened,
-        verifyModalOpened,setVerifyModalOpened
+        verifyModalOpened,setVerifyModalOpened,addUserModalOpened,setAddUserModalOpened
       }}
     >
       {children}
@@ -95,6 +102,23 @@ close={()=>{
 )
 
 }
+
+{addUserModalOpened&&(
+  <Portal>
+
+    <AddUserModal
+    opened={addUserModalOpened}
+    open={open}
+    close={()=>{
+      setAddUserModalOpened(false)
+    }}
+    />
+
+  </Portal>
+)
+
+}
+
 
     </UserContext.Provider>
   );

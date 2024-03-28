@@ -15,7 +15,7 @@ function PrimaryButton({title,variant,className,onClick,fullWidth=true,p,radius=
   return (
    <Button variant={variant}  fullWidth={fullWidth} radius={radius} p={p}
    onClick={onClick}
-   className={`${className} transition-all duration-200`}>
+   className={`${className}  hover:scale-110 transition-all duration-200`}>
 {title}
    </Button>
   )

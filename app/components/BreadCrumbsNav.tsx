@@ -16,7 +16,7 @@ export default function BreadCrumbsNav({
   const pathName= usePathname()
 
     const linksCrumb =items?.map((item, index) => (
-        <Anchor href={item.href} key={index} className={`${item?.href==pathName?"text-[#162170]":"text-dark" }  `}
+        <Anchor href={item.href} key={index} className={`${item?.href==pathName?" text-dark":"text-[#162170]" }  `}
         >
           {item.title}
         </Anchor>

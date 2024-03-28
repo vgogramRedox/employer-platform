@@ -1,19 +1,18 @@
-import { useDisclosure, useLocalStorage } from '@mantine/hooks';
-import { Modal, Button, Box, Text, Group, Image } from '@mantine/core';
-import { Dispatch, SetStateAction, useContext, useState } from 'react';
-import PrimaryButton from '../Button';
-import Input from '../Input';
-import TextArea from '../TextArea';
+import {  useLocalStorage } from '@mantine/hooks';
+import { Modal,  Box, Text, Group, Image } from '@mantine/core';
+import {useContext,  } from 'react';
+
+
 import { BadgeComp } from '../BadgeComp';
-import { EmploymentType, WorkSettingType } from '@/types/app';
+
 import { DropZone } from '../DropZone';
-import MultiSelectComp from '../MultiSelectComp'
+
 import { IconEdit } from '@tabler/icons-react';
 import { UserContext } from '@/context/EmployerContext';
 import { VidThumbNail } from './VidThumbNail';
 import { IconPlayerPlay } from '@tabler/icons-react';
 import { generateVideoThumbnails } from "@rajesh896/video-thumbnails-generator";
-
+import {motion} from "framer-motion"
 
 interface SetterType{
     setter:React.ReactNode
@@ -94,6 +93,14 @@ function PostJobStage2({setter}:SetterType) {
             <Modal.CloseButton className="absolute lg:top-[8%] lg:left-[97%] max-lg:left-[90%]" />
           </Modal.Header>
           <Modal.Body >
+          <motion.div 
+initial={{opacity:0,x:-10}}
+animate={{scale:1,opacity:1,x:1}}
+transition={{
+duration:0.3,
+delay:0.3
+}}
+>
           <Box className="lg:p-10 ">
 
             {postVideoMode&&(
@@ -177,7 +184,7 @@ function PostJobStage2({setter}:SetterType) {
           
 {setter}
             </Box>
-            
+            </motion.div>  
           </Modal.Body>
         </Modal.Content>
   </>

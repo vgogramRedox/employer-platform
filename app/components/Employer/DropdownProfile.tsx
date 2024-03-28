@@ -1,7 +1,10 @@
-import { Menu, Button, rem, Text, px, Drawer, Divider } from '@mantine/core';
+import { UserContext } from '@/context/EmployerContext';
+import { Menu, Button, rem, Text, px, Drawer, Divider, Box } from '@mantine/core';
 import { IconArrowLeft, IconBell, IconCheck, IconChevronDown, IconHelp, IconSettings, IconUsers } from '@tabler/icons-react';
 
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { useContext } from 'react';
 import { isMobile } from 'react-device-detect';
 
 interface DropDownProps {
@@ -12,7 +15,8 @@ export default function DropDownProfile({ dropDownIcon }: DropDownProps) {
   //  return   px(val)
   // }
   const width = px('37.875rem');
-  
+  const router= useRouter()
+  const {setVerifyModalOpened}=useContext(UserContext)
   // console.log(width)
   return (
     <Menu
@@ -44,8 +48,13 @@ export default function DropDownProfile({ dropDownIcon }: DropDownProps) {
             className="   border-t-grey-1 border"
             leftSection
             component="a"
-            href=""
+            href="/employer/home/teams"
             target=""
+onClick={(e)=>{
+e.preventDefault()
+  router.push("/employer/home/teams")
+}}
+
           >
             <div className="flex gap-x-2 items-center ">
               <IconUsers
@@ -55,7 +64,7 @@ export default function DropDownProfile({ dropDownIcon }: DropDownProps) {
               <p className="text-grey-3 font-light max-md:text-sm">
                Team Management
               </p>{' '}
-              <p className="max-lg:hidden text-[0.75rem] font-normal text-grey-3">3 mins ago</p>
+              {/* <p className="max-lg:hidden text-[0.75rem] font-normal text-grey-3">3 mins ago</p> */}
             </div>
         
           </Menu.Item>
@@ -67,6 +76,9 @@ export default function DropDownProfile({ dropDownIcon }: DropDownProps) {
             component="a"
             href=""
             target=""
+            onClick={(e)=>{
+              setVerifyModalOpened(true)
+              }}
           >
             <div className="flex gap-x-2 items-center ">
               <IconCheck
@@ -76,7 +88,7 @@ export default function DropDownProfile({ dropDownIcon }: DropDownProps) {
               <p className="text-grey-3 font-light max-md:text-sm">
                Account Verification
               </p>{' '}
-              <p className="max-lg:hidden text-[0.75rem] font-normal text-grey-3">3 mins ago</p>
+              {/* <p className="max-lg:hidden text-[0.75rem] font-normal text-grey-3">3 mins ago</p> */}
             </div>
           </Menu.Item>
           <Divider/>
@@ -96,7 +108,7 @@ export default function DropDownProfile({ dropDownIcon }: DropDownProps) {
               <p className="text-grey-3 font-light max-md:text-sm">
             Settings
               </p>{' '}
-              <p className="max-lg:hidden text-[0.75rem] font-normal text-grey-3">3 mins ago</p>
+              {/* <p className="max-lg:hidden text-[0.75rem] font-normal text-grey-3">3 mins ago</p> */}
             </div>
           </Menu.Item>
           <Divider/>
@@ -116,7 +128,7 @@ export default function DropDownProfile({ dropDownIcon }: DropDownProps) {
               <p className="text-grey-3 font-light max-md:text-sm">
               Help Center
               </p>{' '}
-              <p className="max-lg:hidden text-[0.75rem] font-normal text-grey-3">3 mins ago</p>
+              {/* <p className="max-lg:hidden text-[0.75rem] font-normal text-grey-3">3 mins ago</p> */}
             </div>
           </Menu.Item>
           <Divider/>
@@ -129,14 +141,16 @@ export default function DropDownProfile({ dropDownIcon }: DropDownProps) {
             target=""
           >
             <div className="flex gap-x-2 items-center ">
-              <IconArrowLeft
+              <Box className='flex items-center justify-center'>  <IconArrowLeft
                 style={{ width: rem(20.5), height: rem(20) }}
                 className="max-lg:w-11  max-lg:h-20 "
-              /> |
+              /> |</Box>
+            
+
               <p className="text-grey-3 font-light max-md:text-sm">
               logout
               </p>{' '}
-              <p className="max-lg:hidden text-[0.75rem] font-normal text-grey-3">3 mins ago</p>
+              {/* <p className="max-lg:hidden text-[0.75rem] font-normal text-grey-3">3 mins ago</p> */}
             </div>
           </Menu.Item>
         </Menu.Dropdown>

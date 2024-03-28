@@ -9,7 +9,7 @@ import { DropZone } from '../DropZone';
 import MultiSelectComp from '../MultiSelectComp';
 import { UserContext } from '@/context/EmployerContext';
 import { useMediaQuery, useScrollIntoView } from '@mantine/hooks';
-
+import {motion} from 'framer-motion'
 interface SetterType {
   setter: React.ReactNode;
 }
@@ -145,99 +145,110 @@ function PostJobStage1({ setter }: SetterType) {
           <Modal.CloseButton className="absolute lg:top-[8%] lg:left-[97%] max-lg:left-[90%] max-lg:top-1" />
         </Modal.Header>
         <Modal.Body>
-          <Box className="lg:p-10">
-            <Input
-              label="Job Title"
-              placeholder="Enter Job Title"
-              value={jobPostTitle}
-              onChange={(e: any) => {
-                setAppState({
-                  ...appState,
-                  jobPostTitle: e.target.value,
-                });
-              }}
-            />
+        <motion.div 
+initial={{opacity:0,x:-10}}
+animate={{scale:1,opacity:1,x:1}}
+transition={{
+duration:0.4,
+delay:0.3
+}}
+>
+<Box className="lg:p-10">
 
-            {postVideoMode && (
-              <Group className="block">
-                <Text
-                  className="mt-5 text-lg"
-                  //  @ts-ignore
-                  ref={targetRef}
-                >
-                  {' '}
-                  Upload Video
-                </Text>
-                <Text className="mt-1 font-light max-lg:text-sm max-lg:leading-7">
-                  {' '}
-                  Upload a video describing the job position in full detail. Be sure to include
-                  important details such as remuneration.
-                </Text>
-                <div className="cursor-pointer border border-dashed">
-                  <DropZone />
-                </div>
-              </Group>
-            )}
-            <TextArea
-              className="mt-1"
-              label="Job Description"
-              value={jobPostDescription}
-              onChange={(e: any) => {
-                setAppState({
-                  ...appState,
-                  jobPostDescription: e.target.value,
-                });
-              }}
-              placeholder="Describe the job position in full details"
-            />
-            <Text className="mt-5"> Employment Type</Text>
-            <Group className="flex gap-5 flex-row mt-2.5">{ET}</Group>
-            <Text className="mt-5"> Employment Type</Text>
-            <Group className="flex gap-5 flex-row mt-5 mb-5">{WORKSET}</Group>
+<Input
+  label="Job Title"
+  placeholder="Enter Job Title"
+  value={jobPostTitle}
+  onChange={(e: any) => {
+    setAppState({
+      ...appState,
+      jobPostTitle: e.target.value,
+    });
+  }}
+/>
 
-            <Input
-              label="Location"
-              placeholder="Enter Job Location"
-              className="mt-10 mb-20"
-              value={jobPostLocation}
-              onChange={(e: any) => {
-                setAppState({
-                  ...appState,
-                  jobPostLocation: e.target.value,
-                });
-              }}
-            />
-            <TextArea
-              className="mt-1 "
-              label="Requirements/Qualification"
-              placeholder="Enter Job Requirements/Qualifications"
-              value={jobPostRequirements}
-              onChange={(e: any) => {
-                setAppState({
-                  ...appState,
-                  jobPostRequirements: e.target.value,
-                });
-              }}
-            />
-            <Input
-              label="Renumerations"
-              value={jobPostRenumerations}
-              onChange={(e: any) => {
-                setAppState({
-                  ...appState,
-                  jobPostRenumerations: e.target.value,
-                });
-              }}
-              placeholder="Enter renumeration"
-              className="mt-5"
-            />
+{postVideoMode && (
+  <Group className="block">
+    <Text
+      className="mt-5 text-lg"
+      //  @ts-ignore
+      ref={targetRef}
+    >
+      {' '}
+      Upload Video
+    </Text>
+    <Text className="mt-1 font-light max-lg:text-sm max-lg:leading-7">
+      {' '}
+      Upload a video describing the job position in full detail. Be sure to include
+      important details such as remuneration.
+    </Text>
+    <div className="cursor-pointer border border-dashed">
+      <DropZone />
+    </div>
+  </Group>
+)}
+<TextArea
+  className="mt-1"
+  label="Job Description"
+  value={jobPostDescription}
+  onChange={(e: any) => {
+    setAppState({
+      ...appState,
+      jobPostDescription: e.target.value,
+    });
+  }}
+  placeholder="Describe the job position in full details"
+/>
+<Text className="mt-5"> Employment Type</Text>
+<Group className="flex gap-5 flex-row mt-2.5">{ET}</Group>
+<Text className="mt-5"> Employment Type</Text>
+<Group className="flex gap-5 flex-row mt-5 mb-5">{WORKSET}</Group>
 
-            <Text className="mt-5 text-lg"> Tags</Text>
-            <Text className="mt-1 font-light">Select up to 5 tags</Text>
-            <MultiSelectComp data={tags} />
+<Input
+  label="Location"
+  placeholder="Enter Job Location"
+  className="mt-10 mb-20"
+  value={jobPostLocation}
+  onChange={(e: any) => {
+    setAppState({
+      ...appState,
+      jobPostLocation: e.target.value,
+    });
+  }}
+/>
+<TextArea
+  className="mt-1 "
+  label="Requirements/Qualification"
+  placeholder="Enter Job Requirements/Qualifications"
+  value={jobPostRequirements}
+  onChange={(e: any) => {
+    setAppState({
+      ...appState,
+      jobPostRequirements: e.target.value,
+    });
+  }}
+/>
+<Input
+  label="Renumerations"
+  value={jobPostRenumerations}
+  onChange={(e: any) => {
+    setAppState({
+      ...appState,
+      jobPostRenumerations: e.target.value,
+    });
+  }}
+  placeholder="Enter renumeration"
+  className="mt-5"
+/>
 
-            {setter}
-          </Box>
+<Text className="mt-5 text-lg"> Tags</Text>
+<Text className="mt-1 font-light">Select up to 5 tags</Text>
+<MultiSelectComp data={tags} />
+
+{setter}
+</Box>
+</motion.div>
+         
         </Modal.Body>
       </Modal.Content>
     </>

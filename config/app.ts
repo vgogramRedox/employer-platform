@@ -26,12 +26,14 @@ export const appConfig = {
    " grey-6":"#F4F5F8",
    "grey-7":"#F6F7FC",
 "light-blue":"#C2CFD6",
+"success-100":"#125309",
     "primary-blue":"#3B4BC1",
     'primary-blue-2':"#515FC8",
     "purple-100":"#D3D7F180",
     "purple-200":"#D3D7F136",
     "sun-100":"#FBF0D0",
-    "sun-200":"#F9DA9A"
-    
+    "sun-200":"#F9DA9A",
+    "pink-100":"#FFE6E4",
+    "pink-200":"#841F17"
   },
 };
