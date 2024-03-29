@@ -23,8 +23,9 @@ export const appConfig = {
     "grey-3":"#7E8494",
     "grey-4":"#BDC0CE",
     "grey-5":"#A8AFE3",
-   " grey-6":"#F4F5F8",
+   "grey-6":"#F4F5F8",
    "grey-7":"#F6F7FC",
+   "grey-8":"#E5E7EF",
 "light-blue":"#C2CFD6",
 "success-100":"#125309",
     "primary-blue":"#3B4BC1",
@@ -34,6 +35,7 @@ export const appConfig = {
     "sun-100":"#FBF0D0",
     "sun-200":"#F9DA9A",
     "pink-100":"#FFE6E4",
-    "pink-200":"#841F17"
+    "pink-200":"#841F17",
+    "link-blue":"#6500FF"
   },
 };

@@ -7,16 +7,18 @@ interface LinkProps{
 }
 interface BreadcrumbsNavProp{
   items:LinkProps[]
+  className?:string
 }
 export default function BreadCrumbsNav({
-  items
+  items,
+  className
 }:BreadcrumbsNavProp) {
 
   
   const pathName= usePathname()
 
     const linksCrumb =items?.map((item, index) => (
-        <Anchor href={item.href} key={index} className={`${item?.href==pathName?" text-dark":"text-[#162170]" }  `}
+        <Anchor href={item.href} key={index} className={`capitalize font-light ${item?.href==pathName?" text-dark-100":"text-link-blue  " }  `}
         >
           {item.title}
         </Anchor>
@@ -25,7 +27,7 @@ export default function BreadCrumbsNav({
   return (
     <>
       
-      <Breadcrumbs separator=">" separatorMargin="md"  className='lg:w-[90%] max-lg:hidden max-lg:w-full mx-auto max-lg:text-lg max-lg:p-4'>
+      <Breadcrumbs separator=">" separatorMargin="md"  className={`${className} lg:w-[90%] max-lg:hidden max-lg:w-full mx-auto max-lg:text-lg max-lg:p-4 ms-0`}>
         {linksCrumb}
       </Breadcrumbs>
     </>

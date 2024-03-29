@@ -14,11 +14,11 @@ function page() {
   const links = [
     {
       title: 'Account',
-      href: '/employer/home/account',
+      href: '/employer/account',
     },
     {
       title: 'Teams',
-      href: '/employer/home/teams',
+      href: '/employer/teams',
     },
   ];
  const {addUserModalOpened, setAddUserModalOpened} = useContext(UserContext);

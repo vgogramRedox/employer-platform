@@ -10,19 +10,24 @@ interface ListType{
  data:  ListType[],
  className?:string
  label:string
+ txtColor?:string
+ width?:string
   }
 
 export default function SelectComp({
   data,
   className,
-  label
+  label,
+  txtColor="#010101",
+  width
 }:SelectProp) {
   const [value, setValue] = useState<ComboboxItem | null>(null);
   return (
     <Box>
-      <Text className='text-[#010101] text-xl max-md:text-sm  mb-2.5'>{label}</Text>
+      <Text className={`text-[${txtColor}] text-xl max-md:text-sm font-light  mb-2.5`}>{label}</Text>
       <Select
-    className={`${className} text-3xl min-h-[3.25rem]`}
+      
+    className={`${className} text-3xl min-h-[3.25rem]  ${width} text-[${txtColor}] `}
     rightSection={<IconChevronDown/>}
  
  
