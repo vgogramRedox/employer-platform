@@ -2,90 +2,83 @@ import { Box, Group, Switch, Text } from '@mantine/core'
 import React, { useState } from 'react'
 import SelectComp from '../Edit/SelectComp'
 import SlideInAnimation from '@/context/Motion'
+import { useMediaQuery } from '@mantine/hooks'
 
 function NotificationsTab() {
 
 const [checked,setChecked]=useState<boolean>()
-    
+const breakpoint = useMediaQuery('(min-width: 56.25em)');
+
   return (
    <Box>
     <SlideInAnimation>
-    <Box>
-<Text className="border-b p-1 text-[1.2rem] text-dark-100 font-bold mb-5">
+    <Box className="max-lg:border max-lg:rounded max-lg:p-2 max-lg:text-sm max-lg:min-h-[15.6875rem] max-lg:mt-5 ">
+<Text className="border-b p-1 lg:text-[1.2rem] text-dark-100 font-bold mb-5">
    Email Notifications
 </Text>
 
 <Box>
-    <Group className='flex gap-x-12 text-dark-100'>
+    <Group className='flex lg:gap-x-12 max-md:gap-x-2  max-lg:justify-between  text-dark-100'>
     <Switch
-          size="lg"
-          className="max-lg:hidden"
+             size= {breakpoint?"lg":'sm'}
+          className=" max-lg:w-[10%] "
           color="blue.9"
           checked={checked}
           onChange={(e)=>setChecked(e.currentTarget.checked)}
         />
 
-        <Box>
-            <Text className=' text-xl'>
+        <Box   className=" max-lg:w-[80%] max-lg:mx-auto">
+            <Text className=' lg:text-xl'>
                 News and Updates
             </Text>
-            <Text className='font-light text-lg'>
+            <Text className='font-light lg:text-lg max-lg:text-xs max-lg:w-full'>
             Get notified about new features and updates
             </Text>
         </Box>
     </Group>
-    <Group className='flex gap-x-12 text-dark-100 mt-6'>
+    <Group className='flex lg:gap-x-12 max-md:gap-x-2  max-lg:justify-between  text-dark-100'>
     <Switch
-          size="lg"
-          className="max-lg:hidden"
+             size= {breakpoint?"lg":'sm'}
+          className=" max-lg:w-[10%] "
           color="blue.9"
           checked={checked}
           onChange={(e)=>setChecked(e.currentTarget.checked)}
         />
 
-        <Box>
-            <Text className=' text-xl'>
-                Weekly Newsletter
+        <Box   className=" max-lg:w-[80%] max-lg:mx-auto">
+            <Text className=' lg:text-xl'>
+            Weekly Newsletter
             </Text>
-            <Text className='font-light text-lg'>
-            Subscribe to our weekly insights.
+            <Text className='font-light lg:text-lg max-lg:text-xs max-lg:w-full'>
+            Subscribe to our weekly newsletter
             </Text>
         </Box>
     </Group>
 </Box>
    </Box>
 
-   <Box>
-<Text className="border-b p-1 text-[1.2rem] text-dark-100 font-bold mb-5 mt-[1rem]">
+   <Box className="max-lg:border max-lg:rounded max-lg:p-2 max-lg:text-sm max-lg:min-h-[15.6875rem] max-lg:mt-5 ">
+<Text className="border-b p-1 lg:text-[1.2rem] text-dark-100 font-bold mb-5 mt-[1rem]">
     Push Notifications
 </Text>
 
 <Box>
-<Group className='flex gap-x-12 text-dark-100'>
-    
-
-        <Box>
-         
-            <Group className='flex gap-x-12 text-dark-100'>
+<Group className='flex lg:gap-x-12 max-md:gap-x-2  max-lg:justify-between  text-dark-100'>
     <Switch
-          size="lg"
-          className="max-lg:hidden"
+             size= {breakpoint?"lg":'sm'}
+          className=" max-lg:w-[10%] "
           color="blue.9"
           checked={checked}
           onChange={(e)=>setChecked(e.currentTarget.checked)}
         />
 
-        <Box>
-            <Text className=' text-xl'>
-            Job Applications
+        <Box   className=" max-lg:w-[80%] max-lg:mx-auto">
+            <Text className=' lg:text-xl'>
+            Shift Bookings
             </Text>
-            <Text className='font-light text-lg'>
-            Get notified when a jobseeker applies for a job
+            <Text className='font-light lg:text-lg max-lg:text-xs max-lg:w-full'>
+            Subscribe to our weekly newsletter
             </Text>
-        </Box>
-    </Group>
-            
-          
         </Box>
     </Group>
 </Box>

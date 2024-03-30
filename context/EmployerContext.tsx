@@ -3,6 +3,7 @@ import AddVideoModal from '@/app/components/Edit/AddVideoModal';
 // import VerifyAccountModal from '@/app/components/Edit/verifyAccountModal';
 import { PostJobModal } from '@/app/components/Employer/PostJobModal';
 import AddUserModal from '@/app/components/HomeComps/AddUserModal';
+import EditPasswordModal from '@/app/components/HomeComps/EditPasswordModal';
 import { Portal } from '@mantine/core';
 import { AnimatePresence,motion } from 'framer-motion';
 import dynamic from 'next/dynamic';
@@ -48,15 +49,16 @@ function EmployerContext({ children }: { children: React.ReactNode }) {
     addUser_email:"",
     addUser_mode:"edit"
   });
-  const [postJobModalOpened, setPostJobModalOpened] = useState(false);
-  const [addVideoModalOpened, setAddVideoModalOpened] = useState(false);
-  const[addUserModalOpened,setAddUserModalOpened]= useState(false);
-  const[verifyModalOpened,setVerifyModalOpened]=useState(false)
+  const [postJobModalOpened, setPostJobModalOpened] = useState<boolean>(false);
+  const [addVideoModalOpened, setAddVideoModalOpened] = useState<boolean>(false);
+  const[addUserModalOpened,setAddUserModalOpened]= useState<boolean>(false);
+  const[verifyModalOpened,setVerifyModalOpened]=useState<boolean>(false)
+  const [editPasswordModalOpened,setEditPasswordModalOpened]=useState<boolean>(false)
   return (
     <UserContext.Provider
       //@ts-ignore
       value={{ appState, setAppState, postJobModalOpened, setPostJobModalOpened,addVideoModalOpened, setAddVideoModalOpened,
-        verifyModalOpened,setVerifyModalOpened,addUserModalOpened,setAddUserModalOpened
+        verifyModalOpened,setVerifyModalOpened,addUserModalOpened,setAddUserModalOpened,editPasswordModalOpened,setEditPasswordModalOpened
       }}
     >
       {children}
@@ -111,6 +113,22 @@ close={()=>{
     open={open}
     close={()=>{
       setAddUserModalOpened(false)
+    }}
+    />
+
+  </Portal>
+)
+
+}
+
+{editPasswordModalOpened&&(
+  <Portal>
+
+    <EditPasswordModal
+    opened={editPasswordModalOpened}
+    open={open}
+    close={()=>{
+      setEditPasswordModalOpened(false)
     }}
     />
 

@@ -16,7 +16,7 @@ export interface addVideoModalType {
   open: () => void;
   close: Dispatch<SetStateAction<boolean>> | any;
 }
-function AddUserModal({ opened, open, close }: addVideoModalType) {
+function EditPasswordModal({ opened, open, close }: addVideoModalType) {
   const { scrollIntoView, targetRef, scrollableRef } = useScrollIntoView();
 
   // const [postVideoMode,setPostVideoMode]=useState<boolean>(false)
@@ -89,8 +89,8 @@ delay:0.3
 >
               <Input 
                 className="mt-7 text-lg"
-                label=" Full Name"
-                placeholder="Enter Full Name"
+                label=" Old password"
+                placeholder="Enter old password"
                 value={addUser_name}
                 onChange={(e: any) => {
                   setAppState({
@@ -111,8 +111,22 @@ delay:0.5
 
 <Input
                 className="mt-7"
-                label=" Email"
-                placeholder="Enter Email "
+                label=" New Password"
+                placeholder="Enter new password "
+                value={addUser_email}
+                onChange={(e: any) => {
+                  setAppState({
+                    ...appState,
+                    addUser_email: e.target.value,
+                  });
+                }}
+              />
+
+              
+<Input
+                className="mt-7"
+                label=" Confirm Password"
+                placeholder="Re-enter new password "
                 value={addUser_email}
                 onChange={(e: any) => {
                   setAppState({
@@ -123,7 +137,7 @@ delay:0.5
               />
 </motion.div>
               
-              <Text className="font-bold">Access Level</Text>
+              
               
               <motion.div 
 initial={{opacity:0,x:-10}}
@@ -133,41 +147,7 @@ duration:0.75,
 delay:0.5
 }}
 >
-<Box className="flex gap-x-5 mt-5">
-                <Box className='gap-y-12 flex-col flex'>
-                  {checkArr?.map((check) => (
-                   
-                      <Radio
-                        checked={checked === check.id}
-                        onChange={(event) => {
-                          setChecked(check.id);
-                        }}
-                      />
-                   
-                  ))}
-                </Box>
-                <Group className='flex-col gap-y-5'>
-                  <Box>
-                    <Text className="font-bold">Administrator</Text>
-                    <Text className="font-light text-[#565C69]">
-                      *Administrators have full access to all features
-                    </Text>
-                  </Box>
 
-                  <Box>
-                    <Text className="font-bold">Standard</Text>
-                    <Text className="font-light text-[#565C69]">
-                      *Administrators have full access to all features
-                    </Text>
-                    <Text className="font-light text-[#565C69]">
-                      *Approve and Review Candidates
-                    </Text>
-                    <Text className="font-light text-[#565C69]">
-                      *Cannot change passwords or make Admin changes
-                    </Text>
-                  </Box>
-                </Group>
-              </Box>
 
 </motion.div>
               <Group className="flex  flex-row  lg:w-full  justify-end  max-lg:justify-center max-lg:gap-x-2 max-lg:p-0 mt-20">
@@ -196,7 +176,7 @@ delay:0.5
                   className="bg-primary-blue border lg:w-60  max-lg:font-normal max-lg:hidden  "
                   title={
                     
-                    addUser_mode=="add"?"  Add User":"Edit User"}
+                   'Update'}
                   //   onClick={() => {
                   //    setvid({
                   //  ...
@@ -231,4 +211,4 @@ delay:0.5
   );
 }
 
-export default AddUserModal;
+export default EditPasswordModal;

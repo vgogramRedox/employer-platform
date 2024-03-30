@@ -52,7 +52,7 @@ export default function DropDownProfile({ dropDownIcon }: DropDownProps) {
             target=""
 onClick={(e)=>{
 e.preventDefault()
-  router.push("/employer/home/teams")
+  router.push("/employer/teams")
 }}
 
           >
@@ -99,6 +99,10 @@ e.preventDefault()
             component="a"
             href=""
             target=""
+            onClick={(e)=>{
+e.preventDefault()
+router.push("/employer/settings")
+            }}
           >
             <div className="flex gap-x-2 items-center ">
               <IconSettings
@@ -119,6 +123,10 @@ e.preventDefault()
             component="a"
             href=""
             target=""
+            onClick={(e)=>{
+              e.preventDefault()
+              router.push("/employer/settings")
+                          }}
           >
             <div className="flex gap-x-2 items-center ">
               <IconHelp
