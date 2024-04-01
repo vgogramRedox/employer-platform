@@ -1,11 +1,15 @@
+"usse client"
 import { UserContext } from '@/context/EmployerContext';
-import { Menu, Button, rem, Text, px, Drawer, Divider, Box } from '@mantine/core';
+import SlideInAnimation from '@/context/Motion';
+import { Menu, Button, rem, Text, px, Drawer, Divider, Box, Group, Portal } from '@mantine/core';
 import { IconArrowLeft, IconBell, IconCheck, IconChevronDown, IconHelp, IconSettings, IconUsers } from '@tabler/icons-react';
 
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { isMobile } from 'react-device-detect';
+import PrimaryButton from '../Button';
+import { SmallModal } from '../SmallModal';
 
 interface DropDownProps {
   dropDownIcon?: React.ReactNode;
@@ -17,8 +21,70 @@ export default function DropDownProfile({ dropDownIcon }: DropDownProps) {
   const width = px('37.875rem');
   const router= useRouter()
   const {setVerifyModalOpened}=useContext(UserContext)
+  const [confirmModal, setConfirmModal] = useState<boolean>(false);
   // console.log(width)
   return (
+
+    <>
+    
+    {
+    confirmModal && (
+      <Portal>
+        <SmallModal
+          opened={confirmModal}
+          open={open}
+          close={() => {
+            setConfirmModal(false);
+          }}
+          header={<Text className="font-bold text-2xl">Logout?</Text>}
+          content={
+            <Text className="font-light mt-[5%] text-lg">
+              Are you sure you want to Log out of your account?
+            </Text>
+          }
+          footer={
+            <>
+            <Group className='flex gap-x-6 mt-[20%] mb-[10%]'>
+
+            <SlideInAnimation>
+                <PrimaryButton
+                  p="sm"
+                  fullWidth={false}
+                  onClick={() => {
+                    // setAppState({
+                    //   ...appState,jobPostStage:1
+                    //  })
+                   setConfirmModal(false)
+                  }}
+                  className="bg-white border border-grey-4 lg:w-[10rem] lg:h-[3rem]  hover:border-dotted text-dark max-lg:w-[40%] max-lg:font-normal max-lg:hidden  "
+                  title="Cancel"
+                />
+              </SlideInAnimation>
+
+              <SlideInAnimation>
+                <PrimaryButton
+                  p="xs"
+                  fullWidth={false}
+                  className="bg-red-700 border lg:w-[10rem] max-lg:w-full lg:h-[3rem] max-lg:font-normal  "
+                  title={'Logout'}
+                  //   onClick={() => {
+                  //    setvid({
+                  //  ...
+                  //    })
+
+                  //   }}
+                />
+              </SlideInAnimation>
+            </Group>
+              
+            </>
+          }
+          
+        />
+      </Portal>
+    )
+  }
+  
     <Menu
       trigger="click-hover"
       openDelay={100}
@@ -125,7 +191,7 @@ router.push("/employer/settings")
             target=""
             onClick={(e)=>{
               e.preventDefault()
-              router.push("/employer/settings")
+              router.push("/help-center")
                           }}
           >
             <div className="flex gap-x-2 items-center ">
@@ -147,6 +213,10 @@ router.push("/employer/settings")
             component="a"
             href=""
             target=""
+            onClick={(e)=>{
+              e.preventDefault()
+              setConfirmModal(true)
+            }}
           >
             <div className="flex gap-x-2 items-center ">
               <Box className='flex items-center justify-center'>  <IconArrowLeft
@@ -164,5 +234,6 @@ router.push("/employer/settings")
         </Menu.Dropdown>
       
     </Menu>
+    </>
   );
 }
