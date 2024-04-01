@@ -1,6 +1,6 @@
 "use client"
 import { BackgroundImage, Box, Center, Image } from '@mantine/core';
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import Input from '../components/Input';
 import CheckboxComp from '../components/Checkbox';
 import PrimaryButton from '../components/Button';
@@ -11,6 +11,10 @@ import SignUpSelector from '../components/SignUpSelector';
 import SignUp from '../components/SignUp';
 import useIsMobile from '@/hooks/useIsMobile';
 import { useRouter } from 'next/navigation';
+// import { UserAuth } from '@/context/AuthContext';
+import { UserContext } from '@/context/EmployerContext';
+import { AuthContext } from '@/context/AuthContext';
+
 const getStage=(stage:number)=>{
   switch(stage){
 case 1:
@@ -25,11 +29,23 @@ case 1:
 
 function page() {
   const [stage,setStage]=useState<number>(1)
+  // @ts-ignore
+  const {user,googleLogOut,googleSignIn,}=useContext(AuthContext)
+  console.log(user)
   const isMobile=useIsMobile()
   // console.log(isMobile)
   const router=useRouter()
 
-
+const handleGoogleSignIn=async()=>{
+  console.log("test")
+  try{
+    await googleSignIn()
+    
+  }
+  catch(err){
+    console.log(err)
+  }
+}
   return(
 
     <div className="flex min-h-screen">
@@ -86,12 +102,15 @@ function page() {
 <PrimaryButton title="Sign Up" className="bg-primary-blue  mt-10" />
 <p className="text-dark font-medium text-lg text-center mt-3">Or</p>
 <PrimaryButton
+onClick={()=>{
+  handleGoogleSignIn()
+}}
   title={
     <div className="flex justify-center gap-x-3 items-center">
       <Image src="/svgs/googleIcon.svg" w={24} h={24} /> Sign Up With Google
     </div>
   }
-  variant="Outline"
+ 
   className="text-primary-blue border mt-3
 hover:bg-primary-blue transition hover:text-white
 border-primary-blue bg-white "

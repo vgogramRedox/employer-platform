@@ -1,15 +1,28 @@
 "use client"
 import { BackgroundImage, Box, Center, Image } from '@mantine/core';
-import React from 'react';
+import React, { useContext } from 'react';
 import Input from '../components/Input';
 import CheckboxComp from '../components/Checkbox';
 import PrimaryButton from '../components/Button';
 import Link from 'next/link';
 import { IconArrowLeft } from '@tabler/icons-react';
 import { useRouter } from 'next/navigation';
+import { AuthContext } from '@/context/AuthContext';
 
 function page() {
   const router=useRouter()
+  //@ts-ignore
+  const {user,googleSignIn}=useContext(AuthContext)
+  const handleGoogleSignIn=async()=>{
+    console.log("test")
+    try{
+      await googleSignIn()
+      
+    }
+    catch(err){
+      console.log(err)
+    }
+  }
   return (
     <div className="flex min-h-screen">
       <Box component="aside" className="lg:min-w-[18.25rem]  max-md:hidden">
@@ -35,6 +48,7 @@ function page() {
             <PrimaryButton title="Log In" className="bg-primary-blue  mt-10 border hover:border-primary-blue hover:bg-white focus:text-primary-blue hover:text-primary-blue" />
             <p className="text-dark font-medium text-lg text-center mt-3">Or</p>
             <PrimaryButton
+            onClick={handleGoogleSignIn}
               title={
                 <div className="flex justify-center gap-x-3 items-center">
                   <Image src="/svgs/googleIcon.svg" w={24} h={24} /> Log In With Google

@@ -11,6 +11,7 @@ import EmployerContext from '@/context/EmployerContext';
 import { nprogress, NavigationProgress } from '@mantine/nprogress';
 import '@mantine/notifications/styles.css';
 import { Notifications } from '@mantine/notifications';
+import {  AuthContextProvider } from '@/context/AuthContext';
 
 
 const font = Work_Sans({ subsets: ['latin'] });
@@ -24,19 +25,25 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html data-mantine-color-scheme="light" lang="en">
       <body className={` font-generalSans`}>
+       
         <MantineProvider
           //@ts-ignore
           withGlobalStyles
           withNormalizeCss
           theme={theme}
         >
+          <AuthContextProvider>
+          
             {/* <NavigationProgress /> */}
+          
             <Notifications />
           <EmployerContext>
           {children}
           </EmployerContext>
-          
+         
+          </AuthContextProvider>
         </MantineProvider>
+        
       </body>
     </html>
   );

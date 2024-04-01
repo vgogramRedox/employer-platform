@@ -7,7 +7,9 @@ import EditPasswordModal from '@/app/components/HomeComps/EditPasswordModal';
 import { Portal } from '@mantine/core';
 import { AnimatePresence,motion } from 'framer-motion';
 import dynamic from 'next/dynamic';
-import React, { createContext, useState } from 'react';
+import React, { createContext, useEffect, useState } from 'react';
+
+import { setUserAgent } from 'react-device-detect';
 interface AppStateType {
   postVideoMode: boolean | false;
   jobPostStage: number;
@@ -54,6 +56,9 @@ function EmployerContext({ children }: { children: React.ReactNode }) {
   const[addUserModalOpened,setAddUserModalOpened]= useState<boolean>(false);
   const[verifyModalOpened,setVerifyModalOpened]=useState<boolean>(false)
   const [editPasswordModalOpened,setEditPasswordModalOpened]=useState<boolean>(false)
+
+
+ 
   return (
     <UserContext.Provider
       //@ts-ignore

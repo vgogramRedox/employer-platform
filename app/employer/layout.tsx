@@ -6,6 +6,7 @@ import { MobileFooter } from '../components/Employer/MobileFooter'
 import { isMobile } from 'react-device-detect'
 import { MobileHeader } from '../components/Employer/MobileHeader'
 import { headers } from 'next/headers'
+import { AuthContextProvider } from '@/context/AuthContext'
 
 
 
@@ -21,7 +22,7 @@ const domain = headersList.get('host') || "";
     // console.log(fullUrl);
     // console.log(fullUrl?.includes("/jobs/active-jobs"||`/jobs/`))
   return (
-    <>
+   <>
       
     <div className='lg:flex'>
       <div className='max-lg:hidden'>
@@ -49,8 +50,8 @@ const domain = headersList.get('host') || "";
 {
   isMobile&&( <MobileFooter/>)
 }
-
-    </>
+</>
+    
       
     
   )

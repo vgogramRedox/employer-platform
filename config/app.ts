@@ -26,6 +26,7 @@ export const appConfig = {
    "grey-6":"#F4F5F8",
    "grey-7":"#F6F7FC",
    "grey-8":"#E5E7EF",
+  "grey-9":"#EEEFF2",
 "light-blue":"#C2CFD6",
 "success-100":"#125309",
     "primary-blue":"#3B4BC1",

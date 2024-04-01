@@ -96,11 +96,11 @@ export function Header() {
 
     <a
       key="NBH2FHnIm0mvaJyI99i"
-      href=""
+      href="/employer/home/messages"
       className={classes.link}
       // data-active={active === link.link || undefined}
       onClick={(event) => {
-        event.preventDefault();
+        // event.preventDefault();
         // setActive(link.link);
       }}
     >
