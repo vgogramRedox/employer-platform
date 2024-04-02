@@ -61,7 +61,8 @@ const{addUser_mode}=appState
             <Modal.Title className="lg:flex justify-between max-lg:w-full lg:w-full lg:p-5 ">
               {/* large screen */}
               <Box className="max-lg:hidden flex justify-between w-full mt--1 ">
-                <Text className="font-bold text-dark text-2xl ">{addUser_mode=="add"?"add":"Edit"} User</Text>
+              <Text className="font-bold text-dark text-2xl ">Edit Password</Text>
+                {/* <Text className="font-bold text-dark text-2xl ">{addUser_mode=="add"?"add":"Edit"} Password</Text> */}
                 <Modal.CloseButton className=" max-lg:hidden " />
               </Box>
 

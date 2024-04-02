@@ -26,25 +26,27 @@ function page() {
       <p className="leading-[1.2rem] text-dark lg:text-2xl  font-semibold mt-20">
         Welcome {isMobile? "back":""}, Vincent
       </p>
-      <p className="leading-[1rem] text-dark font-normal text-lg  max-lg:mt-5 text-start mt-10">
+      <p className="leading-[1rem] text-dark font-normal text-[1rem] lg:font-light  max-lg:mt-5 text-start mt-10">
         Complete your profile
       </p>
       <div className="mt-5 relative ">
         <ProgressBar percent={40} className="w-[90%] max-lg:h-3 " />
 
-        <p className="text-primary-blue lg:text-5xl absolute  font-bold left-[93%] bottom-[15%]"> 32%</p>
+        <p className="text-primary-blue lg:text-[1.25rem] absolute  font-bold left-[93%] bottom-[15%]"> 32%</p>
       </div>
 
-      <Box className="lg:bg-sun-100 max-lg:bg-purple-100  max-lg:rounded lg:min-h-[14.375rem] flex max-lg:flex-col mt-10 max-lg:p-0 lg:p-4 ps-8 ">
+      <Box className="lg:bg-sun-100 max-lg:bg-purple-100  max-lg:rounded lg:min-h-[14.375rem] flex max-lg:flex-col 
+      lg:rounded
+      mt-10 max-lg:p-0  ">
 
-      <BackgroundImage src="/svgs/colorfulBgMobile.svg" className="ms-auto lg:hidden w-full h-10 rounded-t-lg">
+      <BackgroundImage src="/svgs/colorfulBgMobile.svg" className="ms-auto lg:hidden w-full h-10 rounded-t-lg ">
           {/* <Image src="/svgs/colorfulBgMobile.svg" className='h-[2.75931rem]'/> */}
         </BackgroundImage>
-        <section className='max-lg:p-6'>
-          <p className="leading-[1.2rem] text-dark  max-lg:text-[#070B25] lg:text-5xl font-semibold max-lg:mt-2 mt-20 max-lg:text-2xl">
+        <section className='max-lg:p-6 lg:ms-[2.7rem] lg:min-w-[24.625rem]'>
+          <p className="leading-[1.2rem] text-dark  max-lg:text-[#070B25] lg:text-[2rem] font-semibold max-lg:mt-2 mt-[2.19rem] max-lg:text-2xl">
             Create your first job post
           </p>
-          <p className="leading-[1rem] text-dark font-normal text-[1rem] max-lg:text-sm  text-start lg:mt-10 max-lg:mt-2">
+          <p className="lg:leading-[1.37rem] max-lg:leading-[1rem] text-dark  text-[1rem] max-lg:text-[1rem] font-light  text-start lg:mt-5 max-lg:mt-2">
           
           {isMobile?"Find the best talent on Vgogram!":"Find the best talent on Vgogram, create your first job post"}  
           </p>
@@ -54,7 +56,7 @@ function page() {
             onClick={()=>{
               setPostJobModalOpened(true)
             }}
-            className="bg-primary-blue rounded-3xl mt-5 mb-6"
+            className="bg-primary-blue rounded-3xl mt-5 mb-6 lg:min-w-[10rem]"
             title={<>Post a Job</>}
           />
         </section>
@@ -63,8 +65,8 @@ function page() {
           <Image src="/svgs/colorfulbg.svg" />
         </section>
       </Box>
-      <p className="leading-[1.2rem] text-dark lg:text-2xl font-semibold mt-10 ">Explore Talent</p>
-      <Box className="mt-20">
+      <p className="leading-[1.2rem] text-dark lg:text-2xl font-semibold mt-[4.94rem] ">Explore Talent</p>
+      <Box className="mt-5 mb-5 ">
         <div  className=" grid  lg:grid-cols-4 sm:grid-cols-2 md:grid-cols-3 gap-4">
           <VidThumbNail />
           <VidThumbNail />

@@ -22,22 +22,23 @@ const VidThumbNail = ({
 }: VidThumbNailType) => (
     <section className=" lg:max-w-[90%] ">
     <div
-      className={`mx-auto text-center ${
-        bg ? bg : 'bg-purple-200 '
-      } relative rounded-lg lg:min-w-[15.22888rem] max-lg:w-[90%] lg:gap-10 lg:min-h-[16.11313rem] flex-shrink  pt-3 ${className}`}
+      className={`mx-auto text-center  lg:pt-[1.61rem] ${bg?bg:"bg-purple-200 "} relative rounded-lg lg:min-w-[15.22888rem] max-lg:w-[10rem] lg:gap-10 lg:min-h-[16.11313rem] flex-shrink  pt-3 ${className}`}
     >
       <div className="max-lg:p-1">
      
             <IconBookmarkFilled
               onClick={onClickBookMark}
               size={10}
-              className="rounded-full p-2  w-11 h-11 max-lg:w-9  absolute  bottom-[80%] left-[80%] bg-white text-sm z-10"
+              className="rounded-full p-2  w-11 h-11 max-lg:w-9  absolute  left-[78%] lg:bottom-[78%]  bg-white text-sm z-10"
             />
          
 
         <BackgroundImage
           src="/svgs/thumbnail1.svg"
-          className="lg:max-w-[80%] h-[7.15rem] sm:max-w-[90%]  min-h-[7.15rem] pt-1  mx-auto rounded flex items-center justify-center"
+          className="lg:max-w-[80%] lg:min-h-[9.25rem]
+          hover:cursor-pointer focus-within:cursor-pointer
+          rounded-[0.625rem]
+          h-[7.15rem] max-lg:w-[80%]  min-h-[7.15rem] pt-1 max-lg:mt-[1.61rem]  mx-auto  flex items-center justify-center"
         >
           {/* <Image src={"/svgs/thumbnail1.svg"} className=" " /> */}
           <Image src="/svgs/playGreyBg.svg" w={30} className="absolute" />
@@ -54,7 +55,7 @@ const VidThumbNail = ({
       </div>
 
       <p className=" text-dark lg:text-lg font-normal mt-2 max-lg:text-sm">Tolu Ogunnipe</p>
-      <p className="max-lg:text-[0.7rem] lg:text-sm font-light  ">Product designer</p>
+      <p className="max-lg:text-[0.7rem] lg:text-sm font-light  pb-5">Product designer</p>
     </div>
   </section>
 );
@@ -95,16 +96,19 @@ function page() {
       </Group>
       </div>
         
-      <Box className="">
+      <Box className="lg:mt-10">
         <BreadCrumbsNav items={items} />
       </Box>
      
-      <Box className=" sm:mt-5 max-lg:p-4">
-      <Text className="leading-[1.2rem] text-dark   font-semibold   lg:hidden ">
+      <Box className=" sm:mt-5 max-lg:p-4 lg:mt-10">
+      <Text className="leading-[1.2rem] text-dark   font-semibold text-lg   max-lg:hidden ">
+           Saved Search
+        </Text>
+      <Text className="leading-[1.2rem] text-dark   font-bold   lg:hidden ">
           Explore Talent
         </Text>
         
-        <div className=" grid  lg:grid-cols-4 md:grid-cols-3 max-md:grid-cols-2 max-md:gap-y-4 md:gap-4  max-lg:mt-10">
+        <div className=" grid  lg:grid-cols-4 md:grid-cols-3 max-md:grid-cols-2 max-md:gap-y-4 md:gap-4  max-lg:mt-10 lg:mt-[1.88rem]">
           <Link href={''}>
             <VidThumbNail
               bookmarked={bookmarked}

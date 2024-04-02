@@ -37,9 +37,7 @@ const VidThumbNail = ({
 }: VidThumbNailType) => (
   <section className=" lg:max-w-[90%] ">
     <div
-      className={`mx-auto text-center ${
-        bg ? bg : 'bg-purple-200 '
-      } relative rounded-lg lg:min-w-[15.22888rem] max-lg:w-[90%] lg:gap-10 lg:min-h-[16.11313rem] flex-shrink  pt-3 ${className}`}
+      className={`mx-auto text-center  lg:pt-[1.61rem] ${bg?bg:"bg-purple-200 "} relative rounded-lg lg:min-w-[15.22888rem] max-lg:w-[10rem] lg:gap-10 lg:min-h-[16.11313rem] flex-shrink  pt-3 ${className}`}
     >
       <div className="max-lg:p-1">
         {
@@ -47,12 +45,12 @@ const VidThumbNail = ({
             <IconBookmarkFilled
               onClick={onClickBookMark}
               size={10}
-              className="rounded-full p-2  w-11 h-11 max-lg:w-9  absolute  bottom-[80%] left-[80%] bg-white text-sm z-10"
+              className="rounded-full p-2  w-11 h-11 max-lg:w-9  absolute  left-[78%] lg:bottom-[78%]  bg-white text-sm z-10"
             />
           ) : (
             <IconBookmark
               onClick={onClickBookMark}
-              className="rounded-full p-2  w-11 h-11 max-lg:w-9 max-lg:h-9   absolute left-[80%] lg:bottom-[84%] lg:left-[78%] bg-white  z-10"
+              className="rounded-full p-2  w-11 h-11 max-lg:w-9 max-lg:h-9   absolute left-[80%] lg:bottom-[78%] lg:left-[78%] bg-white  z-10"
             />
           )
           // <IconBookmarkOff size={10} className="rounded-full p-2 border w-14 h-14 absolute  bottom-[75%] left-[80%] bg-white text-sm z-10" />
@@ -60,7 +58,10 @@ const VidThumbNail = ({
 
         <BackgroundImage
           src="/svgs/thumbnail1.svg"
-          className="lg:max-w-[80%] h-[7.15rem] sm:max-w-[90%]  min-h-[7.15rem] pt-1  mx-auto rounded flex items-center justify-center"
+          className="lg:max-w-[80%] lg:min-h-[9.25rem]
+          hover:cursor-pointer focus-within:cursor-pointer
+          rounded-[0.625rem]
+          h-[7.15rem] max-lg:w-[80%]  min-h-[7.15rem] pt-1 max-lg:mt-[1.61rem]  mx-auto  flex items-center justify-center"
         >
           {/* <Image src={"/svgs/thumbnail1.svg"} className=" " /> */}
           <Image src="/svgs/playGreyBg.svg" w={30} className="absolute" />
@@ -90,7 +91,7 @@ function page() {
   const router = useRouter();
   const [bookmarked, setBookMarked] = useState(false);
   const toggleBookmark = () => {
-    // setBookMarked((prev) => !prev);
+    setBookMarked((prev) => !prev);
     // console.log(bookmarked);
   };
 
@@ -154,10 +155,10 @@ function page() {
           <Link href={''}>
             <VidThumbNail
               bookmarked={bookmarked}
-              //   onClickBookMark={() => {
-              //     // e.preventDefault();
-              //     toggleBookmark();
-              //   }}
+                onClickBookMark={() => {
+                  // e.preventDefault();
+                  toggleBookmark();
+                }}
             />
           </Link>
 
@@ -177,10 +178,14 @@ function page() {
           <VidThumbNail />
           <VidThumbNail />
           <VidThumbNail />
+          <VidThumbNail />
+          <VidThumbNail />
+          <VidThumbNail />
+          <VidThumbNail />
         </div>
       </Box>
 
-      <Box className=" mt-10 flex max-lg:p-4 mb-[50%] max-lg:w-[90%] max-ms-auto max-lg:hidden">
+      <Box className=" mt-10 flex max-lg:p-4 max-lg:[50%] lg:mb-10 max-lg:w-[90%] max-ms-auto max-lg:hidden">
         <Pagination
           total={10}
           color="primary"

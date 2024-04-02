@@ -127,7 +127,7 @@ e.preventDefault()
                 style={{ width: rem(20.5), height: rem(20) }}
                 className="max-lg:w-11  max-lg:h-20 "
               />
-              <p className="text-grey-3 font-light max-md:text-sm">
+              <p className="text-[#525252] font-light max-md:text-sm lg:text-lg ">
                Team Management
               </p>{' '}
               {/* <p className="max-lg:hidden text-[0.75rem] font-normal text-grey-3">3 mins ago</p> */}
@@ -151,7 +151,7 @@ e.preventDefault()
                 style={{ width: rem(20.5), height: rem(20) }}
                 className="max-lg:w-11  max-lg:h-20 "
               />
-              <p className="text-grey-3 font-light max-md:text-sm">
+              <p className="text-[#525252] font-light max-md:text-sm lg:text-lg">
                Account Verification
               </p>{' '}
               {/* <p className="max-lg:hidden text-[0.75rem] font-normal text-grey-3">3 mins ago</p> */}
@@ -175,7 +175,7 @@ router.push("/employer/settings")
                 style={{ width: rem(20.5), height: rem(20) }}
                 className="max-lg:w-11  max-lg:h-20 "
               />
-              <p className="text-grey-3 font-light max-md:text-sm">
+              <p className="text-[#525252] font-light max-md:text-sm lg:text-lg">
             Settings
               </p>{' '}
               {/* <p className="max-lg:hidden text-[0.75rem] font-normal text-grey-3">3 mins ago</p> */}
@@ -199,7 +199,7 @@ router.push("/employer/settings")
                 style={{ width: rem(20.5), height: rem(20) }}
                 className="max-lg:w-11  max-lg:h-20 "
               />
-              <p className="text-grey-3 font-light max-md:text-sm">
+              <p className="text-[#525252] font-light max-md:text-sm lg:text-lg">
               Help Center
               </p>{' '}
               {/* <p className="max-lg:hidden text-[0.75rem] font-normal text-grey-3">3 mins ago</p> */}
@@ -219,14 +219,14 @@ router.push("/employer/settings")
             }}
           >
             <div className="flex gap-x-2 items-center ">
-              <Box className='flex items-center justify-center'>  <IconArrowLeft
+              <Box className='flex items-center justify-center text-[#303237]'>  <IconArrowLeft
                 style={{ width: rem(20.5), height: rem(20) }}
-                className="max-lg:w-11  max-lg:h-20 "
+                className="max-lg:w-11  max-lg:h-20  font-light lg:text-lg"
               /> |</Box>
             
 
-              <p className="text-grey-3 font-light max-md:text-sm">
-              logout
+              <p className="text-[#525252] font-light lg:text-lg max-md:text-sm">
+              Logout
               </p>{' '}
               {/* <p className="max-lg:hidden text-[0.75rem] font-normal text-grey-3">3 mins ago</p> */}
             </div>

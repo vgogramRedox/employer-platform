@@ -72,8 +72,9 @@ interface Element {
 }
 interface ElementList {
   elements: Element[];
+  className?:string
 }
-export default function TableComp({ elements }: ElementList) {
+export default function TableComp({ elements,className }: ElementList) {
   const [selectedRows, setSelectedRows] = useState<number[]>([]);
   const { setAppState, appState, setAddUserModalOpened } = useContext(UserContext);
   const [confirmModal, setConfirmModal] = useState<boolean>(false);
@@ -368,7 +369,7 @@ const listItem=elements.map((element,i)=>(
         
     
     
-    <Table verticalSpacing={px('1.25rem')} className="border border-[#E5E7EF] rounded-lg max-lg:hidden">
+    <Table verticalSpacing={px('1.25rem')} className={`border border-[#E5E7EF] rounded-lg max-lg:hidden ${className}`}>
       <Table.Thead className="bg-[#E5E7EF] font-light  text-[#515151]  text-lg rounded-lg  ">
         <Table.Tr>
           <Table.Th />

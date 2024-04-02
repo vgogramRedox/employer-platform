@@ -33,7 +33,7 @@ function page() {
         <div className="mt-8 lg:ms-44 lg:w-[33%] max-lg:mx-auto ">
           <Image src="/svgs/darkLogo.svg" w={93} h={93} className='max-lg:items-center max-lg:mx-auto' />
           <p className="leading-[1.2rem] mt-3 text-dark lg:text-2xl font-semibold">Welcome back,</p>
-          <p className="leading-[3rem] mt-3 font-bold text-5xl max-lg:text-[1.5rem]">Log In to continue</p>
+          <p className="leading-[3rem] mt-3 font-bold text-5xl max-lg:text-[1.5rem]">Log In to Continue</p>
 
           <form action="" className="mt-10 p-2">
             <Input label="Email" placeholder="Enter your email" />

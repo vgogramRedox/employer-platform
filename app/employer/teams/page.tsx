@@ -111,7 +111,7 @@ function page() {
         </p>
 
         <Box>
-          <TableComp elements={elements} />
+          <TableComp elements={elements} className="lg:mt-9" />
         </Box>
         </Box>
       </Box>

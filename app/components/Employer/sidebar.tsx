@@ -92,24 +92,24 @@ export function NavbarSimple() {
       </div>
 
       <Box
-        className={`${classes.footer} top-[80%] absolute flex space-between items-center gap-x-4 max-lg:hidden ms-5`}
+        className={`${classes.footer} top-[90%] absolute flex justify-between items-center gap-x-4 max-lg:hidden ms-5`}
       >
         <Link href="#" className={`flex`} onClick={(event) => event.preventDefault()}>
           {checked == false ? (
-            <Image src="/svgs/sun.svg" className={classes.linkIcon} />
+            <Image src="/svgs/sun.svg" className={`${classes.linkIcon} transition `} />
           ) : (
-            <Image src="/svgs/moon.svg" className={`classes.linkIcon fill-slate-100`} />
+            <Image src="/svgs/moon.svg" className={` ${classes.linkIcon} transition  fill-slate-100`} />
           )}
 
-          {checked == false ? (
+          {/* {checked == false ? (
             <span className="text-dark font-bold text-sm ">Dark Mode</span>
           ) : (
             <span className="text-dark font-bold ms-7 text-sm">Light Mode</span>
-          )}
+          )} */}
         </Link>
         <Switch
           size="lg"
-          className="max-lg:hidden"
+          className="max-lg:hidden cursor-pointer"
           color="gray"
           checked={checked}
           onChange={toggleColorScheme}

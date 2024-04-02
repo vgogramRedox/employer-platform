@@ -14,7 +14,7 @@ function layout({
   return (
    
    <>
-   <BreadCrumbsNav items={items}/>
+
    {children}
    </>
   )

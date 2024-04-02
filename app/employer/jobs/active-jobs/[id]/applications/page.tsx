@@ -1,5 +1,6 @@
 'use client';
 import { BadgeComp } from '@/app/components/BadgeComp';
+import BreadCrumbsNav from '@/app/components/BreadCrumbsNav';
 import PrimaryButton from '@/app/components/Button';
 import { VidThumbNail } from '@/app/components/Employer/VidThumbNail';
 import { Box, Group, Image, List, Pagination, Paper, Text } from '@mantine/core';
@@ -15,6 +16,22 @@ function page() {
   const [page, onChange] = useState(1);
   const [activePage, setPage] = useState(1);
   const router = useRouter();
+
+  const items=[
+    {
+      title:"Active Jobs",
+      href:"/employer/jobs/active-jobs"
+    },
+    {
+      title:"Product Designer",
+      href:"/employer/jobs/active-jobs/params"
+    },
+{
+  title:"Applications",
+  href:"/employer/jobs/active-jobs/params/applications"
+}
+    
+  ]
   return (
     <Box className="lg:w-[90%]  max-lg:w-full mx-auto max-lg:text-lg ">
       <div className='max-lg:border-b shadow max-lg:p-4'>
@@ -34,10 +51,12 @@ function page() {
         />
       </Group>
       </div>
+      <BreadCrumbsNav reverse={true} items={items} className='mt-10 max-lg:hidden'/>
+
       {/* <Text className="leading-[1.2rem] text-dark lg:text-2xl  font-semibold mt-10 max-md:ms-auto ">
           Applications
         </Text> */}
-      <Box className="md:mt-20 sm:mt-5 max-lg:p-0">
+      <Box className="md:mt-10 sm:mt-5 max-lg:p-0">
         <div className=" grid  lg:grid-cols-4 md:grid-cols-3 max-md:grid-cols-2 max-md:gap-y-4 md:gap-4 ">
           <Link href={'/employer/jobs/active-jobs/params/applications/1'}>
             <VidThumbNail />
@@ -59,10 +78,15 @@ function page() {
           <VidThumbNail />
           <VidThumbNail />
           <VidThumbNail />
+
+          <VidThumbNail />
+          <VidThumbNail />
+          <VidThumbNail />
+          <VidThumbNail />
         </div>
       </Box>
 
-      <Box className=" mt-10 flex max-lg:p-4 mb-[50%] max-lg:w-[90%] max-ms-auto">
+      <Box className=" mt-10 flex max-lg:p-4 max-lg:mb-[50%] max-lg:w-[90%] max-ms-auto">
         <Pagination 
         total={10}
         
