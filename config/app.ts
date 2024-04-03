@@ -15,6 +15,7 @@ export const appConfig = {
       955:"#F6F7FC"
     },
     "dark":"#010101",
+    black:"#000000",
     "white-smoke":"#FFFFFFD9",
     "dark-100":"#515151",
     "dark-200":"#615656",

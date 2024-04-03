@@ -4,7 +4,7 @@ import PrimaryButton from './Button';
 
 export function ProjectCard() {
   return (
-    <Card shadow="sm" padding="lg" radius="md" withBorder>
+    <Card shadow="sm" padding="lg" radius="md" className='bg-[#F6F7FC]'>
       <Card.Section component="a" href="/" className="p-4">
         <Image
         
@@ -24,7 +24,7 @@ export function ProjectCard() {
         activities on and around the fjords of Norway
       </Text>
 
-      <PrimaryButton className='bg-primary-blue rounded-full w-3/4 text-sm font-normal' title="View Project"/>
+      <PrimaryButton p="0" fullWidth={false} className='h-8 flex justify-center items-center p-[0.357rem] bg-primary-blue rounded-full w-3/4 text-sm font-normal mt-[0.62rem]' title="View Project"/>
 
     </Card>
   );

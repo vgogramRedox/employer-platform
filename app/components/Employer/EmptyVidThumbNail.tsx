@@ -12,12 +12,12 @@ export const EmptyVidThumbNail=({bg,
    
     return (
     
-        <section  className=" lg:max-w-[90%] max-lg:w-full" >
+        <section  className="  max-lg:w-full" >
           
-          <div className={`mx-auto text-center  lg:pt-10 ${bg?bg:"bg-purple-200 "} rounded-lg lg:min-w-[15.22888rem] max-lg:w-[10rem] lg:gap-10 lg:min-h-[16.11313rem] flex-shrink  pt-3 ${className}`}>
+          <div className={`mx-auto text-center   lg:pt-[1.61rem] ${bg?bg:"bg-purple-200 "} rounded-lg lg:min-w-[15.22888rem] max-lg:w-[10rem] lg:gap-10 lg:min-h-[16.11313rem] flex-shrink  pt-3 ${className}`}>
           <Container
           
-            className="lg:max-w-[80%] lg:h-[8rem] bg-[#534747] max-lg:bg-[#00000033]
+            className="lg:max-w-[80%] lg:h-[9.25rem] bg-[#534747] max-lg:bg-[#00000033]
             hover:cursor-pointer focus-within:cursor-pointer
             h-[7.15rem] max-lg:w-[80%]  min-h-[7.15rem] pt-1  mx-auto rounded-lg  flex items-center justify-center"
           >

@@ -26,6 +26,7 @@ export default function TableCompSettings({ elements }: ElementList) {
   const [selectedRows, setSelectedRows] = useState<number[]>([]);
 
   const [confirmModal, setConfirmModal] = useState<boolean>(false);
+  const [signOutModal, setSignOutModal] = useState<boolean>(false);
  
   const rows = elements.map((element) => (
     <Table.Tr
@@ -36,22 +37,29 @@ export default function TableCompSettings({ elements }: ElementList) {
       <Table.Td className="opacity-0">{element.id}</Table.Td>
       <Table.Td>
         <Box className="font-light">
-          <Text className="font-light capitalize text-[#515151]"> {element.device}</Text>
+          <Text className="capitalize text-black font-normal text-[1.2rem]"> {element.device}</Text>
           
         </Box>
       </Table.Td>
 
       <Table.Td>
-        <Text className="capitalize text-[#515151] font-light">{element.dateLoggedIn}</Text>
+        <Text className="capitalize text-black font-normal text-[1.2rem]">{element.dateLoggedIn}</Text>
       </Table.Td>
       <Table.Td>
-        <Text className="capitalize text-[#515151] font-light">{element.IPAddress}</Text>
+        <Text className="capitalize  text-black font-normal text-[1.2rem]">{element.IPAddress}</Text>
       </Table.Td>
       <Table.Td>
         {' '}
         <PrimaryButton 
+        onClick={() => {
+          // setAppState({
+          //   ...appState,jobPostStage:1
+          //  })
+         setSignOutModal(true)
+        }}
     fullWidth={false}
-    className='bg-white text-dark border-dark rounded border-1 hover:bg-black hover:text-white me-5' title={
+    p='0'
+    className='bg-white text-black border-black rounded-lg border-1 w-[6.12rem] hover:bg-black hover:text-white me-5' title={
     <Text className=' text-[1rem] font-normal'>
     Sign Out
     </Text>
@@ -235,23 +243,80 @@ export default function TableCompSettings({ elements }: ElementList) {
     )
   }
         
+        {
+    signOutModal && (
+      <Portal>
+        <SmallModal
+          opened={signOutModal}
+          open={open}
+          close={() => {
+            setSignOutModal(false);
+          }}
+          header={<Text className="font-bold">Log Out?</Text>}
+          content={
+            <Text className="font-light mt-[5%]">
+            Are you sure you want to Log out of your account?
+            </Text>
+          }
+          footer={
+            <>
+            <Group className='flex gap-x-6 mt-[20%] mb-[10%]'>
+
+            <SlideInAnimation>
+                <PrimaryButton
+                  p="sm"
+                  fullWidth={false}
+                  onClick={() => {
+                    // setAppState({
+                    //   ...appState,jobPostStage:1
+                    //  })
+                   setConfirmModal(false)
+                  }}
+                  className="bg-white border border-grey-4 lg:w-[10rem] lg:h-[3rem]  hover:border-dotted text-dark max-lg:w-[40%] max-lg:font-normal max-lg:hidden  "
+                  title="Cancel"
+                />
+              </SlideInAnimation>
+
+              <SlideInAnimation>
+                <PrimaryButton
+                  p="xs"
+                  fullWidth={false}
+                  className="bg-primary-blue border lg:w-[10rem] max-lg:w-full lg:h-[3rem] max-lg:font-normal  "
+                  title={'Log Out'}
+                  //   onClick={() => {
+                  //    setvid({
+                  //  ...
+                  //    })
+
+                  //   }}
+                />
+              </SlideInAnimation>
+            </Group>
+              
+            </>
+          }
+          
+        />
+      </Portal>
+    )
+  }
     
     
-    <Table verticalSpacing={px('1.25rem')} className="border border-[#E5E7EF] rounded-lg max-lg:hidden">
-      <Table.Thead className="bg-[#E5E7EF] font-light  text-[#515151]  text-lg rounded-lg ">
+    <Table verticalSpacing={px('1.25rem')}   className="border border-[#E5E7EF] rounded-lg max-lg:hidden ">
+      <Table.Thead className="bg-[#E5E7EF] font-[500]  text-black text-lg rounded-lg ">
         <Table.Tr>
           <Table.Th />
-          <Table.Th>
+          <Table.Th className="font-[500] ">
             Device
           </Table.Th>
-          <Table.Th>
+          <Table.Th className="font-[500] ">
            Date Logged In
           </Table.Th>
-          <Table.Th>
+          <Table.Th className="font-[500] ">
             IP Address
           </Table.Th>
           <Table.Th>
-            <Box className="flex font-normal items-center gap-x-2">
+            <Box className="flex  items-center gap-x-2 font-[500] ">
               Access Level
               <Box>
       

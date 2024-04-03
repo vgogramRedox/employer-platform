@@ -44,7 +44,7 @@ const elements=[
   return (
    <Box>
     <SlideInAnimation>
-    <Box className='border-t border-b rounded-lg max-lg:border max-lg:rounded max-lg:p-2 max-lg:text-sm max-lg:min-h-[15.6875rem] max-lg:mt-5  '>
+    <Box className='border rounded-lg max-lg:border max-lg:rounded max-lg:p-2 max-lg:text-sm max-lg:min-h-[15.6875rem] max-lg:mt-5  '>
 <Text className="border-b  text-[1.2rem] text-dark font-normal mb-5 lg:ps-10 min-h-[4rem] flex items-center">
 Password
 </Text>
@@ -57,7 +57,7 @@ Password
       setEditPasswordModalOpened(true)
     }}
     p={breakpoint?"sm":'0'}
-    className='bg-white text-dark border-dark rounded border-1 hover:bg-black max-lg:w-[9rem] max-lg:text-sm hover:text-white me-5' title={
+    className='bg-white text-dark border-dark rounded border-1 hover:bg-black max-lg:w-[9rem] max-lg:text-sm hover:text-white me-5 lg:w-[12.625rem] lg:h-12' title={
     <Text className=' text-[1rem] font-normal'>
     Change Password
     </Text>
@@ -71,12 +71,12 @@ Password
    </SlideInAnimation>
 
    <SlideInAnimation>
-    <Box className='border-t border-b rounded-lg '>
+    <Box className='border rounded-lg mt-[4.06rem] lg:mb-[10%] '>
 <Text className="border-b  text-[1.2rem] text-dark font-normal mb-5 lg:ps-10 min-h-[4rem] flex items-center max-lg:hidden">
 Devices
 </Text>
-<Box className=" min-h-[6.3rem] max-lg:hidden">
-    <Text className='text-dark lg:ps-10 font-light mb-10 '>You are currently logged into Emdo on these devices</Text>
+<Box className=" min-h-[6.3rem] max-lg:hidden ">
+    <Text className='text-black lg:ps-10  mb-10 text-[1rem] '>You are currently logged into Emdo on these devices</Text>
 
    <TableCompSettings elements={elements}/>
    

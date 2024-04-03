@@ -49,11 +49,14 @@ setAppState({
       hidePickedOptions
       max={5}
       
+    
       rightSection={<IconChevronDown/>}
-      styles={{dropdown: { maxHeight: 200, overflowY: 'auto', textAlign:'center' }}}
+      styles={{dropdown: { maxHeight: 200, overflowY: 'auto' }}}
       comboboxProps={{ position: 'bottom', middlewares: { flip: false, shift: false } ,dropdownPadding:'6px',
       transitionProps: { transition: 'pop', duration: 200 }
-      
+     
+    
+     
     } }
       searchable
     />

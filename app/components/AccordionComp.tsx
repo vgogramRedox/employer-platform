@@ -1,15 +1,16 @@
 "use client"
-import { Accordion, Group } from '@mantine/core';
+import { Accordion, Box, Group, Text } from '@mantine/core';
 import { IconBriefcase } from '@tabler/icons-react';
 
 interface AccordiontType{
-    title:string
+    jobTitle:string
     description:string
     key:any
     className?:string
+    company?:string
 }
 export default function AccordionComp({
-    title,description,key,className
+  jobTitle,description,key,className,company
 }:AccordiontType) {
   // See groceries data above
  
@@ -17,10 +18,21 @@ export default function AccordionComp({
   return (<Group component="div" bg={'primary.10'}>
 
  
-    <Accordion defaultValue="Apples" className={`${className}`}>
-     <Accordion.Item key={key} value={title}>
-      <Accordion.Control icon={<IconBriefcase style={{color:"#7F0DF1"}}/>}>{title}</Accordion.Control>
-      <Accordion.Panel>{description}</Accordion.Panel>
+    <Accordion defaultValue="Apples" className={`${className} w-full`}>
+     <Accordion.Item key={key} value={jobTitle}>
+      <Accordion.Control icon={<IconBriefcase className='rounded-full w-11 h-11 p-2 bg-[#E0E7EB] text-[#7F0DF1]' />}>
+        <Text className="capitalize"> {jobTitle}</Text>
+        <Box className='flex items-center gap-x-4 mt-1'>
+        <Text className="capitalize "> {company}</Text>  <Text className='font-light text-sm text-black'> | Feb 2016-July 2019</Text>  
+        </Box>
+        
+        </Accordion.Control>
+      <Accordion.Panel>
+        <Box className="lg:ms-[6.8%] font-light">
+        {description}
+
+        </Box>
+        </Accordion.Panel>
     </Accordion.Item>
     </Accordion>
     </Group>

@@ -109,7 +109,7 @@ export function NavbarSimple() {
         </Link>
         <Switch
           size="lg"
-          className="max-lg:hidden cursor-pointer"
+          className="max-lg:hidden cursor-pointer lg:me-[15%]"
           color="gray"
           checked={checked}
           onChange={toggleColorScheme}

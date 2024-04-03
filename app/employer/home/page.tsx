@@ -23,7 +23,7 @@ function page() {
    
       
     <Box className="lg:w-[90%]  max-lg:w-full mx-auto max-lg:text-lg max-lg:p-4">
-      <p className="leading-[1.2rem] text-dark lg:text-2xl  font-semibold mt-20">
+      <p className="leading-[1.2rem] text-dark lg:text-2xl  font-semibold mt-[3.19rem]">
         Welcome {isMobile? "back":""}, Vincent
       </p>
       <p className="leading-[1rem] text-dark font-normal text-[1rem] lg:font-light  max-lg:mt-5 text-start mt-10">
@@ -69,9 +69,10 @@ function page() {
       <Box className="mt-5 mb-5 ">
         <div  className=" grid  lg:grid-cols-4 sm:grid-cols-2 md:grid-cols-3 gap-4">
           <VidThumbNail />
-          <VidThumbNail />
-          <VidThumbNail />
-          <VidThumbNail />
+          <VidThumbNail name='Paul Williams' job='
+          IT Officer'  thumbnailImg={"/svgs/et2.svg"} />
+          <VidThumbNail name="Henry Peter" thumbnailImg={"/svgs/et3.svg"} />
+          <VidThumbNail name="Sarah David" thumbnailImg={"/svgs/et4.svg"} />
         </div>
       </Box>
     </Box>

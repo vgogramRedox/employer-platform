@@ -202,7 +202,7 @@ function page() {
                 setAddVideoModalOpened(true);
               }}
             />
-            <VidThumbNail />
+            <VidThumbNail name="Our People"job=' '  thumbnailImg={"/svgs/ofp1.svg"} />
           </div>
 
           {/* for small screen */}

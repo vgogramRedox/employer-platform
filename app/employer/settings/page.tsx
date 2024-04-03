@@ -31,7 +31,7 @@ function page() {
       <BreadCrumbsNav items={links} className="lg:mt-20 " />
        
 
-        <Box className={`${settingsTab!="general"&& "lg:border rounded  lg:border-grey-8"}  min-h-screen mt-5 `}>
+        <Box className={` min-h-screen mt-5 `}>
       <Text className='text-dark-100 text-2xl font-bold lg:p-10 max-lg:hidden'>Settings</Text>
       <div className="max-lg:border-b max-lg:w-full  lg:hidden w-full max-lg:h-[5.7rem] flex items-center shadow">
                 <Group className="max-md:justify-between lg:hidden flex max-md:w-[100%] items-center">

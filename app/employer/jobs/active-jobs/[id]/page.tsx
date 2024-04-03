@@ -9,7 +9,7 @@ import React from 'react';
 
 function page() {
   const params = useParams();
-  console.log(params);
+  // console.log(params);
   const router = useRouter();
   return (
     <>
@@ -38,12 +38,13 @@ function page() {
 
             <Text className="font-bold  max-lg:text-xl text-5xl max-md:mt-5"> Product Designer</Text>
             <BadgeComp
-              className=" bg-sun-200 absolute  left-[65%] bottom-[70%] "
+            p={'0'}
+              className=" bg-sun-200 absolute  w-20 h-8 left-[65%] bottom-[83.5%] "
               title={
-                <Group className="  text-dark max-md:text-lg " flex={1}>
-                  <IconArrowDownLeft />
-                  <Text className=" text-2xl max-md:text-lg">23</Text>
-                </Group>
+                <Box className="  text-dark max-md:text-lg items-center justify-center flex">
+                  <IconArrowDownLeft  className='w-6 h-6'/>
+                  <Text className=" text-[1rem] max-md:text-lg">23</Text>
+                </Box>
               }
             />
           </Group>

@@ -13,7 +13,7 @@ export interface VidThumbNailType{
 }
 
 export function VidThumbNail({bg,
-  className,job,
+  className,job="Product Designer",name="Tolu Ogunnipe",
   thumbnailImg="/svgs/thumbnail1.svg",
   
 }:VidThumbNailType) {
@@ -35,8 +35,8 @@ export function VidThumbNail({bg,
           <Image src="/svgs/playGreyBg.svg" w={rem(40) } className="absolute" />
         </BackgroundImage>
         
-        <p className=' text-dark lg:text-lg font-normal mt-2 max-lg:text-sm '>Tolu Ogunnipe</p>
-        <p className="max-lg:text-sm lg:text-sm lg:mt-3  font-light ">{job} Product Designer</p>
+        <p className=' text-dark lg:text-lg font-normal mt-2 max-lg:text-sm '>{name}</p>
+        <p className="max-lg:text-sm lg:text-sm lg:mt-3  font-light ">{job} </p>
         </div>
       
         </section>

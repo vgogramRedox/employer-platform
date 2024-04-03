@@ -106,7 +106,7 @@ export function DropZone({lgWidth=rem(220),...props}:DropzonePropsMutation) {
             style={{ width: rem(52), height: rem(52), color: 'var(--mantine-color-blue-6)' }}
             stroke={1.5}
           />
-          {<Text>{file?.name}</Text>}
+          {<Text className="max-lg:text-xs max-lg:flex ">{file?.name}</Text>}
         </Dropzone.Accept>
         <Dropzone.Reject>
           <IconX
@@ -133,7 +133,7 @@ export function DropZone({lgWidth=rem(220),...props}:DropzonePropsMutation) {
               )}
             </Text>
           )}
-          {file && <Text>{file?.name}</Text>}
+          {file && <Text className="max-lg:text-xs  max-lg:flex">{file?.name}</Text>}
           {error && (
             <div className='flex gap-2'>
               <IconX

@@ -153,19 +153,25 @@ duration:0.4,
 delay:0.3
 }}
 >
-<Box className="lg:p-10">
 
-<Input
-  label="Job Title"
-  placeholder="Enter Job Title"
-  value={jobPostTitle}
-  onChange={(e: any) => {
-    setAppState({
-      ...appState,
-      jobPostTitle: e.target.value,
-    });
-  }}
-/>
+
+<Box className="lg:p-5">
+
+{!postVideoMode &&(
+  <Input
+  className='mt-[2.29rem] lg:mb-[2.29rem]'
+    label="Job Title"
+    placeholder="Enter Job Title"
+    value={jobPostTitle}
+    onChange={(e: any) => {
+      setAppState({
+        ...appState,
+        jobPostTitle: e.target.value,
+      });
+    }}
+  />
+)
+}
 
 {postVideoMode && (
   <Group className="block">
@@ -177,28 +183,55 @@ delay:0.3
       {' '}
       Upload Video
     </Text>
-    <Text className="mt-1 font-light max-lg:text-sm max-lg:leading-7">
+    <Text className="mt-1 lg:mt-2 font-light max-lg:text-sm max-lg:leading-7">
       {' '}
       Upload a video describing the job position in full detail. Be sure to include
       important details such as remuneration.
     </Text>
-    <div className="cursor-pointer border border-dashed">
+    <div className="cursor-pointer border border-dashed min-h-[12.062rem] flex items-center justify-center lg:mt-5">
       <DropZone />
     </div>
+    <Text className="mt-1 lg:mt-2 font-light max-lg:text-sm text-xs text-[#7E8494] max-lg:leading-7">
+    max length 5mins
+    </Text>
   </Group>
 )}
-<TextArea
-  className="mt-1"
-  label="Job Description"
-  value={jobPostDescription}
-  onChange={(e: any) => {
-    setAppState({
-      ...appState,
-      jobPostDescription: e.target.value,
-    });
-  }}
-  placeholder="Describe the job position in full details"
+
+{postVideoMode &&(
+  <Input
+  className='mt-[2.29rem] lg:mb-[2.29rem]'
+    label="Job Title"
+    placeholder="Enter Job Title"
+    value={jobPostTitle}
+    onChange={(e: any) => {
+      setAppState({
+        ...appState,
+        jobPostTitle: e.target.value,
+      });
+    }}
+  />
+)
+}
+
+{!postVideoMode &&(
+ <TextArea
+ className="mt-1 "
+ label="Job Description"
+ value={jobPostDescription}
+ onChange={(e: any) => {
+   setAppState({
+     ...appState,
+     jobPostDescription: e.target.value,
+   });
+ }}
+ placeholder="Describe the job position in full details"
 />
+)
+}
+
+
+{!postVideoMode &&(
+<>
 <Text className="mt-5"> Employment Type</Text>
 <Group className="flex gap-5 flex-row mt-2.5">{ET}</Group>
 <Text className="mt-5"> Employment Type</Text>
@@ -241,9 +274,20 @@ delay:0.3
   className="mt-5"
 />
 
-<Text className="mt-5 text-lg"> Tags</Text>
+
+</>
+)
+}
+
+{postVideoMode &&(
+ <>
+ <Text className="mt-5 text-lg"> Tags</Text>
 <Text className="mt-1 font-light">Select up to 5 tags</Text>
 <MultiSelectComp data={tags} />
+ </>
+)
+}
+
 
 {setter}
 </Box>

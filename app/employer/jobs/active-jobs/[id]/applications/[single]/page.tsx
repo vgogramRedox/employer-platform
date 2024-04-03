@@ -42,50 +42,63 @@ function page() {
     <Divider/>
     
     <div className='mt-3.5 max-lg:p-4'>
-    <Box className='flex items-center gap-x-8 max-lg:gap-x-4'>
+    <Box className='flex items-center gap-x-14 max-lg:gap-x-4 '>
  <Image src="/svgs/person.svg" className='min-w-[8.6rem] max-lg:w-[7.6rem] min-h-[8.6rem]'/>
  <PrimaryButton
  onClick={()=>{
   router.push("/employer/jobs/1")
  }}
- className='bg-primary-blue lg:w-1/4  max-lg:text-sm max-lg:rounded-xl max-lg:font-light max-lg:h-6 ' title=" View Profile"/>
+ className='bg-primary-blue lg:w-[17.5rem]  max-lg:text-sm max-lg:rounded-xl max-lg:font-light max-lg:h-6 ' title=" View Profile"/>
     </Box>
-<div className='flex gap-x-4 items-center'>
+<div className='flex gap-x-4 items-center mt-[0.81rem]'>
 
-<Box className=' flex-col gap-y-4'>
+<Box className=' flex-col gap-y-5'>
 
-<Text className='font-bold text-lg'>
+<Text className='font-bold lg:text-[1.5rem] text-lg text-black'>
 Tolu Ogunnipe
 </Text>
-<Text className='text-sm font-light'>
+<Text className='text-sm lg:text-[1.1rem] font-light  text-black '>
   Product Designer
 </Text>
-<Text className='text- flex gap-x-2 font-light'>
+<Text className='lg:text-[1.1rem] font-light flex gap-x-2   text-black'>
  <IconMapPin/> Lagos,Nigeria
 </Text>
     </Box>
 
     <Box className='gap-2 flex'>
 
-<IconMail className='rounded-full p-2 border w-14 h-14 '  />
+<IconMail className='rounded-full p-3 border w-16 h-16 text-black border-black'  />
 
-<IconBookmark className='rounded-full p-2 border w-14 h-14 '/>
+<IconBookmark className='rounded-full p-3 border w-16 h-16 text-black border-black '/>
     </Box>
 </div>
     
     </div>
    <div className='max-lg:p-4'>
           
-    <Paper shadow="xs"  bg={'primary.10'} className="lg:w-[25.5rem] max-lg:w-full min-h-[14.125rem] mt-5 mb-[30%]">
-      <Text className='font-bold  border-b text-center'>Education</Text>
+    <Paper shadow="xs"  bg={'primary.10'} className="lg:w-[25.5rem] max-lg:w-full min-h-[14.125rem] mt-[2.06rem] mb-[30%]  lg:pb-10">
+      <Text className='font-bold  border-b text-center lg:p-5 lg:text-xl '>Education</Text>
 
-      <Box className='flex gap-x-3 p-7 '>
+      <Box className='flex gap-x-3 p-7 lg:p-2 text-black'>
       <Image src="/svgs/graduateCap.svg" className='w-10 h-10'/>
       <Box>
-        <Text component='h1'>B.Sc Computer Engineering</Text>
+        <Text component='h1' className='text-[1rem]' >B.Sc Computer Engineering</Text>
         <Text className='text-sm font-light m'>
-        Use it to create cards, dropdowns, modals and other components that require background
-        with shadow
+        University of Illorin
+        
+      </Text>
+      <Text className='text-sm font-light '>
+        2018
+      </Text>
+      </Box>
+      </Box>
+      <Box className='flex gap-x-3 p-7 lg:p-2 text-black'>
+      <Image src="/svgs/graduateCap.svg" className='w-10 h-10'/>
+      <Box>
+        <Text component='h1' className='text-[1rem]' >B.Sc Computer Engineering</Text>
+        <Text className='text-sm font-light m'>
+        University of Illorin
+        
       </Text>
       <Text className='text-sm font-light '>
         2018

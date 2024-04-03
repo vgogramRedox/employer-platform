@@ -6,7 +6,7 @@ import { useMediaQuery } from '@mantine/hooks'
 
 function NotificationsTab() {
 
-const [checked,setChecked]=useState<boolean>()
+// const [checked,setChecked]=useState<boolean>()
 const breakpoint = useMediaQuery('(min-width: 56.25em)');
 
   return (
@@ -23,8 +23,8 @@ const breakpoint = useMediaQuery('(min-width: 56.25em)');
              size= {breakpoint?"lg":'sm'}
           className=" max-lg:w-[10%] "
           color="blue.9"
-          checked={checked}
-          onChange={(e)=>setChecked(e.currentTarget.checked)}
+        //   checked={checked}
+        //   onChange={(e)=>setChecked(e.currentTarget.checked)}
         />
 
         <Box   className=" max-lg:w-[80%] max-lg:mx-auto">
@@ -36,13 +36,13 @@ const breakpoint = useMediaQuery('(min-width: 56.25em)');
             </Text>
         </Box>
     </Group>
-    <Group className='flex lg:gap-x-12 max-md:gap-x-2  max-lg:justify-between  text-dark-100'>
+    <Group className='flex lg:gap-x-12 max-md:gap-x-2  mt-5 max-lg:justify-between  text-dark-100'>
     <Switch
              size= {breakpoint?"lg":'sm'}
           className=" max-lg:w-[10%] "
           color="blue.9"
-          checked={checked}
-          onChange={(e)=>setChecked(e.currentTarget.checked)}
+        //   checked={checked}
+        //   onChange={(e)=>setChecked(e.currentTarget.checked)}
         />
 
         <Box   className=" max-lg:w-[80%] max-lg:mx-auto">
@@ -68,16 +68,16 @@ const breakpoint = useMediaQuery('(min-width: 56.25em)');
              size= {breakpoint?"lg":'sm'}
           className=" max-lg:w-[10%] "
           color="blue.9"
-          checked={checked}
-          onChange={(e)=>setChecked(e.currentTarget.checked)}
+        //   checked={checked}
+        //   onChange={(e)=>setChecked(e.currentTarget.checked)}
         />
 
         <Box   className=" max-lg:w-[80%] max-lg:mx-auto">
             <Text className=' lg:text-xl'>
-            Shift Bookings
+            Job Applications
             </Text>
             <Text className='font-light lg:text-lg max-lg:text-xs max-lg:w-full'>
-            Subscribe to our weekly newsletter
+            Get notified when a jobseeker applies for a job
             </Text>
         </Box>
     </Group>

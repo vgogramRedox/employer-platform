@@ -23,9 +23,12 @@ export default function PaperComp({ radius, pay, applied, className }: PaperComp
         <Text className="text-[1rem] me-auto font-light">N15,000/hr</Text>
       </Group>
 
-      <Group className='max-lg:gap-x-0'>
+
+      <Group className='max-lg:gap-x-0' component="a"
+      //@ts-ignore
+      href="jobs/active-jobs/1">
         <IconArrowDownLeft />
-        <Text component="a" className=" text-2xl max-lg:text-[1rem]" href="jobs/active-jobs/1">
+        <Text  className=" text-2xl max-lg:text-[1rem]">
           23
         </Text>
       </Group>
