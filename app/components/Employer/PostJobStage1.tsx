@@ -45,8 +45,8 @@ function PostJobStage1({ setter }: SetterType) {
   ];
   const ET = employmentType?.map((type) => (
     <BadgeComp
-      className={` border-[#BDC0CE] border font-normal lg:text-lg p-5 max-lg:text-sm cursor-pointer ${
-        type == jobPostEmploymentType ? 'bg-primary-blue  text-white' : 'bg-white  text-[#BDC0CE] '
+      className={` border-[#BDC0CE] border font-normal lg:text-lg p-5 max-lg:text-[1rem] cursor-pointer max-lg:min-w-[47%] ${
+        type == jobPostEmploymentType ? 'bg-primary-blue  text-white' : 'bg-white max-lg:text-[#3B3B3B] text-[#BDC0CE] max-lg:font-light '
       }`}
       title={type}
       onClick={() => {
@@ -60,7 +60,9 @@ function PostJobStage1({ setter }: SetterType) {
 
   const WORKSET = workSettingType?.map((type) => (
     <BadgeComp
-      className={` border-[#BDC0CE] border font-normal lg:text-lg p-5 cursor-pointer max-lg:text-sm ${
+      className={` border-[#BDC0CE] border font-normal lg:text-lg p-5 cursor-pointer max-lg:text-[1rem] max-lg:font-light 
+      max-md:min-w-[30%]
+      max-lg:text-[#3B3B3B] ${
         type == jobWorkSettingType ? 'bg-primary-blue  text-white' : 'bg-white  text-[#BDC0CE] '
       }`}
       title={type}
@@ -81,10 +83,12 @@ function PostJobStage1({ setter }: SetterType) {
         <Modal.Header className="lg:bg-light-blue min-h-[8.875rem]  max-lg:bg-white max-lg:relative">
           <Modal.Title className="lg:flex justify-between max-lg:w-full lg:w-[80%] lg:p-5 ">
             {/* small screen */}
-            <Box className='max-lg:w-[95%] max-lg:mt-5  lg:hidden '>
+            <Box className='max-lg:w-[95%] max-lg:mt-5  lg:hidden  text-black'>
               <Box className=" lg:hidden w-full max-lg:flex max-lg:justify-between">
                 <Box className="lg:hidden ">
-                  <Text className="font-bold text-dark lg:text-2xl max-lg:mt-auto max-lg:text-sm mt-auto place-items-bottom max-lg:pt-5">
+                  <Text className="font-bold lg:text-2xl max-lg:mt-auto
+                  
+                  max-lg:text-[1rem] mt-auto place-items-bottom max-lg:pt-5">
                     {postVideoMode ? ' Post a Video' : ' Post a Job'}
                   </Text>
                 </Box>
@@ -111,7 +115,7 @@ function PostJobStage1({ setter }: SetterType) {
                   />
                 </Box>
               </Box>
-              <Text className="max-lg:text-sm max-lg:font-light lg:hidden max-lg:mt-4">
+              <Text className="max-lg:text-sm max-lg:font-light lg:hidden max-lg:mt-[0.62rem]">
                 Fill in the required information to post a job
               </Text>
             </Box>
@@ -159,7 +163,7 @@ delay:0.3
 
 {!postVideoMode &&(
   <Input
-  className='mt-[2.29rem] lg:mb-[2.29rem]'
+  className='lg:mt-[2.29rem] lg:mb-[2.29rem] max-lg:mt-[0.5rem]'
     label="Job Title"
     placeholder="Enter Job Title"
     value={jobPostTitle}
@@ -176,30 +180,30 @@ delay:0.3
 {postVideoMode && (
   <Group className="block">
     <Text
-      className="mt-5 text-lg"
+      className="lg:mt-5 text-lg max-lg:text-[1rem] max-lg:font-light max-lg:text-dark max-lg:mt-[0.5rem]"
       //  @ts-ignore
       ref={targetRef}
     >
       {' '}
       Upload Video
     </Text>
-    <Text className="mt-1 lg:mt-2 font-light max-lg:text-sm max-lg:leading-7">
+    <Text className="mt-1 lg:mt-2 font-light max-lg:text-sm max-lg:leading-7 max-lg:text-opacity-[80%]">
       {' '}
       Upload a video describing the job position in full detail. Be sure to include
       important details such as remuneration.
     </Text>
-    <div className="cursor-pointer border border-dashed min-h-[12.062rem] flex items-center justify-center lg:mt-5">
+    <div className="cursor-pointer border-[1px] border-dashed min-h-[12.062rem] flex items-center justify-center lg:mt-5 max-lg:mt-[1.19rem]">
       <DropZone />
     </div>
-    <Text className="mt-1 lg:mt-2 font-light max-lg:text-sm text-xs text-[#7E8494] max-lg:leading-7">
-    max length 5mins
+    <Text className="mt-1 lg:mt-2 font-light max-lg:text-[0.75rem] text-xs text-[#7E8494] max-lg:leading-7">
+    Max length 5mins
     </Text>
   </Group>
 )}
 
 {postVideoMode &&(
   <Input
-  className='mt-[2.29rem] lg:mb-[2.29rem]'
+  className='lg:mt-[2.29rem] lg:mb-[2.29rem] max-lg:mt-[0.5rem]'
     label="Job Title"
     placeholder="Enter Job Title"
     value={jobPostTitle}
@@ -232,10 +236,10 @@ delay:0.3
 
 {!postVideoMode &&(
 <>
-<Text className="mt-5"> Employment Type</Text>
-<Group className="flex gap-5 flex-row mt-2.5">{ET}</Group>
-<Text className="mt-5"> Employment Type</Text>
-<Group className="flex gap-5 flex-row mt-5 mb-5">{WORKSET}</Group>
+<Text className="mt-5 max-lg:font-light text-black"> Employment Type</Text>
+<Group className="flex gap-5  max-lg:gap-x-2 flex-row mt-2.5">{ET}</Group>
+<Text className="mt-5 max-lg:font-light text-black"> Employment Type</Text>
+<Group className="flex gap-5 flex-row mt-5 mb-5 max-lg:gap-x-2">{WORKSET}</Group>
 
 <Input
   label="Location"
@@ -281,7 +285,7 @@ delay:0.3
 
 {postVideoMode &&(
  <>
- <Text className="mt-5 text-lg"> Tags</Text>
+ <Text className="mt-5 text-lg max-md:text-sm lg:text-xl max-lg:font-light"> Tags</Text>
 <Text className="mt-1 font-light">Select up to 5 tags</Text>
 <MultiSelectComp data={tags} />
  </>

@@ -14,6 +14,7 @@ import {
   rem,
   Text,
 } from '@mantine/core';
+import { useMediaQuery } from '@mantine/hooks';
 import { IconSearch } from '@tabler/icons-react';
 
 import {
@@ -35,9 +36,9 @@ const VidThumbNail = ({
   onClick,
   onClickBookMark,
 }: VidThumbNailType) => (
-  <section className=" lg:max-w-[90%] ">
+  <section className=" lg:max-w-[90%] max-md:w-[95%] ">
     <div
-      className={`mx-auto text-center  lg:pt-[1.61rem] ${bg?bg:"bg-purple-200 "} relative rounded-lg lg:min-w-[15.22888rem] max-lg:w-[10rem] lg:gap-10 lg:min-h-[16.11313rem] flex-shrink  pt-3 ${className}`}
+      className={`mx-auto text-center  lg:pt-[1.61rem] ${bg?bg:"bg-purple-200 "} rounded-lg lg:min-w-[15.22888rem] max-lg:full lg:gap-10 lg:min-h-[16.11313rem]   pt-3 ${className}  max-md:min-h-[12.08488rem] md:min-h-[16.11313rem] relative`}
     >
       <div className="max-lg:p-1">
         {
@@ -58,10 +59,10 @@ const VidThumbNail = ({
 
         <BackgroundImage
           src="/svgs/thumbnail1.svg"
-          className="lg:max-w-[80%] lg:min-h-[9.25rem]
+          className="lg:max-w-[80%] lg:min-h-[9.23556rem] md:w-[80%] 
           hover:cursor-pointer focus-within:cursor-pointer
-          rounded-[0.625rem]
-          h-[7.15rem] max-lg:w-[80%]  min-h-[7.15rem] pt-1 max-lg:mt-[1.61rem]  mx-auto  flex items-center justify-center"
+          rounded-[0.625rem] max-md:w-[80%] max-md:h-[ 6.92669rem] md:min-h-[10.77906rem]
+          h-[7.15rem]   min-h-[7.15rem] pt-1 max-lg:mt-[5%]  mx-auto  flex items-center justify-center"
         >
           {/* <Image src={"/svgs/thumbnail1.svg"} className=" " /> */}
           <Image src="/svgs/playGreyBg.svg" w={30} className="absolute" />
@@ -94,6 +95,8 @@ function page() {
     setBookMarked((prev) => !prev);
     // console.log(bookmarked);
   };
+ 
+  const breakpoint=useMediaQuery('(min-width:56.25em)')
 
   return (
     <Box className="lg:w-[90%]  max-lg:w-full mx-auto max-lg:text-lg  max-lg:p-4">
@@ -112,17 +115,19 @@ function page() {
           Explore Talent
         </Text>
 
-        <div className="max-lg:w-[60%]">
+        <div className="">
           <PrimaryButton
+          
+          p={breakpoint?"":"0"}
             fullWidth={false}
             onClick={() => {
               router.push('/employer/talent/saved');
             }}
-            className="bg-white border-primary-blue hover:bg-primary-blue hover:text-white text-primary-blue focus-within:bg-primary-blue focus-within:text-white max-lg: rounded  
+            className="bg-white border-primary-blue hover:bg-primary-blue hover:text-white text-primary-blue focus-within:bg-primary-blue focus-within:text-white max-lg:rounded lg:w-[12.5rem]  max-lg:w-[8.805rem]
           "
             title={
               <Text className="leading-[1.2rem]  flex gap-3 items-center  lg:text-lg rounded-lg font-normal  ">
-                <IconBookmark className="" /> Saved Search
+                <IconBookmark className="" />  <Text className='max-lg:text-sm'> Saved Search</Text>
               </Text>
             }
           />
@@ -151,7 +156,7 @@ function page() {
       <Text className="leading-[1.2rem] text-dark   font-semibold   lg:hidden ">
           Explore Talent
         </Text>
-        <div className=" grid  lg:grid-cols-4 md:grid-cols-3 max-md:grid-cols-2 max-md:gap-y-4 max-md:gap-x-4 md:gap-4 max-lg:mt-5 ">
+        <div className=" grid  lg:grid-cols-4 md:grid-cols-3 max-md:grid-cols-2 max-md:gap-y-4 max-md:gap-x-2 md:gap-4 max-lg:mt-5 ">
           <Link href={''}>
             <VidThumbNail
               bookmarked={bookmarked}

@@ -66,8 +66,8 @@ function page() {
         </section>
       </Box>
       <p className="leading-[1.2rem] text-dark lg:text-2xl font-semibold mt-[4.94rem] ">Explore Talent</p>
-      <Box className="mt-5 mb-5 ">
-        <div  className=" grid  lg:grid-cols-4 sm:grid-cols-2 md:grid-cols-3 gap-4">
+      <Box className="mt-5 mb-5 max-lg:mb-[25%] ">
+        <div  className=" grid  lg:grid-cols-4 max-md:flex  max-md:overflow-x-scroll md:gap-x-6 md:grid-cols-3 max-lg:gap-4 lg:gap-4">
           <VidThumbNail />
           <VidThumbNail name='Paul Williams' job='
           IT Officer'  thumbnailImg={"/svgs/et2.svg"} />

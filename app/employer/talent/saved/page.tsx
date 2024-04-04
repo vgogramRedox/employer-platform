@@ -20,25 +20,26 @@ const VidThumbNail = ({
   onClick,
   onClickBookMark,
 }: VidThumbNailType) => (
-    <section className=" lg:max-w-[90%] ">
+<section className=" lg:max-w-[90%] max-md:w-[95%] ">
     <div
-      className={`mx-auto text-center  lg:pt-[1.61rem] ${bg?bg:"bg-purple-200 "} relative rounded-lg lg:min-w-[15.22888rem] max-lg:w-[10rem] lg:gap-10 lg:min-h-[16.11313rem] flex-shrink  pt-3 ${className}`}
+      className={`mx-auto text-center  lg:pt-[1.61rem] ${bg?bg:"bg-purple-200 "} rounded-lg lg:min-w-[15.22888rem] max-lg:full lg:gap-10 lg:min-h-[16.11313rem]   pt-3 ${className}  max-md:min-h-[12.08488rem] md:min-h-[16.11313rem] relative`}
     >
       <div className="max-lg:p-1">
-     
+        
+           
             <IconBookmarkFilled
               onClick={onClickBookMark}
               size={10}
               className="rounded-full p-2  w-11 h-11 max-lg:w-9  absolute  left-[78%] lg:bottom-[78%]  bg-white text-sm z-10"
             />
-         
+        
 
         <BackgroundImage
           src="/svgs/thumbnail1.svg"
-          className="lg:max-w-[80%] lg:min-h-[9.25rem]
+          className="lg:max-w-[80%] lg:min-h-[9.23556rem] md:w-[80%] 
           hover:cursor-pointer focus-within:cursor-pointer
-          rounded-[0.625rem]
-          h-[7.15rem] max-lg:w-[80%]  min-h-[7.15rem] pt-1 max-lg:mt-[1.61rem]  mx-auto  flex items-center justify-center"
+          rounded-[0.625rem] max-md:w-[80%] max-md:h-[ 6.92669rem] md:min-h-[10.77906rem]
+          h-[7.15rem]   min-h-[7.15rem] pt-1 max-lg:mt-[5%]  mx-auto  flex items-center justify-center"
         >
           {/* <Image src={"/svgs/thumbnail1.svg"} className=" " /> */}
           <Image src="/svgs/playGreyBg.svg" w={30} className="absolute" />
@@ -55,7 +56,7 @@ const VidThumbNail = ({
       </div>
 
       <p className=" text-dark lg:text-lg font-normal mt-2 max-lg:text-sm">Tolu Ogunnipe</p>
-      <p className="max-lg:text-[0.7rem] lg:text-sm font-light  pb-5">Product designer</p>
+      <p className="max-lg:text-[0.7rem] lg:text-sm font-light pb-5 ">Product designer</p>
     </div>
   </section>
 );
@@ -79,7 +80,7 @@ function page() {
   return (
     <Box className="lg:w-[90%]  max-lg:w-full mx-auto max-lg:text-lg ">
   <div className='max-lg:border-b shadow max-lg:p-4 lg:hidden'>
-      <Group className="max-md:justify-between lg:hidden flex max-md:w-[100%] items-center">
+      <Group className="max-lg:justify-between lg:hidden flex max-md:w-[100%] items-center">
         <IconChevronLeft
         className='text-3xl'
           onClick={() => {
@@ -104,9 +105,9 @@ function page() {
       <Text className="leading-[1.2rem] text-dark   font-semibold text-lg   max-lg:hidden ">
            Saved Search
         </Text>
-      <Text className="leading-[1.2rem] text-dark   font-bold   lg:hidden ">
+      {/* <Text className="leading-[1.2rem] text-dark   font-bold   lg:hidden ">
           Explore Talent
-        </Text>
+        </Text> */}
         
         <div className=" grid  lg:grid-cols-4 md:grid-cols-3 max-md:grid-cols-2 max-md:gap-y-4 md:gap-4  max-lg:mt-10 lg:mt-[1.88rem]">
           <Link href={''}>

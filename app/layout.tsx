@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 
   return (
-    <html data-mantine-color-scheme="light" lang="en">
+    <html data-mantine-color-scheme="light" lang="en" style={{fontSize: "16px"}}>
       <body className={` font-generalSans`}>
        <RecoilWrapper>
         <MantineProvider

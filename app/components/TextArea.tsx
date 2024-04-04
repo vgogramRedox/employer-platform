@@ -20,7 +20,7 @@ value
     <div className='leading-8'>
     
     
-    <label className='text-dark text-xl max-md:text-sm' >
+    <label className='text-dark text-xl max-md:text-sm max-lg:font-light' >
 {label}
     </label>
     <Textarea
@@ -28,7 +28,7 @@ value
     value={value}
     autosize={true}
     minRows={10}
- className={`lg:min-h-[16.5rem] min-w-full   w-full rounded  ${className}`}
+ className={`lg:min-h-[16.5rem] min-w-full   w-full rounded  ${className} max-lg:font-light`}
   placeholder={placeholder} />
    </div>
   )

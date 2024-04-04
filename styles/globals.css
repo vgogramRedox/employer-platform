@@ -10,9 +10,17 @@
   html{
     @apply scroll-smooth
     font-generalSans
+    text-["16px"]
   }
 }
 
+
+body {
+  /* Reset default browser margins */
+  margin: 0;
+  /* Reset default browser font size */
+  font-size: 1rem; /* Ensure 1rem equals the root font size */
+}
 @font-face {
   font-family: "GeneralSans";
   src: url("../public/font/GeneralSans-Regular.otf");
