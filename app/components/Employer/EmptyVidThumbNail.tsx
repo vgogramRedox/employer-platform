@@ -14,12 +14,13 @@ export const EmptyVidThumbNail=({bg,
     
         <section  className="  max-lg:w-full" >
           
-          <div className={`mx-auto text-center   lg:pt-[1.61rem] ${bg?bg:"bg-purple-200 "} rounded-lg lg:min-w-[15.22888rem] max-lg:w-[10rem] lg:gap-10 lg:min-h-[16.11313rem] flex-shrink  pt-3 ${className}`}>
+          <div className={`mx-auto text-center  lg:pt-[1.61rem] ${bg?bg:"bg-purple-200 "} rounded-lg lg:min-w-[15.22888rem] max-lg:full lg:gap-10 lg:min-h-[16.11313rem]  pt-3 ${className}  max-md:w-[11.42169rem] max-md:min-h-[12.08488rem] md:min-h-[16.11313rem]`}>
           <Container
           
-            className="lg:max-w-[80%] lg:h-[9.25rem] bg-[#534747] max-lg:bg-[#00000033]
+            className="lg:max-w-[80%] lg:min-h-[9.23556rem] md:w-[80%]
             hover:cursor-pointer focus-within:cursor-pointer
-            h-[7.15rem] max-lg:w-[80%]  min-h-[7.15rem] pt-1  mx-auto rounded-lg  flex items-center justify-center"
+            rounded-[0.625rem] max-md:w-[9.13731rem] max-md:h-[ 6.92669rem] md:min-h-[10.77906rem]
+            h-[7.15rem]   min-h-[7.15rem] pt-1 max-lg:mt-[5%]  mx-auto  flex items-center justify-center bg-[#534747] max-lg:bg-[#00000033]"
           >
             {/* <Image src={"/svgs/thumbnail1.svg"} className=" " /> */}
            
@@ -36,7 +37,7 @@ export const EmptyVidThumbNail=({bg,
                   </FileButton> */}
  <Button 
  onClick={onClick}
-              className="bg-[#B3ADAD] text-dark rounded-full absolute flex justify-center items-center text-lg w-14 h-14"
+              className="bg-[#B3ADAD] text-dark rounded-full lg:absolute flex justify-center items-center text-lg w-14 h-14"
              >
                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
  <path d="M12 5V19M5 12H19" stroke="#303237" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>

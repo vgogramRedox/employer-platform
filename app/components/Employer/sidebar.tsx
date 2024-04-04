@@ -4,7 +4,9 @@ import { Group, Code, Image, Switch, useMantineColorScheme, Box } from '@mantine
 
 import classes from '@/styles/NavbarSimple.module.css';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
+import { motion } from 'framer-motion';
+import { Router } from 'next/router';
 
 <Image src="/svgs/home-house.svg" className={classes.linkIcon} />;
 
@@ -22,35 +24,52 @@ export function NavbarSimple() {
 
   const [active, setActive] = useState('Billing');
   const { colorScheme, setColorScheme } = useMantineColorScheme();
+  const router = useRouter();
   //@ts-ignore
   const [checked, setChecked] = useState<boolean>(() => {
     if (typeof window !== 'undefined') {
       return window.localStorage.getItem('darkMode') === 'true';
     }
   });
+
+  const SlideIn = ({ children, delay }: any) => (
+    <motion.div
+      initial={{ opacity: 0, x: -20 }}
+      animate={{ scale: 1, opacity: 1, x: 0 }}
+      transition={{
+        duration: 0.3,
+        delay: delay,
+      }}
+    >
+      {children}
+    </motion.div>
+  );
+
   const pathname = usePathname();
   // const path=pathname.substring(1)
 
   // const computedColorScheme = useComputedColorScheme('light', { getInitialValueInEffect: true });
-  const links = data.map((item) => (
-    <Link
-      className={`${classes.link} w-full relative min-h-[4.28rem]`}
-      data-active={item.link == active || pathname?.includes(item?.link) || undefined}
-      href={item.link}
-      key={item.label}
-      onClick={(event) => {
-        // event.preventDefault();
-        setActive(item.link?.substring(1));
-      }}
-    >
-      <Image src={item.icon} className={classes.linkIcon} />
-      <span className="font-normal text-[1rem] text-grey-2 p-0">{item.label}</span>
-      {item.link === active ||
-        (pathname?.includes(item?.link) && (
-          <Image src="/svgs/indicatorLgOn.svg" className=" absolute left-[95%]  w-[0.675rem]" />
-          // <span className="font-normal text-[1rem] text-grey-2 bg-primary-blue min-h-[2.91rem] rounded-s-[0.25rem] min-w-[0.625rem] ms-auto"></span>
-        ))}
-    </Link>
+  const links = data.map((item, i) => (
+    <SlideIn delay={0.1 * i} key={i}>
+      <Link
+        className={`${classes.link} w-full relative min-h-[4.28rem]`}
+        data-active={item.link == active || pathname?.includes(item?.link) || undefined}
+        href={item.link}
+        key={item.label}
+        onClick={(event) => {
+          // event.preventDefault();
+          setActive(item.link?.substring(1));
+        }}
+      >
+        <Image src={item.icon} className={classes.linkIcon} />
+        <span className="font-normal text-[1rem] text-grey-2 p-0">{item.label}</span>
+        {item.link === active ||
+          (pathname?.includes(item?.link) && (
+            <Image src="/svgs/indicatorLgOn.svg" className=" absolute left-[95%]  w-[0.675rem]" />
+            // <span className="font-normal text-[1rem] text-grey-2 bg-primary-blue min-h-[2.91rem] rounded-s-[0.25rem] min-w-[0.625rem] ms-auto"></span>
+          ))}
+      </Link>
+    </SlideIn>
   ));
 
   const toggleColorScheme = () => {
@@ -82,8 +101,11 @@ export function NavbarSimple() {
       <div className={`${classes.navbarMain} max-lg:hidden`}>
         <Group className={`${classes.header} lg:p-10 mb-10`} justify="center">
           <Image
+            onClick={() => {
+              router.push('/employer/home');
+            }}
             src="/svgs/darkLogo.svg"
-            className="max-lg:items-center max-lg:mx-auto"
+            className="max-lg:items-center max-lg:mx-auto hover:scale-125  transition-all cursor-pointer"
             w={93}
             h={93}
           />
@@ -98,7 +120,10 @@ export function NavbarSimple() {
           {checked == false ? (
             <Image src="/svgs/sun.svg" className={`${classes.linkIcon} transition `} />
           ) : (
-            <Image src="/svgs/moon.svg" className={` ${classes.linkIcon} transition  fill-slate-100`} />
+            <Image
+              src="/svgs/moon.svg"
+              className={` ${classes.linkIcon} transition  fill-slate-100`}
+            />
           )}
 
           {/* {checked == false ? (

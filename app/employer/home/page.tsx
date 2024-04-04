@@ -8,13 +8,14 @@ import { VidThumbNail } from '@/app/components/Employer/VidThumbNail';
 import { isMobile } from 'react-device-detect';
 
 import { UserContext } from '@/context/EmployerContext';
+import { useRouter } from 'next/navigation';
 
 
 
 function page() {
  
   const {setPostJobModalOpened}=useContext(UserContext)
-
+const router=useRouter()
 
   return (
 
@@ -68,11 +69,27 @@ function page() {
       <p className="leading-[1.2rem] text-dark lg:text-2xl font-semibold mt-[4.94rem] ">Explore Talent</p>
       <Box className="mt-5 mb-5 max-lg:mb-[25%] ">
         <div  className=" grid  lg:grid-cols-4 max-md:flex  max-md:overflow-x-scroll md:gap-x-6 md:grid-cols-3 max-lg:gap-4 lg:gap-4">
-          <VidThumbNail />
-          <VidThumbNail name='Paul Williams' job='
+          <VidThumbNail className="/employer/jobs/1"
+          onClick={()=>{
+            router.push("/employer/jobs/1")
+          }}
+           />
+          <VidThumbNail 
+          onClick={()=>{
+            router.push("/employer/jobs/1")
+          }}
+          name='Paul Williams' job='
           IT Officer'  thumbnailImg={"/svgs/et2.svg"} />
-          <VidThumbNail name="Henry Peter" thumbnailImg={"/svgs/et3.svg"} />
-          <VidThumbNail name="Sarah David" thumbnailImg={"/svgs/et4.svg"} />
+          <VidThumbNail 
+          onClick={()=>{
+            router.push("/employer/jobs/1")
+          }}
+          name="Henry Peter" thumbnailImg={"/svgs/et3.svg"} />
+          <VidThumbNail
+          onClick={()=>{
+            router.push("/employer/jobs/1")
+          }}
+          name="Sarah David" thumbnailImg={"/svgs/et4.svg"} />
         </div>
       </Box>
     </Box>

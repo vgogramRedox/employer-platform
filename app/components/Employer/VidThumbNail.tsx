@@ -14,14 +14,16 @@ export interface VidThumbNailType{
 
 export function VidThumbNail({bg,
   className,job="Product Designer",name="Tolu Ogunnipe",
-  thumbnailImg="/svgs/thumbnail1.svg",
+  thumbnailImg="/svgs/thumbnail1.svg",onClick
   
 }:VidThumbNailType) {
   // console.log(isMobile)
   
   return (
   
-      <section  className="" >
+      <section  className=""
+      onClick={onClick}
+      >
         
         <div className={`mx-auto text-center  lg:pt-[1.61rem] ${bg?bg:"bg-purple-200 "} rounded-lg lg:min-w-[15.22888rem] max-lg:full lg:gap-10 lg:min-h-[16.11313rem]  pt-3 ${className}  max-md:w-[11.42169rem] max-md:min-h-[12.08488rem] md:min-h-[16.11313rem] `}>
         <BackgroundImage
