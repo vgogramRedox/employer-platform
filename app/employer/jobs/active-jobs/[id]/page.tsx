@@ -21,7 +21,7 @@ function page() {
           bg={'primary.10'}
         >
           <Group className="flex max-md:block gap-y-2 relative lg:w-[50%] max-lg:w-full max-lg:text-sm">
-            <Group className="max-md:justify-between md:hidden flex">
+            <Group className="max-md:justify-between max-lg:hidden flex">
               <IconChevronLeft  onClick={()=>{
                 router.back()
               }}/>
