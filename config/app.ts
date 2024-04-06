@@ -40,4 +40,11 @@ export const appConfig = {
     "pink-200":"#841F17",
     "link-blue":"#6500FF"
   },
+  screens: {
+    sm: "540px",
+    md: "668px",
+    lg: "1100px",
+    xl: "1300px",
+    "2xl": "1536px",
+  },
 };

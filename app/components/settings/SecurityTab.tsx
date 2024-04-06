@@ -57,8 +57,10 @@ Password
       setEditPasswordModalOpened(true)
     }}
     p={breakpoint?"sm":'0'}
-    className='bg-white text-dark border-dark rounded border-1 hover:bg-black max-lg:w-[9rem] max-lg:text-sm hover:text-white me-5 lg:w-[12.625rem] lg:h-12' title={
-    <Text className=' text-[1rem] font-normal'>
+    className='bg-white text-dark border-dark rounded border-1
+
+    hover:bg-black max-lg:w-[9rem] max-lg:text-sm hover:text-white me-5 lg:w-[12.625rem] lg:h-12' title={
+    <Text className=' text-[1rem] font-normal max-lg:text-sm'>
     Change Password
     </Text>
     }

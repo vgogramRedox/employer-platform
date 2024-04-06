@@ -91,7 +91,7 @@ function page() {
       </div>
       )}
       
-      <Box className="lg:w-[90%] flex max-lg:block max-lg:text-lg mb-5 lg:p-5">
+      <Box className="lg:w-full flex max-lg:block max-lg:text-lg mb-5 lg:p-5">
         <SlideInAnimation>
         <Box className="min-h-[7rem] max-lg:min-h-[4rem] h-[7rem] min-w-full bg-[#D3D7F1] lg:hidden flex items-center justify-end">
           <IconSettings className=' me-[5%] focus:rotate-180 hover:rotate-180  transition-all' onClick={()=>{
@@ -104,13 +104,14 @@ function page() {
         <Box className=" w-[50%] max-lg:w-full max-lg:p-2  ">
           <div className="mt-3.5  max-lg:top-[3.96rem] max-lg:absolute max-lg:mb-[50rem] max-lg:flex max-lg:items-center  max-lg:w-full max-lg:gap-x-8   ">
             <div className=''>
-            <SlideInAnimation>
+        
+      
             <Box className="lg:w-[8.6rem] lg:h-[8.6rem] max-lg:h-[8.6rem] max-lg:w-[8.6rem] lg:mx-auto lg:flex lg:items-center lg:gap-x-8 relative lg:justify-start ">
-                  <Image src="/svgs/person.svg" className="[8.6rem] [8.6rem] " />
-                  <Image
+                  <Image src="/svgs/ovigo.svg" className="[8.6rem] [8.6rem] " />
+                  {/* <Image
                     src="/svgs/verifiedCheck.svg"
                     className="w-[1.6rem] h-[1.6rem] absolute top-[10%] left-[80%]"
-                  />
+                  /> */}
                   <IconEdit
                     onClick={() => {
                       router.push('profile/edit');
@@ -118,18 +119,18 @@ function page() {
                     className="absolute top-[90%] left-[90%] font-light text-grey-2"
                   />
                 </Box>
-            </SlideInAnimation>
+          
                 
              
-              <div className="flex gap-x-4 items-center  lg:justify-center mt-2.5">
-                <Box className=" flex-col gap-y-4">
+              <div className="flex gap-x-4 items-center  lg:justify-center mt-2.5 max-lg:ms-[7%]">
+                <Box className=" flex-col gap-y-4 ">
                 <SlideInAnimation>
                 <Text className="font-bold text-lg max-lg:text-sm">Tolu Ogunnipe</Text>
                 </SlideInAnimation>
                   
 
-                  <Text className="lg:text-[1rem] flex gap-x-2 font-light max-lg:text-sm lg:mt-[0.69rem] ">
-                  <SlideInAnimation><IconMapPin className="max-lg:w-5" /> Lagos,Nigeria</SlideInAnimation>  
+                  <Text className="lg:text-[1rem] flex gap-x-2  lg:gap-x-0 font-light max-lg:text-sm lg:mt-[0.69rem]  lg:w-full">
+                  <IconMapPin className="max-lg:w-5" /> Lagos,Nigeria
                   </Text>
                 </Box>
               </div>
@@ -144,21 +145,21 @@ function page() {
               {/* small screen */}
               <Paper
                 bg={'primary.10'}
-                className="font-bold flex items-center gap-x-3 w-[7rem] min-h-[2.6rem] lg:hidden text-sm p-2 mt-[40%] "
+                className="font-bold flex items-center gap-x-3 min-h-[2.6rem] sm:min-w-[8.8rem]  lg:hidden text-sm p-2 mt-[40%] "
               >
                 <Image src="/svgs/diamondYellow.svg" className="w-6 h-6" /> Premium{' '}
               </Paper>
 
-              <Box className="flex lg:hidden gap-x-2.5 justify-center mt-[60%]">
-                <Box className="bg-primary-blue text-white-smoke w-[4rem] min-h-[3.9375rem] rounded-lg text-center ">
-                  <Text className="max-lg:text-[0.475rem] text-center mt-[0.69rem] min-h-[1.29rem] leading-normal">
+              <Box className="flex lg:hidden gap-x-2.5 justify-center mt-[20%]">
+                <Box className="bg-primary-blue text-white-smoke min-w-[4rem] min-h-[3.9375rem] rounded-lg text-center ">
+                  <Text className="max-md:text-[0.475rem] max-lg:text-[0.6rem]  text-center mt-[0.69rem] min-h-[1.29rem] leading-normal">
                     Jobs <br /> Completed
                   </Text>
                   <Text className="font-bold  max-lg:text-[1.5rem] text-center leading-1">20</Text>
                 </Box>
 
-                <Box className="bg-primary-blue text-white-smoke w-[4rem] min-h-[3.9375rem] rounded-lg text-center">
-                  <Text className="max-lg:text-[0.475rem] text-center mt-[0.69rem] min-h-[1.29rem]">
+                <Box className="bg-primary-blue text-white-smoke min-w-[4rem] min-h-[3.9375rem] rounded-lg text-center">
+                  <Text className="max-md:text-[0.475rem] max-lg:text-[0.6rem] text-center mt-[0.69rem] min-h-[1.29rem]">
                     Hired  Talent
                   </Text>
                   <Text className="font-bold max-lg:text-[1.5rem] text-center">20</Text>
@@ -217,8 +218,8 @@ function page() {
           </Group>
         </Box>
 
-        <Box className="w-full  max-lg:p-4 max-lg:mt-60 ">
-          <Box className="flex text-bold justify-between items-center text-2xl lg:w-[75%] max-lg:text-[1rem] max-lg:text-black  max-lg:font-bold ">
+        <Box className="w-full  max-lg:p-4 max-lg:mt-60  lg:ms-[10%]">
+          <Box className="flex text-bold justify-between items-center text-2xl lg:w-[90%] max-lg:text-[1rem] max-lg:text-black  max-lg:font-bold ">
             <IconEdit className="opacity-0" />
             About Ovidigo{' '}
             <IconEdit
@@ -227,14 +228,14 @@ function page() {
               }}
             />
           </Box>
-          <div className=" grid  lg:grid-cols-2 max-md:flex  max-md:overflow-x-scroll md:gap-x-6 md:grid-cols-3 gap-4 max-lg:w-full  lg:w-[80%] mt-2.5 max-lg:mt-5">
-       <SlideInAnimation>
+          <div className=" grid  lg:grid-cols-3 lg:overflow-x-auto max-md:flex max-lg:gap-x-6  max-md:overflow-x-scroll md:gap-x-6 md:grid-cols-3 gap-4 max-lg:w-full  lg:w-[90%] mt-2.5 max-lg:mt-5">
+      
        <EmptyVidThumbNail
               onClick={() => {
                 setAddVideoModalOpened(true);
               }}
             />
-       </SlideInAnimation>
+  
             
             <SlideInAnimation>
             <VidThumbNail name="Our People"job=' '  thumbnailImg={"/svgs/ofp1.svg"} />

@@ -1,4 +1,5 @@
 'use client';
+import NewChatModal from '@/app/components/Chat/NewChatModal';
 import AddVideoModal from '@/app/components/Edit/AddVideoModal';
 // import VerifyAccountModal from '@/app/components/Edit/verifyAccountModal';
 import { PostJobModal } from '@/app/components/Employer/PostJobModal';
@@ -27,6 +28,7 @@ interface AppStateType {
   verifyAccStage:number
   addUser_name:string
   addUser_email:string
+  chatStage:"chats"|"newChat"|"singleChat"
 }
 const VerifyAccountModal=dynamic(()=>import('@/app/components/Edit/verifyAccountModal'))
 
@@ -49,13 +51,15 @@ function EmployerContext({ children }: { children: React.ReactNode }) {
     verifyAccStage:1,
     addUser_name:"",
     addUser_email:"",
-    addUser_mode:"edit"
+    addUser_mode:"edit",
+    chatStage:"chats"
   });
   const [postJobModalOpened, setPostJobModalOpened] = useState<boolean>(false);
   const [addVideoModalOpened, setAddVideoModalOpened] = useState<boolean>(false);
   const[addUserModalOpened,setAddUserModalOpened]= useState<boolean>(false);
   const[verifyModalOpened,setVerifyModalOpened]=useState<boolean>(false)
   const [editPasswordModalOpened,setEditPasswordModalOpened]=useState<boolean>(false)
+  const [newChatModalOpened,setnewChatModalOpened]=useState<boolean>(false)
 
 
  
@@ -63,7 +67,7 @@ function EmployerContext({ children }: { children: React.ReactNode }) {
     <UserContext.Provider
       //@ts-ignore
       value={{ appState, setAppState, postJobModalOpened, setPostJobModalOpened,addVideoModalOpened, setAddVideoModalOpened,
-        verifyModalOpened,setVerifyModalOpened,addUserModalOpened,setAddUserModalOpened,editPasswordModalOpened,setEditPasswordModalOpened
+        verifyModalOpened,setVerifyModalOpened,addUserModalOpened,setAddUserModalOpened,editPasswordModalOpened,setEditPasswordModalOpened,newChatModalOpened,setnewChatModalOpened,
       }}
     >
       {children}
@@ -134,6 +138,23 @@ close={()=>{
     open={open}
     close={()=>{
       setEditPasswordModalOpened(false)
+    }}
+    />
+
+  </Portal>
+)
+
+}
+
+
+{newChatModalOpened&&(
+  <Portal>
+
+    <NewChatModal
+    opened={newChatModalOpened}
+    open={open}
+    close={()=>{
+      setnewChatModalOpened(false)
     }}
     />
 

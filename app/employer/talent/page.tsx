@@ -36,9 +36,9 @@ const VidThumbNail = ({
   onClick,
   onClickBookMark,
 }: VidThumbNailType) => (
-  <section className=" lg:max-w-[90%] max-md:w-[95%] ">
+  <section className="  ">
     <div
-      className={`mx-auto text-center  lg:pt-[1.61rem] ${bg?bg:"bg-purple-200 "} rounded-lg lg:min-w-[15.22888rem] max-lg:full lg:gap-10 lg:min-h-[16.11313rem]   pt-3 ${className}  max-md:min-h-[12.08488rem] md:min-h-[16.11313rem] relative`}
+      className={`mx-auto text-center  lg:min-w-[98%]  lg:pt-[1.61rem] ${bg?bg:"bg-purple-200 "} rounded-lg  max-lg:full lg:gap-10 lg:min-h-[16.11313rem]   pt-3 ${className}  max-md:min-h-[12.08488rem] md:min-h-[16.11313rem] relative`}
     >
       <div className="max-lg:p-1">
         {

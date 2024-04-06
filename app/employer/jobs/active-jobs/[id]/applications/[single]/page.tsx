@@ -6,8 +6,24 @@ import PrimaryButton from '@/app/components/Button'
 import { IconBookmark, IconMail, IconMapPin } from '@tabler/icons-react'
 import { useRouter } from 'next/navigation'
 import { IconChevronLeft } from '@tabler/icons-react'
+import BreadCrumbsNav from '@/app/components/BreadCrumbsNav'
 function page() {
   const router=useRouter()
+  const items=[
+    {
+      title:"Active Jobs",
+      href:"/employer/jobs/active-jobs"
+    },
+    {
+      title:"Product Designer",
+      href:"/employer/jobs/active-jobs/params"
+    },
+{
+  title:"Applications",
+  href:"/employer/jobs/active-jobs/params/applications/1"
+}
+    
+  ]
     return (
     
         <Box className="lg:w-[90%]  max-lg:w-full mx-auto max-lg:text-lg  mb-5">
@@ -29,9 +45,10 @@ function page() {
         />
       </Group>
       </div>
+      <BreadCrumbsNav reverse={true} items={items} className='mt-10 max-lg:hidden'/>
        <p className="leading-[1.2rem] text-dark lg:text-2xl font-semibold mt-10  max-lg:hidden">Applications</p>
           <Box className="mt-20 mb-5">
-            <div  className=" lg:max-w-[23.5rem] ">
+            <div  className=" lg:max-w-[20.5rem] md:w-[70%] max-lg:mx-auto ">
               <VidThumbNail />
               
              
@@ -48,7 +65,9 @@ function page() {
  onClick={()=>{
   router.push("/employer/jobs/1")
  }}
- className='bg-primary-blue lg:w-[17.5rem]  max-lg:text-sm max-lg:rounded-xl max-lg:font-light max-lg:h-6 ' title=" View Profile"/>
+ className='bg-primary-blue lg:w-[17.5rem] 
+ md:w-[40%]
+ max-lg:text-sm max-lg:rounded-xl max-lg:font-light max-lg:h-12 ' title=" View Profile"/>
     </Box>
 <div className='flex gap-x-4 items-center mt-[0.81rem]'>
 

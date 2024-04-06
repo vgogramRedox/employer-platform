@@ -57,25 +57,28 @@ const{addUser_mode}=appState
       >
         <Modal.Overlay />
         <Modal.Content ref={scrollableRef}>
-          <Modal.Header className="lg:bg-light-blue min-h-[8.875rem]  max-lg:bg-white max-lg:relative">
-            <Modal.Title className="lg:flex justify-between max-lg:w-full lg:w-full lg:p-5 ">
+          <Modal.Header className="lg:bg-light-blue min-h-[8.875rem]  max-lg:min-h-[4rem] max-lg:bg-white max-lg:relative max-lg:shadow">
+            <Modal.Title className="lg:flex justify-between max-lg:w-full lg:w-full lg:p-5  max-lg:p-0  max-lg:items-end">
               {/* large screen */}
-              <Box className="max-lg:hidden flex justify-between w-full mt--1 ">
-              <Text className="font-bold text-dark text-2xl ">Edit Password</Text>
+              <Box className=" flex justify-between w-full mt--1 ">
+              <Text className="font-bold text-dark text-2xl  max-lg:hidden">Change Password</Text>
                 {/* <Text className="font-bold text-dark text-2xl ">{addUser_mode=="add"?"add":"Edit"} Password</Text> */}
-                <Modal.CloseButton className=" max-lg:hidden " />
+                <Modal.CloseButton
+                 className="   " />
               </Box>
+              
 
-
-              <div className="max-lg:border-b   lg:hidden">
-                <Group className="max-md:justify-between lg:hidden flex max-md:w-[100%] items-center">
-                  <IconChevronLeft className="text-3xl" onClick={close} />
-                  <Text className=" text-dark text-lg  font-semibold   ">{
-                    addUser_mode=="add"?"Add a User":"Edit a User"
+{/* small screen */}
+          
+                <Box className="max-md:justify-center lg:hidden flex max-lg:w-[100%] ">
+                  {/* <IconChevronLeft className="text-3xl"  /> */}
+                  <Text className=" text-[#303237] text-lg  font-semibold  max-lg:mb-1 ">{
+                    // addUser_mode=="add"?"Add a User":"Edit a User"
+               "     Change Password"
                   } </Text>
-                  <IconChevronLeft className="text-3xl opacity-0" />
-                </Group>
-              </div>
+                  {/* <IconChevronLeft className="text-3xl opacity-0" /> */}
+                </Box>
+           
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
@@ -192,9 +195,12 @@ delay:0.5
                   p="xs"
                   fullWidth={false}
                   className="bg-primary-blue border lg:w-60 lg:hidden max-lg:font-normal max-lg:w-32  "
-                  title={
+                  // title={
                     
-                    addUser_mode=="add"?"  Post ":"Edit "}
+                  //   addUser_mode=="add"?"  Post ":"Edit "
+                  // }
+
+                  title={"Update"}
                   //   onClick={() => {
                   //    setvid({
                   //  ...

@@ -5,6 +5,7 @@ const config: Config = {
   darkMode: ['class', '[data-mantine-color-scheme="dark"]'],
   content: ['./app/**/*.{js,ts,jsx,tsx}'],
   theme: {
+    screens:appConfig.screens,
     extend: {
       colors: appConfig.colors,
       backgroundImage:{

@@ -9,15 +9,15 @@ function Template({
 }) {
   return (
     <motion.div
-    initial={{ y:30,opacity:0}}
-    animate={{y:0,opacity:1}}
-    viewport={{
-      once:true,
-amount:"some"
-    }}
-    transition={{
-        ease:'easeInOut',duration:0.85
-    }}
+//     initial={{ y:30,opacity:0}}
+//     animate={{y:0,opacity:1}}
+//     viewport={{
+//       once:true,
+// amount:"some"
+//     }}
+//     transition={{
+//         ease:'easeInOut',duration:0.85
+//     }}
     >
       {children}</motion.div>
   )

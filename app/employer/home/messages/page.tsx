@@ -1,6 +1,6 @@
 'use client';
 import React, { useContext, useEffect, useState } from 'react';
-import { Box, Image, Paper, Text } from '@mantine/core';
+import { Autocomplete, Box, FileButton, Group, Image, Input, Paper, Text } from '@mantine/core';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 import { auth, db } from '@/config/firebase';
@@ -14,6 +14,7 @@ import { addDoc, collection, getDocs, orderBy, query, serverTimestamp } from 'fi
 import { AuthContext } from '@/context/AuthContext';
 import Reciever from '@/app/components/Chat/Reciever';
 import Sender from '@/app/components/Chat/Sender';
+import { IconChevronLeft } from '@tabler/icons-react';
 
 interface UserMessagesProps {
   user?: string;
@@ -21,7 +22,33 @@ interface UserMessagesProps {
   className?: string;
   active?: any;
   userPfp?: string;
+  onClick?: () => void;
 }
+
+const messagesDemo = [
+  {
+    name: ' Tolu Olupe',
+    text: 'I am on my way to my shift!',
+    avatar: '/svgs/person.svg',
+  },
+  {
+    name: ' Tolu Olupe',
+    text: 'I am on my way to my shift!',
+    avatar: '/svgs/person.svg',
+  },
+
+  {
+    name: ' Tolu Olupe',
+    text: 'I am on my way to my shift!',
+    avatar: '/svgs/person.svg',
+  },
+
+  {
+    name: ' Tolu Olupe',
+    text: 'I am on my way to my shift!',
+    avatar: '/svgs/person.svg',
+  },
+];
 
 const UserMessages = ({
   user,
@@ -29,19 +56,21 @@ const UserMessages = ({
   message,
 
   active,
+  onClick,
 }: UserMessagesProps) => (
   <Box
-    className={`flex px-[0.5rem] py-[0.5rem] min-w-[22.5rem] min-h-[5.5rem] gap-x-4 items-center ${
-      active ? 'bg-grey' : ''
+    onClick={onClick}
+    className={`flex px-[0.5rem] p-5 py-[0.5rem] hover:border-0 cursor-pointer hover:rounded lg:min-w-[22.5rem] max-lg:w-full  min-h-[5.5rem] gap-x-4 items-center hover:bg-grey-6 ${
+      active ? 'bg-grey-6 rounded' : ''
     }  border-b rounded text-dark-100`}
   >
     <Image className="w-[2.5rem] h-[2.5rem]" src="/svgs/person.svg" />
     {userPfp}
     <Box>
-      <Text className="font-bold">Vincent{user}</Text>
-      <Text className="text-sm font-light text-grey-3">sup my nigga{message}</Text>
+      <Text className="font-bold">Tolu Olupe{user}</Text>
+      <Text className="text-sm font-light text-grey-3">I am on my way to my shift!{message}</Text>
     </Box>
-    <Box className="ms-auto">
+    <Box className="ms-auto me-[1.69rem]">
       <Text className="text-xs font-light text-grey-3 mb-1 ">0:00</Text>
       <Text className="text-sm w-5 min-h-5 rounded-full bg-red-600 text-white  ms-auto flex items-center justify-center">
         2
@@ -51,9 +80,8 @@ const UserMessages = ({
 );
 
 function page() {
-  const { setVerifyModalOpened } = useContext(UserContext);
+  const { setnewChatModalOpened } = useContext(UserContext);
   const [loadedmessages, setLoadedMessages] = useState();
-
 
   const [messages, setMessages] = useState([]);
 
@@ -63,19 +91,20 @@ function page() {
   // Create a query to order messages by createdAt timestamp
   const q = query(messagesRef, orderBy('createdAt'));
 
-  // Use useCollectionData to subscribe to changes in the "messages" collection
   const [messageDocs] = useCollectionData(q, {
     //@ts-ignore
-    idField: 'id' });
+    idField: 'id',
+  });
   // console.log(messageDocs)
   const router = useRouter();
 
-  const [messageText, setMessageText] = useState<any>("");
- 
-//@ts-ignore
-  const { user } = useContext(AuthContext);
+  const [messageText, setMessageText] = useState<any>('');
+
+  //@ts-ignore
+  const { user, setNewChatModalOpened, appState, setAppState } = useContext(AuthContext);
+  // const {chatStage}=appState
   // console.log(user)
-  const sendMessage = async (text:any) => {
+  const sendMessage = async (text: any) => {
     try {
       const docRef = await addDoc(collection(db, 'messages'), {
         text: text,
@@ -83,25 +112,23 @@ function page() {
 
         createdAt: serverTimestamp(),
       });
-      getItems()
-      setMessageText("")
+      getItems();
+      setMessageText('');
       console.log('Document written with ID: ', docRef.id);
     } catch (e) {
       console.error('Error adding document: ', e);
     }
   };
 
-  const handleKeyPress=(e:any)=>{
-    if(e.charCode!==13 || !messageText) return
-    sendMessage(messageText)
-    e.preventDefault()
-  }
-
+  const handleKeyPress = (e: any) => {
+    if (e.charCode !== 13 || !messageText) return;
+    sendMessage(messageText);
+    e.preventDefault();
+  };
 
   const getItems = async () => {
-    const querySnapshot = await getDocs(collection(db, "messages"));
+    const querySnapshot = await getDocs(collection(db, 'messages'));
 
-   
     const data: any = [];
     querySnapshot?.forEach((doc) => {
       data.push({
@@ -111,85 +138,113 @@ function page() {
     });
 
     setMessages(data);
- 
   };
-
+  const [file, setFile] = useState<File | null>(null);
   useEffect(() => {
     getItems();
-  }, []); 
-  
+  }, []);
+
   // useEffect(() => {
   //   // console.log(messages);
   //   // messages.reverse()
   // }, [messages]);
   return (
     <Box className="min-h-screen">
-      <Box className="  max-lg:bg-[#040513] max-lg:full max-lg:min-h-10 lg:hidden flex justify-between items-center text-[#FFFFFFD9] lg:p-5">
-        <Link
-          href=""
-          onClick={(e) => {
-            e.preventDefault();
-            setVerifyModalOpened(true);
-          }}
-          className="underline font-normal  ms-[10%] text-sm"
-        >
-          Verify your profile
-        </Link>
-        <IconX className="w-6 h-6 me-[2%] cursor-pointer" />
-      </Box>
+      <div className="max-lg:border-b max-lg:w-full  lg:hidden w-full max-lg:h-[5.7rem] flex items-end shadow">
+        <Group className="max-md:justify-between lg:hidden flex max-md:w-[100%] items-center">
+          <IconChevronLeft
+            className="text-3xl"
+            onClick={() => {
+              router.back();
+            }}
+          />
+          <Text className=" text-dark text-lg  font-semibold  max-lg:text-[1rem] ">Messages</Text>
+          <IconChevronLeft className="text-3xl opacity-0" />
+        </Group>
+      </div>
 
-      <Box className="lg:w-[90%] flex max-lg:block max-lg:text-lg mb-5 lg:p-5">
-        <Box className=" w-[40%] max-lg:w-full max-lg:p-2 border-e gap-x-3 flex flex-col min-h-screen p-2">
-          <Text className="rounded-lg px-[0.5rem] py-[1rem] w-[5.9rem] border border-primary-blue flex items-center h-[2.5rem] justify-center text-primary-blue hover:scale-125 transition cursor-pointer gap-x-2 hover:bg-primary-blue hover:text-white ms-auto group">
-            <IconPlus className="text-primary-blue group-hover:text-white" /> New
+      <Box className=" flex max-lg:block max-lg:text-lg mb-5  ms-auto">
+        <Box className=" w-[30%] max-lg:w-full max-lg:p-2 border-e gap-x-3 flex flex-col min-h-screen lg:p-2 ">
+          <Text
+            className="mb-[1.12rem] rounded-lg px-[0.5rem] py-[1rem]  lg:w-[5.9rem] border border-primary-blue flex items-center h-[2.5rem] justify-center text-primary-blue hover:scale-125 transition cursor-pointer gap-x-2 hover:bg-primary-blue hover:text-white ms-auto group max-lg:mt-[1.19rem]"
+            onClick={() => {
+              setnewChatModalOpened(true);
+            }}
+          >
+            <IconPlus className="text-primary-blue group-hover:text-white " />{' '}
+            <Text className="max-lg:hidden"> New</Text>
           </Text>
-          <UserMessages />
+          <UserMessages
+            onClick={() => {
+              setNewChatModalOpened(true);
+              setAppState({
+                ...appState,
+                chatStage: 'singleChat',
+              });
+            }}
+          />
           <UserMessages />
           <UserMessages />
         </Box>
 
-        <Box className="w-full   overflow-y-auto relative">
-          <Box className="flex border-b p-4 text-dark-100 gap-x-2 items-center text-lg capitalize">
+        <Box className=" w-[70%] ms-[0.94rem] max-lg:hidden">
+          <Box className="flex border-b p-4  text-dark-100 gap-x-2 items-center text-lg capitalize w-full">
             <Image className="w-[2.5rem] h-[2.5rem]" src="/svgs/person.svg" /> Vincent
           </Box>
-          <Box className="flex flex-col content-evenly p-4 mb-[30%]">
-           { //@ts-ignore
-            <Reciever/>}
-            {messageDocs&&messageDocs?.map((message)=>(
-<>
-<Sender name={user?.displayName} text={message?.text} avatar={user?.photoURL}/>
-</>
-              ))
+          <Box className="flex flex-col content-evenly p-4 mb-[30%] w-full">
+            {
+              //@ts-ignore
             }
-          
+            {messagesDemo &&
+              messagesDemo?.map((message) => (
+                <>
+                  <Reciever name={message?.name} text={message?.text} avatar={message?.avatar} />
+                  <Sender name={message?.name} text={message?.text} avatar={message?.avatar} />
+                </>
+              ))}
           </Box>
-          <Box className="flex gap-3 flex-row z-10 fixed bottom-0 w-[60%] ms-4 p-4 border-t bg-white">
-            <Box className="relative w-[95%]">
-              <form onSubmit={sendMessage}
-              onKeyDown={handleKeyPress}
+          <Box className="z-10 fixed bottom-0 w-[60%] ms-4 p-4 border-t bg-white">
+            <Box className=" flex gap-x-3  flex-row ">
+              <form
+                onSubmit={sendMessage}
+                onKeyDown={handleKeyPress}
+                className="relative min-h-8  min-w-[88%] "
               >
                 <input
                   value={messageText}
                   onChange={(e) => {
                     setMessageText(e.target.value);
                   }}
-                  className="min-h-8 w-[95%]  text-dark-100 border border-dark-100 rounded-lg p-4"
+                  className="min-h-8 text-dark-100 border w-full border-grey-8 rounded-lg p-4"
                   placeholder="Write a message"
                 />
-                <IconPaperclip className="absolute right-[7%] top-[15%] text-slate-400 hover:skew-x-2 transition" />
+
+                <FileButton onChange={setFile} accept="image/png,image/jpeg">
+                  {(props) => (
+                    <Image
+                      {...props}
+                      src="/svgs/clip.svg"
+                      className=" absolute left-[95%] bottom-[26%] w-6 h-6"
+                    />
+                  )}
+                </FileButton>
               </form>
+
+              <Box
+                type="submit"
+                component="button"
+                onClick={() => {
+                  sendMessage(messageText);
+                }}
+                className="w-14 h-14 flex items-center bg-primary-blue justify-center group rounded-full"
+              >
+                <IconSend className="text-white group-hover:rotate-[10deg] transition-all  " />
+              </Box>
             </Box>
 
-            <Box
-              type="submit"
-              component="button"
-              onClick={() => {
-                sendMessage(messageText);
-              }}
-              className="w-14 h-14 flex items-center bg-primary-blue justify-center group rounded-full"
-            >
-              <IconSend className="text-white group-hover:rotate-180 transition-all scale-125 " />
-            </Box>
+            {/* <Input
+            h={50}
+            placeholder="" className=' min-w-[75%]  rounded-lg p-4 min-h-14   border-grey-8'   rightSection={<IconPaperclip/>}/> */}
           </Box>
         </Box>
       </Box>

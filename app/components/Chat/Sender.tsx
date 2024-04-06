@@ -19,7 +19,7 @@ function Sender({
             <Box className="flex ms-auto min-h-24 mt-14 gap-x-5 ">
               <Box className="bg-primary-blue min-w-[60%] rounded-tl-lg rounded-tr-lg rounded-br-none rounded-bl-lg p-4 text-slate-200 ">
                 <Text className="text-sm">{name}</Text>
-                <Text className="min-h-[2.25rem] font-light  leading-[1.125rem]">
+                <Text className="min-h-[2.25rem] font-light  leading-[1.125rem] text-[#141316] text-sm">
                  {text}
                 </Text>
               </Box>

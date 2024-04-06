@@ -25,7 +25,7 @@ export function VidThumbNail({bg,
       onClick={onClick}
       >
         
-        <div className={`mx-auto text-center  lg:pt-[1.61rem] ${bg?bg:"bg-purple-200 "} rounded-lg lg:min-w-[15.22888rem] max-lg:full lg:gap-10 lg:min-h-[16.11313rem]  pt-3 ${className}  max-md:w-[11.42169rem] max-md:min-h-[12.08488rem] md:min-h-[16.11313rem] `}>
+        <div className={`mx-auto text-center lg:min-w-[98%]  lg:pt-[1.61rem] ${bg?bg:"bg-purple-200 "} rounded-lg lg:min-w-[15.22888rem] max-lg:full lg:gap-10 lg:min-h-[16.11313rem]  pt-3 ${className}  max-md:w-[11.42169rem] max-md:min-h-[12.08488rem] md:min-h-[16.11313rem] `}>
         <BackgroundImage
           src={thumbnailImg}
           className="lg:max-w-[80%] lg:min-h-[9.23556rem] md:w-[80%]

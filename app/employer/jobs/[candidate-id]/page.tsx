@@ -63,18 +63,18 @@ function page() {
   
     <Box className=" flex max-lg:block max-lg:text-lg mb-5  lg:mt-[5.1rem]">
      
-      <div className="min-h-[8rem] h-[8rem] min-w-full bg-[#D3D7F1] lg:hidden"></div>
+      <div className="min-h-[8rem] h-[8rem] max-lg:[7rem] min-w-full bg-[#D3D7F1] lg:hidden"></div>
       {/* large left-side */}
       <Box className=" w-[50%] max-lg:w-full  max-lg:p-4 lg:ps-[4.69rem] lg:pe-[4.69rem] ">
       
         <div className="max-lg:mt-3.5 lg:mt-0 max-lg:mb-20 max-lg:top-[10%] max-lg:absolute ">
           <Box className="flex  gap-x-8 lg:gap-x-0  ms-[2.18rem]">
-            <Image src="/svgs/person.svg" className="w-[8.6rem] h-[8.6rem]" />
+            <Image src="/svgs/person.svg" className="w-[8.6rem] h-[8.6rem] " />
           </Box>
 
           <div className="flex gap-x-4 mt-[0.81rem] ">
             <Box className=" flex-col gap-y-5">
-              <Text className="font-bold lg:text-[1.5rem] text-lg text-black">Sarah David</Text>
+              <Text className="font-bold lg:text-[1.2rem] text-lg text-black lg:w-full">Sarah David</Text>
               <Text className="text-sm lg:text-[1.1rem] font-light  text-black ">
                 Product Designer
               </Text>
@@ -91,15 +91,16 @@ function page() {
             </Box>
 
             <Box className="gap-2 flex">
-              <IconMail className="rounded-full p-3 border w-16 h-16 text-black border-black" />
+              <IconMail className="rounded-full p-3 border w-14 h-14 text-black border-black" />
 
-              <IconBookmark className="rounded-full p-3 border w-16 h-16 text-black border-black " />
+              <IconBookmark className="rounded-full p-3 border w-14 h-14 text-black border-black " />
             </Box>
           </div>
         </div>
 {/* for small screen */}
-        <Text className="font-bold text-center lg:hidden mt-[60%]">About me</Text>
-        <div className=" grid  lg:hidden  max-lg:grid-cols-2  mt-5">
+        <Text className="font-bold text-center lg:hidden max-lg: mt-[13.5rem]  ">About me</Text>
+        {/* grid  lg:grid-cols-4   max-md:overflow-x-scroll md:grid-cols-3 max-lg:gap-4 lg:gap-4 */}
+        <div className=" grid  lg:hidden max-md:flex max-lg:grid-cols-2 max-lg:gap-x-5 mt-5 max-md:overflow-x-scroll md:gap-x-6 ">
           <VidThumbNail />
           <VidThumbNail />
         </div>
@@ -244,7 +245,7 @@ function page() {
         {/* for both screens */}
         <Box className="lg:mt-10">
         <Text className="font-bold text-center text-lg ">Projects</Text>
-          <Box className="grid  lg:grid-cols-3 sm:grid-cols-2 md:grid-cols-2 gap-x-4 mt-6 ">
+          <Box className="grid  lg:grid-cols-3 sm:grid-cols-2 md:grid-cols-2 gap-4 mt-6 ">
                 {/* <Text className=" flex h-10 items-center gap-5 my-auto text-center">
             
                 Projects

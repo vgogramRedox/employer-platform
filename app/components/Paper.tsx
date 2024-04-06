@@ -11,10 +11,13 @@ interface PaperCompType {
 export default function PaperComp({ radius, pay, applied, className }: PaperCompType) {
   return (
     <Paper
+    component="a"
+    //@ts-ignore
+    href="jobs/active-jobs/1"
       shadow="xs"
       // p={isMobile ? 'xs' : 'xl'}
-      component="a"
-      className={`${className} w-full flex justify-between  max-lg:items-center max-lg:p-2 mt-5 max-lg:min-h-28 lg:p-10 max-lg: mb-5`}
+    
+      className={`${className} cursor-pointer w-full flex justify-between  max-lg:items-center max-lg:p-2 mt-5 max-lg:min-h-28 lg:p-10 max-lg: mb-5`}
       bg={'primary.10'}
       radius={radius}
     >
@@ -24,9 +27,7 @@ export default function PaperComp({ radius, pay, applied, className }: PaperComp
       </Group>
 
 
-      <Group className='max-lg:gap-x-0' component="a"
-      //@ts-ignore
-      href="jobs/active-jobs/1">
+      <Group className='max-lg:gap-x-0'>
         <IconArrowDownLeft />
         <Text  className=" text-2xl max-lg:text-[1rem]">
           23

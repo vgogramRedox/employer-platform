@@ -12,9 +12,9 @@ export const EmptyVidThumbNail=({bg,
    
     return (
     
-        <section  className="  max-lg:w-full" >
+        <section  className="  " >
           
-          <div className={`mx-auto text-center  lg:pt-[1.61rem] ${bg?bg:"bg-purple-200 "} rounded-lg lg:min-w-[15.22888rem] max-lg:full lg:gap-10 lg:min-h-[16.11313rem]  pt-3 ${className}  max-md:w-[11.42169rem] max-md:min-h-[12.08488rem] md:min-h-[16.11313rem]`}>
+          <div className={`mx-auto text-center  lg:pt-[1.61rem] ${bg?bg:"bg-purple-200 "} rounded-lg lg:min-w-[98%] max-lg:full lg:gap-10 lg:min-h-[16.11313rem]  pt-3 ${className}  max-md:w-[11.42169rem] max-md:min-h-[12.08488rem] md:min-h-[16.11313rem]`}>
           <Container
           
             className="lg:max-w-[80%] lg:min-h-[9.23556rem] md:w-[80%]
@@ -37,7 +37,7 @@ export const EmptyVidThumbNail=({bg,
                   </FileButton> */}
  <Button 
  onClick={onClick}
-              className="bg-[#B3ADAD] text-dark rounded-full lg:absolute flex justify-center items-center text-lg w-14 h-14"
+              className="bg-[#B3ADAD] text-dark rounded-full l flex justify-center items-center text-lg w-14 h-14"
              >
                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
  <path d="M12 5V19M5 12H19" stroke="#303237" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
