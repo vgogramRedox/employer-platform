@@ -30,7 +30,7 @@ const VidThumbNail = ({
             <IconBookmarkFilled
               onClick={onClickBookMark}
               size={10}
-              className="rounded-full p-2  w-11 h-11 max-lg:w-9  absolute  left-[78%] lg:bottom-[78%]  bg-white text-sm z-10"
+              className="rounded-full p-2  w-11 h-11 max-lg:w-9  max-md:w-[1.8rem] max-md:h-[1.8rem]  absolute  left-[78%] lg:bottom-[78%]  bg-white text-sm z-10"
             />
         
 
@@ -109,7 +109,7 @@ function page() {
           Explore Talent
         </Text> */}
         
-        <div className=" grid  lg:grid-cols-4 md:grid-cols-3 max-md:grid-cols-2 max-md:gap-y-4 md:gap-4  max-lg:mt-10 lg:mt-[1.88rem]">
+        <div className=" grid  lg:grid-cols-4 md:grid-cols-3 max-md:grid-cols-2 max-md:gap-y-4 md:gap-4 max-md:gap-x-2  max-lg:mt-10 lg:mt-[1.88rem]">
           <Link href={''}>
             <VidThumbNail
               bookmarked={bookmarked}

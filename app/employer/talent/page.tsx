@@ -46,12 +46,12 @@ const VidThumbNail = ({
             <IconBookmarkFilled
               onClick={onClickBookMark}
               size={10}
-              className="rounded-full p-2  w-11 h-11 max-lg:w-9  absolute  left-[78%] lg:bottom-[78%]  bg-white text-sm z-10"
+              className="rounded-full p-2  w-11 h-11 max-lg:w-9  max-md:w-[1.8rem] max-md:h-[1.8rem]  absolute  left-[78%] lg:bottom-[78%]  bg-white text-sm z-10"
             />
           ) : (
             <IconBookmark
               onClick={onClickBookMark}
-              className="rounded-full p-2  w-11 h-11 max-lg:w-9 max-lg:h-9   absolute left-[80%] lg:bottom-[78%] lg:left-[78%] bg-white  z-10"
+              className="rounded-full p-2  w-11 h-11 max-lg:w-9 max-lg:h-9 max-md:w-[1.8rem] max-md:h-[1.8rem]  absolute left-[80%] lg:bottom-[78%] lg:left-[78%] bg-white  z-10"
             />
           )
           // <IconBookmarkOff size={10} className="rounded-full p-2 border w-14 h-14 absolute  bottom-[75%] left-[80%] bg-white text-sm z-10" />
@@ -167,26 +167,27 @@ function page() {
             />
           </Link>
 
-          <Link href={''}>
+          <Link href={'/employer/jobs/active-jobs/params/applications/1'}>
             <VidThumbNail />
           </Link>
 
-          <Link href={''}>
+          <Link href={'/employer/jobs/active-jobs/params/applications/1'}>
             <VidThumbNail />
           </Link>
 
-          <Link href={''}>
+          <Link href={'/employer/jobs/active-jobs/params/applications/1'}>
+            <VidThumbNail />
+          </Link>
+          <Link href={'/employer/jobs/active-jobs/params/applications/1'}>
+            <VidThumbNail />
+          </Link>
+          <Link href={'/employer/jobs/active-jobs/params/applications/1'}>
+            <VidThumbNail />
+          </Link>
+          <Link href={'/employer/jobs/active-jobs/params/applications/1'}>
             <VidThumbNail />
           </Link>
 
-          <VidThumbNail />
-          <VidThumbNail />
-          <VidThumbNail />
-          <VidThumbNail />
-          <VidThumbNail />
-          <VidThumbNail />
-          <VidThumbNail />
-          <VidThumbNail />
         </div>
       </Box>
 

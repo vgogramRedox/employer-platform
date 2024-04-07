@@ -57,32 +57,20 @@ function page() {
           Applications
         </Text> */}
       <Box className="md:mt-10 sm:mt-5 max-lg:p-0">
-        <div className=" grid  lg:grid-cols-4 md:grid-cols-3 max-md:grid-cols-2 max-md:gap-y-4 md:gap-4 ">
-          <Link href={'/employer/jobs/active-jobs/params/applications/1'}>
-            <VidThumbNail />
-          </Link>
-
-          <Link href={'/employer/jobs/active-jobs/params/applications/1'}>
-            <VidThumbNail />
-          </Link>
-
-          <Link href={'/employer/jobs/active-jobs/params/applications/1'}>
-            <VidThumbNail />
-          </Link>
-
-          <Link href={'/employer/jobs/active-jobs/params/applications/1'}>
-            <VidThumbNail />
-          </Link>
-
-          <VidThumbNail />
-          <VidThumbNail />
+        <div className=" grid  lg:grid-cols-4 md:grid-cols-3 max-md:grid-cols-2 max-md:gap-4 max-md:y-9 md:gap-4 ">
+       
+<Box className='max-md:w-[98%]'>  <VidThumbNail /></Box>
+<Box className='max-md:w-[98%]'>  <VidThumbNail /></Box>
+<Box className='max-md:w-[98%]'>  <VidThumbNail /></Box>
+         
+          {/* <VidThumbNail />
           <VidThumbNail />
           <VidThumbNail />
 
           <VidThumbNail />
           <VidThumbNail />
           <VidThumbNail />
-          <VidThumbNail />
+          <VidThumbNail /> */}
         </div>
       </Box>
 
