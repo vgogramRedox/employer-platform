@@ -95,7 +95,7 @@ function page() {
         <SlideInAnimation>
         <Box className="min-h-[7rem] max-lg:min-h-[4rem] h-[7rem] min-w-full bg-[#D3D7F1] lg:hidden flex items-center justify-end">
           <IconSettings className=' me-[5%] focus:rotate-180 hover:rotate-180  transition-all' onClick={()=>{
-            router.push("/employer/settings")
+            router.push("/employer/profile/account")
           }} />
         </Box>
         </SlideInAnimation>

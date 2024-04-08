@@ -59,7 +59,7 @@ function page() {
                   <IconChevronLeft className="text-3xl" onClick={()=>{
                     router.back()
                   }} />
-                  <Text className=" text-dark text-lg  font-semibold  max-lg:text-[1rem] ">Team Managemeny</Text>
+                  <Text className=" text-dark text-lg  font-semibold  max-lg:text-[1rem] ">Team Management</Text>
                   <IconChevronLeft className="text-3xl opacity-0" />
                 </Group>
               </div>

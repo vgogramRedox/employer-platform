@@ -5,12 +5,15 @@ import AddVideoModal from '@/app/components/Edit/AddVideoModal';
 import { PostJobModal } from '@/app/components/Employer/PostJobModal';
 import AddUserModal from '@/app/components/HomeComps/AddUserModal';
 import EditPasswordModal from '@/app/components/HomeComps/EditPasswordModal';
-import { Portal } from '@mantine/core';
+import { Group, Portal, Text } from '@mantine/core';
 import { AnimatePresence,motion } from 'framer-motion';
 import dynamic from 'next/dynamic';
 import React, { createContext, useEffect, useState } from 'react';
 
 import { setUserAgent } from 'react-device-detect';
+import SlideInAnimation from './Motion';
+import PrimaryButton from '@/app/components/Button';
+import { SmallModal } from '@/app/components/SmallModal';
 interface AppStateType {
   postVideoMode: boolean | false;
   jobPostStage: number;
@@ -60,6 +63,7 @@ function EmployerContext({ children }: { children: React.ReactNode }) {
   const[verifyModalOpened,setVerifyModalOpened]=useState<boolean>(false)
   const [editPasswordModalOpened,setEditPasswordModalOpened]=useState<boolean>(false)
   const [newChatModalOpened,setnewChatModalOpened]=useState<boolean>(false)
+  const [confirmLogoutModal, setConfirmLogoutModal] = useState<boolean>(false);
 
 
  
@@ -67,7 +71,7 @@ function EmployerContext({ children }: { children: React.ReactNode }) {
     <UserContext.Provider
       //@ts-ignore
       value={{ appState, setAppState, postJobModalOpened, setPostJobModalOpened,addVideoModalOpened, setAddVideoModalOpened,
-        verifyModalOpened,setVerifyModalOpened,addUserModalOpened,setAddUserModalOpened,editPasswordModalOpened,setEditPasswordModalOpened,newChatModalOpened,setnewChatModalOpened,
+        verifyModalOpened,setVerifyModalOpened,addUserModalOpened,setAddUserModalOpened,editPasswordModalOpened,setEditPasswordModalOpened,newChatModalOpened,setnewChatModalOpened,setConfirmLogoutModal
       }}
     >
       {children}
@@ -162,6 +166,65 @@ close={()=>{
 )
 
 }
+
+
+{
+    confirmLogoutModal && (
+      <Portal>
+        <SmallModal
+          opened={confirmLogoutModal}
+          open={open}
+          close={() => {
+            setConfirmLogoutModal(false);
+          }}
+          header={<Text className="font-bold text-2xl">Logout?</Text>}
+          content={
+            <Text className="font-light mt-[5%] text-lg">
+              Are you sure you want to Log out of your account?
+            </Text>
+          }
+          footer={
+            <>
+            <Group className='flex gap-x-6 mt-[20%] mb-[10%]'>
+
+            <SlideInAnimation>
+                <PrimaryButton
+                  p="sm"
+                  fullWidth={false}
+                  onClick={() => {
+                    // setAppState({
+                    //   ...appState,jobPostStage:1
+                    //  })
+                    setConfirmLogoutModal(false)
+                  }}
+                  className="bg-white border border-grey-4 lg:w-[10rem] lg:h-[3rem]  hover:border-dotted text-dark max-lg:w-[40%] max-lg:font-normal  "
+                  title="Cancel"
+                />
+              </SlideInAnimation>
+
+              <SlideInAnimation>
+                <PrimaryButton
+                  p="xs"
+                  fullWidth={false}
+                  className="bg-red-700 border lg:w-[10rem] max-lg:w-full lg:h-[3rem] max-lg:font-normal  "
+                  title={'Logout'}
+                  //   onClick={() => {
+                  //    setvid({
+                  //  ...
+                  //    })
+
+                  //   }}
+                />
+              </SlideInAnimation>
+            </Group>
+              
+            </>
+          }
+          
+        />
+      </Portal>
+    )
+  }
 
 
     </UserContext.Provider>

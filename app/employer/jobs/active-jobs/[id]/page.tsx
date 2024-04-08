@@ -21,7 +21,7 @@ function page() {
           bg={'primary.10'}
         >
           <Group className="flex max-md:block gap-y-2 relative lg:w-[50%] max-lg:w-full max-lg:text-sm">
-            <Group className="max-md:justify-between max-lg:hidden flex">
+            <Group className="max-md:justify-between md:hidden flex">
               <IconChevronLeft  onClick={()=>{
                 router.back()
               }}/>
@@ -39,7 +39,7 @@ function page() {
             <Text className="font-bold  max-lg:text-xl text-5xl max-md:mt-5"> Product Designer</Text>
             <BadgeComp
             p={'0'}
-              className=" bg-sun-200 absolute  w-20 h-8 left-[65%] bottom-[83.5%] "
+              className=" bg-sun-200 absolute  w-20 h-8 left-[65%] bottom-[83.5%] max-md:hidden "
               title={
                 <Box className="  text-dark max-md:text-lg items-center justify-center flex">
                   <IconArrowDownLeft  className='w-6 h-6'/>

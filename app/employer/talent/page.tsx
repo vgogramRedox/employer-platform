@@ -157,7 +157,11 @@ function page() {
           Explore Talent
         </Text>
         <div className=" grid  lg:grid-cols-4 md:grid-cols-3 max-md:grid-cols-2 max-md:gap-y-4 max-md:gap-x-2 md:gap-4 max-lg:mt-5 ">
-          <Link href={''}>
+        
+
+         {
+          Array. from({length:16}).map((_,i)=>(
+            <Link key={i} href={''}>
             <VidThumbNail
               bookmarked={bookmarked}
                 onClickBookMark={() => {
@@ -166,27 +170,8 @@ function page() {
                 }}
             />
           </Link>
-
-          <Link href={'/employer/jobs/active-jobs/params/applications/1'}>
-            <VidThumbNail />
-          </Link>
-
-          <Link href={'/employer/jobs/active-jobs/params/applications/1'}>
-            <VidThumbNail />
-          </Link>
-
-          <Link href={'/employer/jobs/active-jobs/params/applications/1'}>
-            <VidThumbNail />
-          </Link>
-          <Link href={'/employer/jobs/active-jobs/params/applications/1'}>
-            <VidThumbNail />
-          </Link>
-          <Link href={'/employer/jobs/active-jobs/params/applications/1'}>
-            <VidThumbNail />
-          </Link>
-          <Link href={'/employer/jobs/active-jobs/params/applications/1'}>
-            <VidThumbNail />
-          </Link>
+          ))
+         }
 
         </div>
       </Box>

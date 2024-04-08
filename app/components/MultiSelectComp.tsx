@@ -3,16 +3,18 @@ import { IconChevronDown, IconCircleX, IconCircleXFilled } from '@tabler/icons-r
 import { useContext, useState } from 'react';
 import { BadgeComp } from './BadgeComp';
 import { UserContext } from '@/context/EmployerContext';
+import { useMediaQuery } from '@mantine/hooks';
 interface DataType{
    value: string, label: string
    }
    interface List{
   data:  DataType[]
+  placeholder?:string
    }
 
 
 export default function MultiSelectComp({
-  data
+  data,placeholder="Select"
 }:List) {
   const [value, setValue] = useState<string[]>([]);
   const { appState, setAppState } = useContext(UserContext);
@@ -33,6 +35,7 @@ setAppState({
   tags: [...appState.tags, ...uniqueNewValues],
 });
   }
+  const midWidth=useMediaQuery('(max-width:668px)')
   return (
 
     <>
@@ -44,14 +47,21 @@ setAppState({
       onChange={ handleChange}
       
       value={value}
-      placeholder="Pick value"
+      placeholder={placeholder}
       data={data}
       hidePickedOptions
       max={5}
       
     
       rightSection={<IconChevronDown/>}
-      styles={{dropdown: { maxHeight: 200, overflowY: 'auto' }}}
+      styles={{
+        dropdown: { maxHeight: 200, overflowY: 'auto' },
+      option:{fontSize:"1rem"},
+      input:{minHeight:"3.5rem",fontSize: midWidth ? '0.875rem' : '1.2rem',fontWeight:300 },
+      pill:{fontSize: midWidth ? '0.875rem' : '1rem',padding:'1px'}
+      
+    }
+    }
       comboboxProps={{ position: 'bottom', middlewares: { flip: false, shift: false } ,dropdownPadding:'6px',
       transitionProps: { transition: 'pop', duration: 200 }
      

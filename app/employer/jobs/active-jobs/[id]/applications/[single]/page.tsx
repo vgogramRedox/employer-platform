@@ -29,7 +29,7 @@ function page() {
         <Box className="lg:w-[90%]  max-lg:w-full mx-auto max-lg:text-lg  mb-5">
     
     <div className='max-lg:border-b shadow '>
-      <Group className="max-md:justify-between lg:hidden flex max-md:w-[100%] items-center max-lg:p-4">
+      <Group className="max-lg:justify-between lg:hidden flex max-md:w-[100%] items-center max-lg:p-4">
         <IconChevronLeft
         className='text-3xl'
           onClick={() => {

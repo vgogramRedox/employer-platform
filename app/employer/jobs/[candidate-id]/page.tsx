@@ -98,7 +98,7 @@ function page() {
           </div>
         </div>
 {/* for small screen */}
-        <Text className="font-bold text-center lg:hidden max-lg: mt-[13.5rem]  ">About me</Text>
+        <Text className="font-bold text-center lg:hidden max-lg: mt-[14.5rem]  ">About me</Text>
         {/* grid  lg:grid-cols-4   max-md:overflow-x-scroll md:grid-cols-3 max-lg:gap-4 lg:gap-4 */}
         <div className=" grid  lg:hidden max-md:flex max-lg:grid-cols-2 max-lg:gap-x-5 mt-5 max-md:overflow-x-scroll md:gap-x-6 ">
           <VidThumbNail />
