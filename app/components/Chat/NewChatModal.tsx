@@ -15,6 +15,7 @@ import { useRouter } from 'next/navigation';
 import { IconSearch } from '@tabler/icons-react';
 import { IconCheck } from '@tabler/icons-react';
 import Chats from './Chats';
+import SingleChat from './SingleChat';
 
 interface UserMessagesProps {
   user?: string;
@@ -34,8 +35,8 @@ function NewChatModal({ opened, open, close }: addVideoModalType) {
   const { scrollIntoView, targetRef, scrollableRef } = useScrollIntoView();
 
   // const [postVideoMode,setPostVideoMode]=useState<boolean>(false)
-  const { appState,setAppState,setnewChatModalOpened } = useContext(UserContext);
-  const {chatStage} = appState;
+  const { appState, setAppState, setnewChatModalOpened } = useContext(UserContext);
+  const { chatStage } = appState;
 
   const breakpoint = useMediaQuery('(min-width: 56.25em)');
 
@@ -66,42 +67,42 @@ function NewChatModal({ opened, open, close }: addVideoModalType) {
     </Box>
   );
 
-const getStage=(messageStage:string)=>{
-switch (messageStage) {
-    case "chats":
-        
-       return <Chats/>
+  const getStage = (messageStage: string) => {
+    switch (messageStage) {
+      case 'chats':
+        return <Chats />;
 
-       case "newChat":
-        
-       return <Chats/>
-    default: 1
-        
-}
+      case 'newChat':
+        return <Chats />;
 
-}
-const handleCloseStage=()=>{
-    if(chatStage=="chats"){
-        // setAppState({
-        //     ...appState,
-        // })
-        setnewChatModalOpened(false)
+        case 'singleChat':
+          return <SingleChat />;
+      default:
+        <SingleChat />;
+    }
+  };
+  const handleCloseStage = () => {
+    if (chatStage == 'chats') {
+      // setAppState({
+      //     ...appState,
+      // })
+      setnewChatModalOpened(false);
     }
 
-    if(chatStage=="newChat"){
-        setAppState({
-            ...appState,chatStage:"chats"
-        })
-  
+    if (chatStage == 'newChat') {
+      setAppState({
+        ...appState,
+        chatStage: 'chats',
+      });
     }
 
-    if(chatStage=="singleChat"){
-        setAppState({
-            ...appState,chatStage:"chats"
-        })
-  
+    if (chatStage == 'singleChat') {
+      setAppState({
+        ...appState,
+        chatStage: 'chats',
+      });
     }
-}
+  };
 
   return (
     <>
@@ -125,31 +126,21 @@ const handleCloseStage=()=>{
         <Modal.Content ref={scrollableRef}>
           <Modal.Header className="  max-lg:bg-white  shadow max-lg:border-b">
             <Modal.Title className="  ">
-            
-                <Box className="max-lg:justify-between max-lg:w-full lg:hidden items-end  max-lg:h-[3.65rem] flex">
-                  <IconChevronLeft
-                    className="text-3xl"
-                    onClick={() => {
-                        handleCloseStage()
-                    }}
-                  />
-                  <Text className=" text-dark text-lg  font-semibold  max-lg:text-[1rem] ">
-                  {chatStage=="chats"?"Messages":"New Message"}  
-                  </Text>
-                  <IconChevronLeft className="text-3xl opacity-0" />
-                </Box>
-          
-
-             
+              <Box className="max-lg:justify-between max-lg:w-full lg:hidden items-end  max-lg:h-[3.65rem] flex">
+                <IconChevronLeft
+                  className="text-3xl"
+                  onClick={() => {
+                    handleCloseStage();
+                  }}
+                />
+                <Text className=" text-dark text-lg  font-semibold  max-lg:text-[1rem] ">
+                  {chatStage == 'chats' ? 'Messages' : 'New Message'}
+                </Text>
+                <IconChevronLeft className="text-3xl opacity-0" />
+              </Box>
             </Modal.Title>
           </Modal.Header>
-          <Modal.Body>
-
-          {
-               getStage (chatStage)
-            }
-
-          </Modal.Body>
+          <Modal.Body>{getStage(chatStage)}</Modal.Body>
         </Modal.Content>
       </Modal.Root>
     </>

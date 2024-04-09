@@ -72,19 +72,18 @@ function SingleChat() {
     setMessages(data);
   };
   const [file, setFile] = useState<File | null>(null);
+  
   useEffect(() => {
     getItems();
   }, []);
 
   return (
-    <Box className="   w-full">
+    <Box className="min-h-screen   w-full">
       <Box className="flex border-b p-4  text-dark-100 gap-x-2 items-center text-lg capitalize w-full">
         <Image className="w-[2.5rem] h-[2.5rem]" src="/svgs/person.svg" /> Vincent
       </Box>
-      <Box className="flex flex-col content-evenly p-4 mb-[30%] w-full">
-        {
-          //@ts-ignore
-        }
+      <Box className="flex flex-col content-evenly p-4 w-full  overflow-y-auto" style={{ maxHeight: 'calc(100% - 250px)' }}>
+    
         {messagesDemo &&
           messagesDemo?.map((message) => (
             <>
@@ -93,8 +92,8 @@ function SingleChat() {
             </>
           ))}
       </Box>
-      <Box className="z-10 fixed bottom-0 w-[60%] ms-4 p-4 border-t bg-white">
-        <Box className=" flex gap-x-3  flex-row ">
+      <Box className="z-10 absolute bottom-0 w-full  p-4 border-t bg-white">
+        <Box className=" flex gap-x-  flex-row ">
           <form
             onSubmit={sendMessage}
             onKeyDown={handleKeyPress}
@@ -114,7 +113,7 @@ function SingleChat() {
                 <Image
                   {...props}
                   src="/svgs/clip.svg"
-                  className=" absolute left-[95%] bottom-[26%] w-6 h-6"
+                  className=" absolute left-[95%] bottom-[26%] w-3 h-5"
                 />
               )}
             </FileButton>
@@ -126,9 +125,11 @@ function SingleChat() {
             onClick={() => {
               sendMessage(messageText);
             }}
-            className="w-14 h-14 flex items-center bg-primary-blue justify-center group rounded-full"
+            className="w-14 h-14 flex items-center  bg-primary-blue justify-center group rounded-full
+            
+            "
           >
-            <IconSend className="text-white group-hover:rotate-[10deg] transition-all  " />
+            <IconSend className="text-white group-hover:rotate-[10deg] transition-all w-6  h-6 " />
           </Box>
         </Box>
 

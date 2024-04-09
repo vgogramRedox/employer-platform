@@ -97,16 +97,16 @@ function page() {
             </Box>
           </div>
         </div>
-{/* for small screen */}
-        <Text className="font-bold text-center lg:hidden max-lg: mt-[14.5rem]  ">About me</Text>
+{/* for small screen */} <br />
+        <Text className="font-bold text-center lg:hidden max-md:mt-[14.5rem] max-lg:mt-[18.5rem] ">About me</Text>
         {/* grid  lg:grid-cols-4   max-md:overflow-x-scroll md:grid-cols-3 max-lg:gap-4 lg:gap-4 */}
-        <div className=" grid  lg:hidden max-md:flex max-lg:grid-cols-2 max-lg:gap-x-5 mt-5 max-md:overflow-x-scroll md:gap-x-6 ">
+        <div className=" grid  lg:hidden max-md:flex max-lg:grid-cols-2 max-lg:gap-x-5 mt-3 max-md:overflow-x-scroll md:gap-x-6 ">
           <VidThumbNail />
           <VidThumbNail />
         </div>
         {/* for small screen */}
         <CandidateInfo
-          className="lg:hidden"
+          className="lg:hidden mt-[2.28rem]"
           header={<Text className="text center font-bold ">Bio</Text>}
           content={
             <div className="max-w-[80%] m-auto mt-3">
@@ -123,7 +123,7 @@ function page() {
         <Paper
           shadow="xs"
           bg={'primary.10'}
-          className=" max-lg:w-full min-h-[14.125rem] mt-5 max-lg:mb-[30%] lg:p-5"
+          className=" max-lg:w-full min-h-[14.125rem] mt-5  lg:p-5 max-lg:p-5"
         >
           <Text className="font-bold  border-b text-center ">Education</Text>
 
@@ -155,9 +155,14 @@ function page() {
       </Box>
       </Box>
         </Paper>
-
         {/* for small screen */}
-        <Text className="lg:hidden text-center ">Job History</Text>
+<Paper
+shadow="xs"
+bg={'primary.10'}
+className='max-lg:p-5 mt-5'
+>
+
+<Text className="text-center border-b lg:hidden  font-bold">Job History</Text>
         <AccordionComp
           className="lg:hidden"
           key="1"
@@ -165,10 +170,13 @@ function page() {
           company='Wakanow'
           description="Lorem ipsum dolor sit amet consectetur. Nibh massa tincidunt est ultrices vulputate pretium curabitur vitae. Feugiat mauris arcu cursus lectus elit senectus aliquam. Malesuada morbi tincidunt ac amet quis at adipiscing.Lorem ipsum dolor sit amet consectetur. Nibh massa tincidunt est ultrices vulputate pretium curabitur vitae. Feugiat mauris arcu cursus lectus elit senectus aliquam. Malesuada morbi tincidunt ac amet quis at adipiscing."
         />
+</Paper>
+        
+       
         {/* for large screen */}
         <CandidateInfo
-        className=''
-          header={<Text className="text center">CV</Text>}
+        className='max-lg:mt-5'
+          header={<Text className="text center max-lg:font-bold">CV</Text>}
           content={
             <div className="mt-5">
               <Link href="" className="underline flex h-10 items-center gap-5 ">
@@ -180,7 +188,8 @@ function page() {
 
         {/* for large screen */}
         <CandidateInfo
-          header={<Text className="text center">Certification</Text>}
+        className='max-lg:mt-5'
+          header={<Text className="text center max-lg:font-bold">Certification</Text>}
           content={
             <div className="my-auto">
               <Group className=" flex h-10 items-center gap-5 ">
@@ -191,7 +200,7 @@ function page() {
                 <Text>
                   Fundamentals of UI Design
                   <br />
-                  <Text className="font-light">DATE</Text>
+                  <Text className="font-light">2020</Text>
                 </Text>
               </Group>
             </div>
@@ -243,9 +252,9 @@ function page() {
         />
 
         {/* for both screens */}
-        <Box className="lg:mt-10">
-        <Text className="font-bold text-center text-lg ">Projects</Text>
-          <Box className="grid  lg:grid-cols-3 sm:grid-cols-2 md:grid-cols-2 gap-4 mt-6 ">
+        <Box className="lg:mt-10 max-lg:mt-1">
+        <Text className="font-bold text-center text-lg max-lg:text-start max-lg:border-b max-lg:p-5 ">Projects</Text>
+          <Box className="grid  lg:grid-cols-3 sm:grid-cols-2 md:grid-cols-2 gap-4 lg:mt-6  max-md:flex max-lg:grid-cols-2 max-lg:gap-x-5 max-lg:mt-5 max-md:overflow-x-scroll md:gap-x-6">
                 {/* <Text className=" flex h-10 items-center gap-5 my-auto text-center">
             
                 Projects
@@ -260,8 +269,8 @@ function page() {
 
         {/* for smaller screen */}
         <CandidateInfo
-          className="lg:hidden"
-          header={<Text className="text center">REVIEWS</Text>}
+          className="lg:hidden max-lg:mt-5 max-lg:mb-[30%] "
+          header={<Text className="text center max-lg:font-bold">REVIEWS</Text>}
           content={
             <div className="">
               <Text className=" flex h-10 items-center gap-5 my-auto">
@@ -281,7 +290,7 @@ function page() {
 <Paper
           shadow="xs"
           bg={'primary.10'}
-          className=" max-lg:w-full min-h-[14.125rem] mt-5 max-lg:mb-[30%] lg:p-5 lg:mt-8"
+          className=" max-lg:w-full min-h-[14.125rem] mt-5 max-lg:hidden max-lg:mb-[30%] lg:p-5 lg:mt-8"
         >
           <Text className="font-bold  text-lg border-b text-center pb-1">Job History</Text>
           <Box className='mt-5'>

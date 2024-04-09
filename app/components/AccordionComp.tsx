@@ -20,7 +20,7 @@ export default function AccordionComp({
  
     <Accordion defaultValue="Apples" className={`${className} w-full`}>
      <Accordion.Item key={key} value={jobTitle}>
-      <Accordion.Control icon={<IconBriefcase className='rounded-full w-11 h-11 p-2 bg-[#E0E7EB] text-[#7F0DF1]' />}>
+      <Accordion.Control icon={<IconBriefcase className='rounded-full w-11 h-11 lg:p-2 max-lg:w-6 max-lg:h-6 bg-[#E0E7EB] text-[#7F0DF1]' />}>
         <Text className="capitalize"> {jobTitle}</Text>
         <Box className='flex items-center gap-x-4 mt-1'>
         <Text className="capitalize "> {company}</Text>  <Text className='font-light text-sm text-black'> | Feb 2016-July 2019</Text>  

@@ -4,7 +4,7 @@ import PrimaryButton from './Button';
 
 export function ProjectCard() {
   return (
-    <Card shadow="sm" padding="lg" radius="md" className='bg-[#F6F7FC]'>
+    <Card shadow="sm" padding="lg" radius="md" className='bg-[#F6F7FC] max-md:min-w-[11.11rem]'>
       <Card.Section component="a" href="/" className="p-4">
         <Image
         

@@ -1,9 +1,10 @@
 import { Autocomplete, Box, Group, Image, Text } from '@mantine/core';
-import React from 'react'
+import React, { useContext } from 'react'
 import PrimaryButton from '../Button';
 import { IconCheck } from '@tabler/icons-react';
 import { IconSearch } from '@tabler/icons-react';
 import { useRouter } from 'next/navigation';
+import { UserContext } from '@/context/EmployerContext';
 
 
 interface UserMessagesProps {
@@ -40,6 +41,8 @@ const UserMessages = ({
   );
 export function Chats() {
     const router = useRouter();
+    const{setNewChatModalOpened}=useContext(UserContext)
+    const { appState, setAppState, setnewChatModalOpened } = useContext(UserContext);
   return (
     <Box className="max-lg:w-[95%] mx-auto">
     <Group>
@@ -65,23 +68,35 @@ export function Chats() {
                   <Box className="min-h-[30%] ">
                     <UserMessages
                       onClick={() => {
-                        router.push('/employer/messages/home/mobile');
+                        setAppState({
+                          ...appState,
+                          chatStage: 'singleChat',
+                        });
                       }}
                     />
                     <UserMessages
-                      onClick={() => {
-                        router.push('/employer/messages/home/mobile');
-                      }}
+                     onClick={() => {
+                      setAppState({
+                        ...appState,
+                        chatStage: 'singleChat',
+                      });
+                    }}
                     />
                     <UserMessages
-                      onClick={() => {
-                        router.push('/employer/messages/home/mobile');
-                      }}
+                    onClick={() => {
+                      setAppState({
+                        ...appState,
+                        chatStage: 'singleChat',
+                      });
+                    }}
                     />
                   </Box>
-                  <Box className="w-full mt-[8.6rem]">
+                  <Box className="w-full mt-[2.6rem]">
                     <PrimaryButton
-                    
+                     onClick={() => {
+                      router.push('/employer/home/messages/mobile');
+                      setNewChatModalOpened(false);
+                    }}
                       p="0"
                       className=" h-12 bg-primary-blue text-lg mx-auto text-center"
                       title="Message"

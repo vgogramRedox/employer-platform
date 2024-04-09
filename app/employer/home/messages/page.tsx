@@ -151,7 +151,7 @@ function page() {
   return (
     <Box className="min-h-screen">
       <div className="max-lg:border-b max-lg:w-full  lg:hidden w-full max-lg:h-[5.7rem] flex items-end shadow">
-        <Group className="max-md:justify-between lg:hidden flex max-md:w-[100%] items-center">
+        <Group className="max-lg:justify-between lg:hidden flex max-md:w-[100%] items-center">
           <IconChevronLeft
             className="text-3xl"
             onClick={() => {
