@@ -9,6 +9,7 @@ import { isMobile } from 'react-device-detect';
 
 import { UserContext } from '@/context/EmployerContext';
 import { useRouter } from 'next/navigation';
+import { MobileHeader } from '@/app/components/Employer/MobileHeader';
 
 
 
@@ -24,10 +25,12 @@ const router=useRouter()
    
       
     <Box className="lg:w-[90%]  max-lg:w-full mx-auto max-lg:text-lg max-lg:p-4">
-      <p className="leading-[1.2rem] text-dark lg:text-2xl  font-semibold mt-[3.19rem]">
+      <Box className='lg:hidden'>  <MobileHeader /></Box>
+  
+      <p className="leading-[1.2rem] text-black lg:text-2xl max-md:text-[1rem]  font-semibold mt-[3.19rem] max-lg:mt-[1.2rem]">
         Welcome {isMobile? "back":""}, Vincent
       </p>
-      <p className="leading-[1rem] text-dark font-normal text-[1rem] lg:font-light  max-lg:mt-5 text-start mt-10">
+      <p className="leading-[1rem] text-black font-normal text-[1rem] lg:font-light max-md:text-sm  max-lg:mt-5 text-start mt-10">
         Complete your profile
       </p>
       <div className="mt-5 relative ">

@@ -4,7 +4,7 @@ import { signInWithPopup, signOut, onAuthStateChanged, GoogleAuthProvider } from
 import { auth } from '@/config/firebase';
 import { selector, useRecoilState, useRecoilValue } from 'recoil';
 import {  UserProfileAtom } from '@/Recoil/recoilStates';
-import { count } from 'console';
+
 
 //@ts-ignore
 export const AuthContext = createContext();
@@ -23,18 +23,18 @@ export const AuthContextProvider = ({ children }: { children: React.ReactNode })
     signOut(auth);
   };
 
-  const userProfileSelector=selector({
-    key:"userProfileSelector",
-    get:({ get})=>{
-const user=get(UserProfileAtom)
-const newUser={
-  ...user,email:user?.email
+//   const userProfileSelector=selector({
+//     key:"userProfileSelector",
+//     get:({ get})=>{
+// const user=get(UserProfileAtom)
+// const newUser={
+//   ...user,email:user?.email
   
-}
-return newUser
-    }
-})
-  const value=useRecoilValue(userProfileSelector)
+// }
+// return newUser
+//     }
+// })
+  // const value=useRecoilValue(userProfileSelector)
   // console.log(user,value)
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -44,7 +44,7 @@ return newUser
     
 
     });
-    console.log(user,userProfile)
+    // console.log(user,userProfile)
 
     return()=>{
       unsubscribe()

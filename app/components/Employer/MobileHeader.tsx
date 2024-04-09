@@ -39,11 +39,37 @@ export function MobileHeader() {
 
   return (
     <header className="">
-      <div className={` pt-5 w-[80%] ms-auto flex justify-center items-center  gap-x-10 `}>
+      <div className={` pt-5 w-full ms-auto flex justify-center items-center  gap-x-10 `}>
+
+      <div  className="flex flex-row gap-4 opacity-0">
+          <DropDown
+            dropDownIcon={
+              <>
+                <Group pos={'relative'}>
+                  <IconBell />{' '}
+                  <Badge className="absolute left-3 bottom-3" size="xs" bg="red" circle></Badge>
+                </Group>
+              </>
+            }
+          />
+
+          <a
+            key="9iLinkHidden"
+            href=""
+            className={``}
+            // data-active={active === link.link || undefined}
+            onClick={(event) => {
+              event.preventDefault();
+              // setActive(link.link);
+            }}
+          >
+            <IconMail />
+          </a>
+        </div>
         <a
           key="9i"
           href="/"
-          className={` text-center `}
+          className={` text-center  `}
           // data-active={active === link.link || undefined}
           onClick={(event) => {
             event.preventDefault();
@@ -67,11 +93,11 @@ export function MobileHeader() {
 
           <a
             key="9iLink"
-            href=""
+            href="home/messages"
             className={``}
             // data-active={active === link.link || undefined}
             onClick={(event) => {
-              event.preventDefault();
+       
               // setActive(link.link);
             }}
           >

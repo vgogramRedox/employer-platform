@@ -16,8 +16,8 @@ function layout ({children}:{
 
 const headersList=headers()
 // console.log(headersList)
-const domain = headersList.get('host') || "";
-    const fullUrl = headersList.get('referer') || "";
+// const domain = headersList.get('host') || "";
+//     const fullUrl = headersList.get('referer') || "";
 
     // console.log(fullUrl);
     // console.log(fullUrl?.includes("/jobs/active-jobs"||`/jobs/`))
@@ -34,11 +34,11 @@ const domain = headersList.get('host') || "";
 
     <main className='lg:ms-auto lg:min-w-[85%] lg:max-w-[85%] max-lg:w-full '>
 <Header/>
-<div className='lg:hidden'>{
+{/* <div className='lg:hidden'>{
   fullUrl?.includes("/jobs/active-jobs"||`/jobs/`)?(<MobileHeader />):""
 }
       
-      </div>
+      </div> */}
 {children}
 {
 
