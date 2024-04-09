@@ -90,7 +90,7 @@ function PostJobStage2({setter}:SetterType) {
 
               
             </Modal.Title>
-            <Modal.CloseButton className="absolute lg:top-[8%] lg:left-[97%] max-lg:left-[90%]" />
+            <Modal.CloseButton className="absolute lg:top-[8%] lg:left-[97%] max-lg:left-[90%] lg:w-10" />
           </Modal.Header>
           <Modal.Body >
           <motion.div 

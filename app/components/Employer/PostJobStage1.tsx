@@ -146,7 +146,7 @@ function PostJobStage1({ setter }: SetterType) {
               />
             </Box>
           </Modal.Title>
-          <Modal.CloseButton className="absolute lg:top-[8%] lg:left-[97%] max-lg:left-[90%] max-lg:top-1" />
+          <Modal.CloseButton className="absolute lg:top-[8%] lg:left-[97%] max-lg:left-[90%] max-lg:top-1 lg:w-10" />
         </Modal.Header>
         <Modal.Body>
         <motion.div 
@@ -236,9 +236,9 @@ delay:0.3
 
 {!postVideoMode &&(
 <>
-<Text className="mt-5 max-lg:font-light text-black lg:text-lg"> Employment Type</Text>
+<Text className="mt-5 max-lg:font-light text-black lg:text-lg max-lg:text-sm"> Employment Type</Text>
 <Group className="flex gap-5  max-lg:gap-x-2 flex-row mt-2.5">{ET}</Group>
-<Text className="mt-5 max-lg:font-light text-black  lg:text-lg"> Work Type</Text>
+<Text className="mt-5 max-lg:font-light text-black  lg:text-lg max-lg:text-sm"> Work Type</Text>
 <Group className="flex gap-5 flex-row mt-5 lg:mt-2.5 mb-5 max-lg:gap-x-2">{WORKSET}</Group>
 
 <Input

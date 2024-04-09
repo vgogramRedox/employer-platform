@@ -219,7 +219,7 @@ function page() {
         </Box>
 
         <Box className="w-full  max-lg:p-4 max-lg:mt-60  lg:ms-[10%]">
-          <Box className="flex text-bold justify-between items-center text-2xl lg:w-[90%] max-lg:text-[1rem] max-lg:text-black  max-lg:font-bold ">
+          <Box className="flex lg:text-lg justify-between items-center text-2xl lg:w-[90%] max-lg:text-[1rem] max-lg:text-black  font-bold  ">
             <IconEdit className="opacity-0" />
             About Ovidigo{' '}
             <IconEdit
@@ -271,7 +271,7 @@ function page() {
           {/* for large screen */}
           <SlideInAnimation>
           <CandidateInfo
-            className="max-lg:hidden"
+            className="max-lg:hidden lg:hidden"
             header={
               <Box className="flex text-bold justify-between items-center  ">
                 <IconEdit className="opacity-0" />
@@ -300,10 +300,10 @@ function page() {
           <SlideInAnimation>
 
           <CandidateInfo
-            className=" max-lg:hidden"
+            className=" max-lg:hidden lg:min-h-[17rem]"
             header={<Text className="text center font-bold">Reviews</Text>}
             content={
-              <div className="mt-5">
+              <div className="mt-5 lg:max-w-[80%] m-auto">
                 <Text className=" flex h-10 items-center gap-5 my-auto">
                   <IconStar
                     className="w-10 h-10 border rounded-full p-2"
@@ -325,7 +325,7 @@ function page() {
 
           <SlideInAnimation>
           <CandidateInfo
-            className="lg:hidden mb-[30%]"
+            className="lg:hidden mb-[30%] "
             header={<Text className="text center font-semibold">Reviews</Text>}
             content={
               <div className="">
