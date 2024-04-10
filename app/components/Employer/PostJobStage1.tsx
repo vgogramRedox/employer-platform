@@ -236,15 +236,15 @@ delay:0.3
 
 {!postVideoMode &&(
 <>
-<Text className="mt-5 max-lg:font-light text-black lg:text-lg max-lg:text-sm"> Employment Type</Text>
+<Text className="mt-10 lg:font-[400]  lg:text-xl max-md:font-light text-black text-xl max-md:text-sm max-lg:font-light"> Employment Type</Text>
 <Group className="flex gap-5  max-lg:gap-x-2 flex-row mt-2.5">{ET}</Group>
-<Text className="mt-5 max-lg:font-light text-black  lg:text-lg max-lg:text-sm"> Work Type</Text>
+<Text className="mt-10 lg:font-[400]  lg:text-xl max-md:font-light text-black text-xl max-md:text-sm max-lg:font-light"> Work Type</Text>
 <Group className="flex gap-5 flex-row mt-5 lg:mt-2.5 mb-5 max-lg:gap-x-2">{WORKSET}</Group>
 
 <Input
   label="Location"
   placeholder="Enter Job Location"
-  className="mt-10 mb-20"
+  className="mt-10 mb-10 max-lg:mb-[0.5rem] max-lg:mt-[0.5rem]"
   value={jobPostLocation}
   onChange={(e: any) => {
     setAppState({
@@ -254,7 +254,7 @@ delay:0.3
   }}
 />
 <TextArea
-  className="mt-1 "
+  className=""
   label="Requirements/Qualification"
   placeholder="Enter Job Requirements/Qualifications"
   value={jobPostRequirements}
@@ -275,7 +275,7 @@ delay:0.3
     });
   }}
   placeholder="Enter renumeration"
-  className="mt-5"
+  className="mt-10 max-lg:mt-[0.5rem]"
 />
 
 

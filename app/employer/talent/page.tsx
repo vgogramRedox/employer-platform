@@ -90,9 +90,9 @@ function page() {
 
   const [activePage, setPage] = useState(1);
   const router = useRouter();
-  const [bookmarked, setBookMarked] = useState(false);
-  const toggleBookmark = () => {
-    setBookMarked((prev) => !prev);
+  const [bookmarked, setBookMarked] = useState<number|null>();
+  const toggleBookmark = (index:number) => {
+    setBookMarked(index);
     // console.log(bookmarked);
   };
  
@@ -161,12 +161,12 @@ function page() {
 
          {
           Array. from({length:16}).map((_,i)=>(
-            <Link key={i} href={''}>
+            <Link key={i} href={'/employer/jobs/1'}>
             <VidThumbNail
-              bookmarked={bookmarked}
+              bookmarked={i==bookmarked?true:false}
                 onClickBookMark={() => {
                   // e.preventDefault();
-                  toggleBookmark();
+                  toggleBookmark(i);
                 }}
             />
           </Link>

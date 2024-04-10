@@ -68,8 +68,12 @@ function page() {
       <Box className=" w-[50%] max-lg:w-full  max-lg:p-4 lg:ps-[4.69rem] lg:pe-[4.69rem] ">
       
         <div className="max-lg:mt-3.5 lg:mt-0 max-lg:mb-20 max-lg:top-[10%] max-lg:absolute ">
-          <Box className="flex  gap-x-8 lg:gap-x-0  ms-[2.18rem]">
+          <Box className="flex  max-lg:ms-1 w-[8.6rem] h-[8.6rem] lg:gap-x-0  ms-[2.18rem] relative">
             <Image src="/svgs/person.svg" className="w-[8.6rem] h-[8.6rem] " />
+             <Image
+                    src="/svgs/verifiedCheck.svg"
+                    className="w-[1.6rem] h-[1.6rem] absolute top-[10%] left-[80%]"
+                  />
           </Box>
 
           <div className="flex gap-x-4 mt-[0.81rem] ">
@@ -123,7 +127,7 @@ function page() {
         <Paper
           shadow="xs"
           bg={'primary.10'}
-          className=" max-lg:w-full min-h-[14.125rem] mt-5  lg:p-5 max-lg:p-5"
+          className=" max-lg:w-full min-h-[14.125rem] lg:mt-5   lg:p-5 max-lg:p-5 max-lg:mt-[2.28rem]"
         >
           <Text className="font-bold  border-b text-center ">Education</Text>
 
@@ -159,7 +163,7 @@ function page() {
 <Paper
 shadow="xs"
 bg={'primary.10'}
-className='max-lg:p-5 mt-5'
+className='max-lg:p-5 mt-0 max-lg:mt-[2.28rem]'
 >
 
 <Text className="text-center border-b lg:hidden  font-bold">Job History</Text>
@@ -173,9 +177,9 @@ className='max-lg:p-5 mt-5'
 </Paper>
         
        
-        {/* for large screen */}
+        {/* for both screen */}
         <CandidateInfo
-        className='max-lg:mt-5'
+        className='max-lg:mt-[2.28rem] mt-5'
           header={<Text className="text center max-lg:font-bold">CV</Text>}
           content={
             <div className="mt-5">
@@ -186,13 +190,13 @@ className='max-lg:p-5 mt-5'
           }
         />
 
-        {/* for large screen */}
+        {/* for both screen */}
         <CandidateInfo
-        className='max-lg:mt-5'
+        className='max-lg:mt-[2.28rem]'
           header={<Text className="text center max-lg:font-bold">Certification</Text>}
           content={
             <div className="my-auto">
-              <Group className=" flex h-10 items-center gap-5 ">
+              <Box className=" flex h-10 items-center gap-5 min-h-[4.325rem] ">
                 <IconAward
                   className="w-10 h-10 border rounded-full p-2 bg-[#E0E7EB] "
                   style={{ color: '#F2AB1B' }}
@@ -202,14 +206,14 @@ className='max-lg:p-5 mt-5'
                   <br />
                   <Text className="font-light">2020</Text>
                 </Text>
-              </Group>
+              </Box>
             </div>
           }
         />
         {/* larger screen */}
         <CandidateInfo
           className="max-lg:hidden"
-          header={<Text className="text center">REVIEWS</Text>}
+          header={<Text className="text center">Reviews</Text>}
           content={
             <div className="">
               <Text className=" flex h-10 items-center gap-5 my-auto">
@@ -269,7 +273,7 @@ className='max-lg:p-5 mt-5'
 
         {/* for smaller screen */}
         <CandidateInfo
-          className="lg:hidden max-lg:mt-5 max-lg:mb-[30%] "
+          className="lg:hidden max-lg:mt-[2.28rem] max-lg:mb-[30%] "
           header={<Text className="text center max-lg:font-bold">REVIEWS</Text>}
           content={
             <div className="">
